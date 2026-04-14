@@ -5,6 +5,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:customUI="using:AppControlManager.CustomUIElements"
     xmlns:win="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:CCToolKit="using:CommonCore.ToolKits"
     xmlns:controls="using:CommunityToolkit.WinUI.Controls"
     xmlns:animatedvisuals="using:AnimatedVisuals"
     xmlns:ViewModel="using:AppControlManager.ViewModels"
@@ -41,7 +42,7 @@
                     </customUI:InfoBarV2>
                 </controls:SettingsExpander.ItemsHeader>
 
-                <controls:WrapPanel Orientation="Horizontal" HorizontalSpacing="6" VerticalSpacing="10">
+                <CCToolKit:WrapPanel Orientation="Horizontal" HorizontalSpacing="6" VerticalSpacing="10">
 
                     <Button x:Uid="MergeButton"
                             IsEnabled="{x:Bind ViewModel.MergeButtonState, Mode=OneWay}"
@@ -53,7 +54,7 @@
 
                     <ProgressRing IsIndeterminate="True" Visibility="{x:Bind ViewModel.MergeProgressRingVisibility, Mode=OneWay}" />
 
-                </controls:WrapPanel>
+                </CCToolKit:WrapPanel>
 
                 <controls:SettingsExpander.Items>
 
@@ -81,7 +82,7 @@
                             <customUI:ButtonV2.Flyout>
                                 <Flyout x:Name="MainPolicyForMergeBrowseButton_FlyOut">
 
-                                    <controls:WrapPanel Orientation="Vertical" HorizontalSpacing="15" VerticalSpacing="15">
+                                    <CCToolKit:WrapPanel Orientation="Vertical" HorizontalSpacing="15" VerticalSpacing="15">
 
                                         <Button x:Uid="ClearButton" Click="{x:Bind ViewModel.MainPolicy_Flyout_ClearButton}">
                                             <Button.ContentTemplate>
@@ -100,7 +101,7 @@
                                                  TextWrapping="Wrap" AcceptsReturn="True" IsSpellCheckEnabled="False"
                                                  MinWidth="400" IsReadOnly="True" />
 
-                                    </controls:WrapPanel>
+                                    </CCToolKit:WrapPanel>
 
                                 </Flyout>
                             </customUI:ButtonV2.Flyout>
@@ -133,7 +134,7 @@
                             <customUI:ButtonV2.Flyout>
                                 <Flyout x:Name="OtherPoliciesForMergeBrowseButton_FlyOut">
 
-                                    <controls:WrapPanel Orientation="Vertical" HorizontalSpacing="15" VerticalSpacing="15">
+                                    <CCToolKit:WrapPanel Orientation="Vertical" HorizontalSpacing="15" VerticalSpacing="15">
 
                                         <Button x:Uid="ClearButton" Click="{x:Bind ViewModel.OtherPolicies_Flyout_ClearButton}">
                                             <Button.ContentTemplate>
@@ -150,7 +151,7 @@
 
                                         <customUI:ListBoxV2 MinWidth="400" SelectionMode="Single" ItemsSource="{x:Bind ViewModel.OtherPolicies, Mode=OneWay}" />
 
-                                    </controls:WrapPanel>
+                                    </CCToolKit:WrapPanel>
 
                                 </Flyout>
                             </customUI:ButtonV2.Flyout>
@@ -190,7 +191,7 @@
 
                     <controls:SettingsCard x:Uid="ConvertPoliciesToAppIDTaggingSettingsCard">
 
-                        <controls:WrapPanel Orientation="Horizontal" HorizontalSpacing="6" VerticalSpacing="10">
+                        <CCToolKit:WrapPanel Orientation="Horizontal" HorizontalSpacing="6" VerticalSpacing="10">
 
                             <Button x:Uid="ConvertToAppIDTaggingButton"
                                     IsEnabled="{x:Bind ViewModel.ConvertToAppIDTaggingElementsAreEnabled, Mode=OneWay}"
@@ -233,7 +234,7 @@
                                 <customUI:ButtonV2.Flyout>
                                     <Flyout x:Name="AppIDTaggingConversionBrowseButton_FlyOut">
 
-                                        <controls:WrapPanel Orientation="Vertical" HorizontalSpacing="15" VerticalSpacing="15">
+                                        <CCToolKit:WrapPanel Orientation="Vertical" HorizontalSpacing="15" VerticalSpacing="15">
 
                                             <Button x:Uid="ClearButton" Click="{x:Bind ViewModel.PoliciesToConvertToAppIDTagging_Clear}">
                                                 <Button.ContentTemplate>
@@ -252,20 +253,20 @@
                                                                 SelectionMode="Single"
                                                                 ItemsSource="{x:Bind ViewModel.PoliciesToConvertToAppIDTagging, Mode=OneWay}" />
 
-                                        </controls:WrapPanel>
+                                        </CCToolKit:WrapPanel>
 
                                     </Flyout>
                                 </customUI:ButtonV2.Flyout>
 
                             </customUI:ButtonV2>
 
-                        </controls:WrapPanel>
+                        </CCToolKit:WrapPanel>
 
                     </controls:SettingsCard>
 
                     <controls:SettingsCard x:Uid="RemoveSigningScenarioFeatureSettingsCard">
 
-                        <controls:WrapPanel Orientation="Horizontal" HorizontalSpacing="6" VerticalSpacing="10">
+                        <CCToolKit:WrapPanel Orientation="Horizontal" HorizontalSpacing="6" VerticalSpacing="10">
 
                             <Button x:Uid="RemoveSigningScenarioButton"
                                     IsEnabled="{x:Bind ViewModel.SigningScenarioRemovalElementsAreEnabled, Mode=OneWay}"
@@ -305,7 +306,7 @@
                                 <customUI:ButtonV2.Flyout>
                                     <Flyout x:Name="SigningScenarioRemovalBrowseButton_FlyOut">
 
-                                        <controls:WrapPanel Orientation="Vertical" HorizontalSpacing="15" VerticalSpacing="15">
+                                        <CCToolKit:WrapPanel Orientation="Vertical" HorizontalSpacing="15" VerticalSpacing="15">
 
                                             <Button x:Uid="ClearButton" Click="{x:Bind ViewModel.PoliciesForSigningScenarioRemoval_Clear}">
                                                 <Button.ContentTemplate>
@@ -324,7 +325,7 @@
                                                                 SelectionMode="Single"
                                                                 ItemsSource="{x:Bind ViewModel.PoliciesForSigningScenarioRemoval, Mode=OneWay}" />
 
-                                        </controls:WrapPanel>
+                                        </CCToolKit:WrapPanel>
 
                                     </Flyout>
                                 </customUI:ButtonV2.Flyout>
@@ -338,7 +339,7 @@
                                 <RadioButton GroupName="SigningScenarioSelection" x:Uid="KernelModeRadioButton" IsChecked="{x:Bind ViewModel.KernelModeSigningScenarioSelected, Mode=TwoWay}"/>
                             </RadioButtons>
 
-                        </controls:WrapPanel>
+                        </CCToolKit:WrapPanel>
 
                     </controls:SettingsCard>
 

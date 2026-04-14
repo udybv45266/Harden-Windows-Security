@@ -3,13 +3,11 @@
     x:Class="AppControlManager.Pages.CreateDenyPolicy"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:ui="using:CommunityToolkit.WinUI"
-    xmlns:ani="using:CommunityToolkit.WinUI.Animations"
     xmlns:customUI="using:AppControlManager.CustomUIElements"
     xmlns:CCToolKit="using:CommonCore.ToolKits"
     xmlns:CC="using:CommonCore.Others"
-    xmlns:vm="using:AppControlManager.ViewModels"
     xmlns:controls="using:CommunityToolkit.WinUI.Controls"
+    xmlns:vm="using:AppControlManager.ViewModels"
     xmlns:win="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:animatedvisuals="using:AnimatedVisuals"
     xmlns:CommonCore="using:CommonCore"
@@ -110,7 +108,7 @@
                                        x:Phase="0"/>
 
                                 <!-- Secondary Information -->
-                                <controls:WrapPanel x:Name="SecondaryInfoWrapPanel"
+                                <CCToolKit:WrapPanel x:Name="SecondaryInfoWrapPanel"
                                               Orientation="Horizontal"
                                               HorizontalSpacing="16"
                                               VerticalSpacing="6">
@@ -216,7 +214,7 @@
                                                VerticalAlignment="Center"/>
                                     </Grid>
 
-                                </controls:WrapPanel>
+                                </CCToolKit:WrapPanel>
 
                                 <!-- Expandable Details Section -->
                                 <Expander x:Name="DetailsExpander"
@@ -374,22 +372,12 @@
 
             <Border x:Name="AnimatedBorder"
                     Grid.Row="0"
-                    ui:Effects.Shadow="{StaticResource BorderShadow}"
+                    CCToolKit:Effects.Shadow="{StaticResource BorderShadow}"
                     Background="Transparent"
                     BorderThickness="0"
                     Margin="15,15,15,0"
                     PointerEntered="{x:Bind OnBorderPointerEntered}"
                     PointerExited="{x:Bind OnBorderPointerExited}">
-
-                <ani:Explicit.Animations>
-                    <ani:AnimationSet x:Name="ShadowEnterAnimation">
-                        <ani:BlurRadiusDropShadowAnimation To="20"/>
-                    </ani:AnimationSet>
-
-                    <ani:AnimationSet x:Name="ShadowExitAnimation">
-                        <ani:BlurRadiusDropShadowAnimation To="10"/>
-                    </ani:AnimationSet>
-                </ani:Explicit.Animations>
 
                 <Border Height="60"
                         BorderThickness="0"
@@ -420,7 +408,7 @@
 
                         <Border Grid.Column="1" Grid.ColumnSpan="1" BorderThickness="0" CornerRadius="18">
 
-                            <controls:WrapPanel HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalSpacing="15">
+                            <CCToolKit:WrapPanel HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalSpacing="15">
 
                                 <customUI:ButtonV2 x:Uid="SelectPolicyFileToAddRulesToButton"
                                                    x:Name="SelectPolicyFileToAddRulesToButton"
@@ -448,7 +436,7 @@
                                     <customUI:ButtonV2.Flyout>
                                         <Flyout x:Name="SelectPolicyFileToAddRulesToButton_FlyOut">
 
-                                            <controls:WrapPanel Orientation="Vertical" HorizontalSpacing="15" VerticalSpacing="15">
+                                            <CCToolKit:WrapPanel Orientation="Vertical" HorizontalSpacing="15" VerticalSpacing="15">
 
                                                 <Button x:Uid="ClearButton" Click="{x:Bind ViewModel.ClearPolicyFileToMergeWith}">
                                                     <Button.ContentTemplate>
@@ -467,14 +455,14 @@
                                                          TextWrapping="Wrap" AcceptsReturn="True" IsSpellCheckEnabled="False"
                                                          MinWidth="400" IsReadOnly="True" />
 
-                                            </controls:WrapPanel>
+                                            </CCToolKit:WrapPanel>
 
                                         </Flyout>
                                     </customUI:ButtonV2.Flyout>
 
                                 </customUI:ButtonV2>
 
-                            </controls:WrapPanel>
+                            </CCToolKit:WrapPanel>
 
                         </Border>
 
@@ -534,7 +522,7 @@
                     </controls:SettingsExpander.ItemsHeader>
 
 
-                    <controls:WrapPanel Orientation="Horizontal" HorizontalSpacing="6" VerticalSpacing="10">
+                    <CCToolKit:WrapPanel Orientation="Horizontal" HorizontalSpacing="6" VerticalSpacing="10">
 
                         <customUI:AnimatedCancellableButton x:Uid="CreateDenyPolicyButton"
                                     Style="{StaticResource AccentButtonStyle}"
@@ -560,7 +548,7 @@
                                       x:Uid="DeployAfterCreationButton"
                                       Margin="0,0,15,0" />
 
-                    </controls:WrapPanel>
+                    </CCToolKit:WrapPanel>
 
                     <controls:SettingsExpander.Items>
 
@@ -584,7 +572,7 @@
                                 <customUI:ButtonV2.Flyout>
                                     <Flyout>
 
-                                        <controls:WrapPanel Orientation="Vertical" HorizontalSpacing="15" VerticalSpacing="15">
+                                        <CCToolKit:WrapPanel Orientation="Vertical" HorizontalSpacing="15" VerticalSpacing="15">
 
                                             <Button x:Uid="ClearButton" Click="{x:Bind ViewModel.FilesAndFoldersBrowseForFilesButton_Flyout_Clear_Click}">
                                                 <Button.ContentTemplate>
@@ -601,7 +589,7 @@
 
                                             <customUI:ListBoxV2 MinWidth="400" SelectionMode="Single" ItemsSource="{x:Bind ViewModel.filesAndFoldersFilePaths, Mode=OneWay}" />
 
-                                        </controls:WrapPanel>
+                                        </CCToolKit:WrapPanel>
 
                                     </Flyout>
                                 </customUI:ButtonV2.Flyout>
@@ -629,7 +617,7 @@
                                 <customUI:ButtonV2.Flyout>
                                     <Flyout>
 
-                                        <controls:WrapPanel Orientation="Vertical" HorizontalSpacing="15" VerticalSpacing="15">
+                                        <CCToolKit:WrapPanel Orientation="Vertical" HorizontalSpacing="15" VerticalSpacing="15">
 
                                             <Button x:Uid="ClearButton" Click="{x:Bind ViewModel.FilesAndFoldersBrowseForFoldersButton_Flyout_Clear_Click}">
                                                 <Button.ContentTemplate>
@@ -646,7 +634,7 @@
 
                                             <customUI:ListBoxV2 MinWidth="400" SelectionMode="Single" ItemsSource="{x:Bind ViewModel.filesAndFoldersFolderPaths, Mode=OneWay}" />
 
-                                        </controls:WrapPanel>
+                                        </CCToolKit:WrapPanel>
 
                                     </Flyout>
                                 </customUI:ButtonV2.Flyout>
@@ -678,7 +666,7 @@
 
                         <customUI:SettingsCardV2 x:Uid="ScalabilitySettingsCard">
 
-                            <controls:WrapPanel Orientation="Horizontal" HorizontalSpacing="10" VerticalSpacing="10">
+                            <CCToolKit:WrapPanel Orientation="Horizontal" HorizontalSpacing="10" VerticalSpacing="10">
 
                                 <ProgressRing IsIndeterminate="False"
                                               Value="{x:Bind ViewModel.FilesAndFoldersProgressRingValue, Mode=OneWay}" />
@@ -714,7 +702,7 @@
                                     </Button.Flyout>
                                 </Button>
 
-                            </controls:WrapPanel>
+                            </CCToolKit:WrapPanel>
 
                         </customUI:SettingsCardV2>
 
@@ -773,7 +761,7 @@
                         </customUI:InfoBarV2>
                     </controls:SettingsExpander.ItemsHeader>
 
-                    <controls:WrapPanel Orientation="Horizontal" HorizontalSpacing="6" VerticalSpacing="10">
+                    <CCToolKit:WrapPanel Orientation="Horizontal" HorizontalSpacing="6" VerticalSpacing="10">
 
                         <customUI:AnimatedCancellableButton x:Uid="CreateDenyPolicyButton"
                                 Style="{StaticResource AccentButtonStyle}"
@@ -799,7 +787,7 @@
                                       IsEnabled="{x:Bind ViewModel.IsElevated}"
                                       Margin="0,0,15,0" />
 
-                    </controls:WrapPanel>
+                    </CCToolKit:WrapPanel>
 
                     <controls:SettingsExpander.Items>
 
@@ -817,9 +805,9 @@
                                                IsClickEnabled="False"
                                                IsActionIconVisible="False">
 
-                            <controls:WrapPanel Orientation="Horizontal">
+                            <CCToolKit:WrapPanel Orientation="Horizontal">
 
-                                <controls:WrapPanel VerticalAlignment="Center"
+                                <CCToolKit:WrapPanel VerticalAlignment="Center"
                                                     Orientation="Vertical"
                                                     Margin="0,0,15,0"
                                                     VerticalSpacing="15"
@@ -874,7 +862,7 @@
                                         </Button.ContentTemplate>
                                     </Button>
 
-                                </controls:WrapPanel>
+                                </CCToolKit:WrapPanel>
 
                                 <RefreshContainer RefreshRequested="{x:Bind ViewModel.PFNRefreshAppsListButton_Click}">
 
@@ -913,7 +901,7 @@
 
                                 </RefreshContainer>
 
-                            </controls:WrapPanel>
+                            </CCToolKit:WrapPanel>
 
                         </controls:SettingsCard>
 
@@ -963,7 +951,7 @@
                         </customUI:InfoBarV2>
                     </controls:SettingsExpander.ItemsHeader>
 
-                    <controls:WrapPanel Orientation="Horizontal" HorizontalSpacing="6" VerticalSpacing="10">
+                    <CCToolKit:WrapPanel Orientation="Horizontal" HorizontalSpacing="6" VerticalSpacing="10">
 
                         <customUI:AnimatedCancellableButton x:Uid="CreateDenyPolicyButton"
                                 Style="{StaticResource AccentButtonStyle}"
@@ -989,7 +977,7 @@
                                       IsChecked="{x:Bind ViewModel.CustomPatternBasedFileRuleBasedDeployButton, Mode=TwoWay}"
                                       Margin="0,0,15,0" />
 
-                    </controls:WrapPanel>
+                    </CCToolKit:WrapPanel>
 
                     <controls:SettingsExpander.Items>
 

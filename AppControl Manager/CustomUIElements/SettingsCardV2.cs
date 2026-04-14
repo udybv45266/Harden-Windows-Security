@@ -16,12 +16,12 @@
 //
 
 using System.Linq;
-using CommunityToolkit.WinUI.Controls;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Automation.Peers;
 using Microsoft.UI.Xaml.Automation.Provider;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Controls.Primitives;
+using CommunityToolkit.WinUI.Controls;
 
 namespace AppControlManager.CustomUIElements;
 

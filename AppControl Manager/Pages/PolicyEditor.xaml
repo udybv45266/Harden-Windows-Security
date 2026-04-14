@@ -5,8 +5,8 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:CommonCore="using:CommonCore"
     xmlns:customUI="using:AppControlManager.CustomUIElements"
-    xmlns:PolicyEditor="using:AppControlManager.PolicyEditor"
     xmlns:controls="using:CommunityToolkit.WinUI.Controls"
+    xmlns:PolicyEditor="using:AppControlManager.PolicyEditor"
     xmlns:CCToolKit="using:CommonCore.ToolKits"
     xmlns:animatedvisuals="using:AnimatedVisuals"
     xmlns:win="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
@@ -31,7 +31,7 @@
                 Style="{StaticResource GridCardStyle}"
                 Padding="8">
 
-            <controls:WrapPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalSpacing="10" VerticalSpacing="10">
+            <CCToolKit:WrapPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalSpacing="10" VerticalSpacing="10">
 
                 <ProgressRing IsIndeterminate="True" Visibility="{x:Bind ViewModel.ProgressBarVisibility, Mode=OneWay}" />
 
@@ -58,7 +58,7 @@
                     <customUI:ButtonV2.Flyout>
                         <Flyout>
 
-                            <controls:WrapPanel Orientation="Vertical" HorizontalSpacing="15" VerticalSpacing="15">
+                            <CCToolKit:WrapPanel Orientation="Vertical" HorizontalSpacing="15" VerticalSpacing="15">
 
                                 <Button x:Uid="ClearButton" Click="{x:Bind ViewModel.ClearButton_Click}">
                                     <Button.ContentTemplate>
@@ -77,7 +77,7 @@
                                          TextWrapping="Wrap" AcceptsReturn="True" IsSpellCheckEnabled="False"
                                          MinWidth="400" IsReadOnly="True" />
 
-                            </controls:WrapPanel>
+                            </CCToolKit:WrapPanel>
 
                         </Flyout>
                     </customUI:ButtonV2.Flyout>
@@ -151,7 +151,7 @@
                     </Button.Content>
                 </Button>
 
-            </controls:WrapPanel>
+            </CCToolKit:WrapPanel>
         </Border>
 
         <TabView VerticalAlignment="Stretch"
@@ -778,7 +778,7 @@
                         <!-- Header section with action buttons -->
                         <Border Grid.Row="0" Style="{StaticResource GridCardStyle}" Padding="12" Margin="12,12,12,6">
 
-                            <controls:WrapPanel Orientation="Horizontal"
+                            <CCToolKit:WrapPanel Orientation="Horizontal"
                                                     HorizontalSpacing="8"
                                                     VerticalSpacing="8"
                                                     VerticalAlignment="Center">
@@ -847,7 +847,7 @@
                                         <TextBlock x:Uid="ClearAllPolicySettingsTextBlock" />
                                     </StackPanel>
                                 </Button>
-                            </controls:WrapPanel>
+                            </CCToolKit:WrapPanel>
 
 
                         </Border>

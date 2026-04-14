@@ -3,9 +3,10 @@
     x:Class="AppControlManager.Pages.DeploymentPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:controls="using:CommunityToolkit.WinUI.Controls"
     xmlns:win="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:customUI="using:AppControlManager.CustomUIElements"
+    xmlns:controls="using:CommunityToolkit.WinUI.Controls"
+    xmlns:CCToolKit="using:CommonCore.ToolKits"
     xmlns:animatedvisuals="using:AnimatedVisuals"
     FlowDirection="{x:Bind ViewModel.AppSettings.ApplicationGlobalFlowDirection, Mode=OneWay}">
 
@@ -133,14 +134,14 @@
                                 <TextBlock Text="Local Deployment" Foreground="Orange" FontWeight="SemiBold" FontSize="12" VerticalAlignment="Center"/>
                             </StackPanel>
 
-                            <controls:WrapPanel HorizontalSpacing="15" VerticalSpacing="15">
+                            <CCToolKit:WrapPanel HorizontalSpacing="15" VerticalSpacing="15">
 
                                 <customUI:ButtonV2 x:Name="BrowseForXMLPolicyFilesButton"
                                                    ObservedData="{x:Bind ViewModel.FilesForUnsignedDeployment.Count, Mode=OneWay}"
                                                    IsEnabled="{x:Bind ViewModel.AreElementsEnabled, Mode=OneWay}"
                                                    Click="{x:Bind ViewModel.BrowseForXMLPolicyFilesButton_Click}">
                                     <customUI:ButtonV2.Content>
-                                        <controls:WrapPanel Orientation="Horizontal">
+                                        <CCToolKit:WrapPanel Orientation="Horizontal">
 
                                             <AnimatedIcon Visibility="{x:Bind ViewModel.UnsignedXMLFilesLightAnimatedIconVisibility, Mode=OneWay}"
                                                           Height="20"
@@ -153,13 +154,13 @@
 
                                             <TextBlock x:Uid="BrowseTextBlock" />
 
-                                        </controls:WrapPanel>
+                                        </CCToolKit:WrapPanel>
                                     </customUI:ButtonV2.Content>
 
                                     <customUI:ButtonV2.Flyout>
                                         <Flyout x:Name="BrowseForXMLPolicyFilesButton_Flyout">
 
-                                            <controls:WrapPanel Orientation="Vertical" HorizontalSpacing="15" VerticalSpacing="15">
+                                            <CCToolKit:WrapPanel Orientation="Vertical" HorizontalSpacing="15" VerticalSpacing="15">
 
                                                 <Button x:Uid="ClearButton"
                                                         Click="{x:Bind ViewModel.BrowseForXMLPolicyFilesButton_Flyout_Clear_Click}">
@@ -179,7 +180,7 @@
                                                          SelectionMode="Single"
                                                          ItemsSource="{x:Bind ViewModel.FilesForUnsignedDeployment, Mode=OneWay}" />
 
-                                            </controls:WrapPanel>
+                                            </CCToolKit:WrapPanel>
 
                                         </Flyout>
                                     </customUI:ButtonV2.Flyout>
@@ -203,7 +204,7 @@
 
                                 </Button>
 
-                            </controls:WrapPanel>
+                            </CCToolKit:WrapPanel>
                         </StackPanel>
                     </controls:SettingsCard.Content>
 
@@ -241,14 +242,14 @@
                                 <TextBlock Text="Local Deployment" Foreground="Orange" FontWeight="SemiBold" FontSize="12" VerticalAlignment="Center"/>
                             </StackPanel>
 
-                            <controls:WrapPanel HorizontalSpacing="15" VerticalSpacing="15">
+                            <CCToolKit:WrapPanel HorizontalSpacing="15" VerticalSpacing="15">
 
                                 <customUI:ButtonV2 x:Name="BrowseForSignedXMLPolicyFilesButton"
                                                    IsEnabled="{x:Bind ViewModel.AreElementsEnabled, Mode=OneWay}"
                                                    ObservedData="{x:Bind ViewModel.FilesForSignedDeployment.Count, Mode=OneWay}"
                                                    Click="{x:Bind ViewModel.BrowseForSignedXMLPolicyFilesButton_Click}">
                                     <customUI:ButtonV2.Content>
-                                        <controls:WrapPanel Orientation="Horizontal">
+                                        <CCToolKit:WrapPanel Orientation="Horizontal">
 
                                             <AnimatedIcon Visibility="{x:Bind ViewModel.SignedXMLFilesLightAnimatedIconVisibility, Mode=OneWay}"
                                                           Height="20"
@@ -261,13 +262,13 @@
 
                                             <TextBlock x:Uid="BrowseTextBlock" />
 
-                                        </controls:WrapPanel>
+                                        </CCToolKit:WrapPanel>
                                     </customUI:ButtonV2.Content>
 
                                     <customUI:ButtonV2.Flyout>
                                         <Flyout x:Name="BrowseForSignedXMLPolicyFilesButton_Flyout">
 
-                                            <controls:WrapPanel Orientation="Vertical" HorizontalSpacing="15" VerticalSpacing="15">
+                                            <CCToolKit:WrapPanel Orientation="Vertical" HorizontalSpacing="15" VerticalSpacing="15">
 
                                                 <Button x:Uid="ClearButton"
                                                         Click="{x:Bind ViewModel.BrowseForSignedXMLPolicyFilesButton_Flyout_Clear_Click}">
@@ -287,7 +288,7 @@
                                                          SelectionMode="Single"
                                                          ItemsSource="{x:Bind ViewModel.FilesForSignedDeployment, Mode=OneWay}" />
 
-                                            </controls:WrapPanel>
+                                            </CCToolKit:WrapPanel>
 
                                         </Flyout>
                                     </customUI:ButtonV2.Flyout>
@@ -309,7 +310,7 @@
 
                                 </Button>
 
-                            </controls:WrapPanel>
+                            </CCToolKit:WrapPanel>
                         </StackPanel>
 
                         <controls:SettingsExpander.Items>
@@ -366,7 +367,7 @@
                                 <TextBlock Text="Local Deployment" Foreground="Orange" FontWeight="SemiBold" FontSize="12" VerticalAlignment="Center"/>
                             </StackPanel>
 
-                            <controls:WrapPanel HorizontalSpacing="15" VerticalSpacing="15">
+                            <CCToolKit:WrapPanel HorizontalSpacing="15" VerticalSpacing="15">
 
                                 <customUI:ButtonV2 x:Uid="FileBrowseButton"
                                                    ObservedData="{x:Bind ViewModel.CIPFiles.Count, Mode=OneWay}"
@@ -376,7 +377,7 @@
                                     <customUI:ButtonV2.Flyout>
                                         <Flyout>
 
-                                            <controls:WrapPanel Orientation="Vertical" HorizontalSpacing="15" VerticalSpacing="15">
+                                            <CCToolKit:WrapPanel Orientation="Vertical" HorizontalSpacing="15" VerticalSpacing="15">
 
                                                 <Button x:Uid="ClearButton"
                                                         Click="{x:Bind ViewModel.BrowseForCIPBinaryFilesButton_Flyout_Clear_Click}">
@@ -397,7 +398,7 @@
                                                          SelectionMode="Single"
                                                          ItemsSource="{x:Bind ViewModel.CIPFiles, Mode=OneWay}" />
 
-                                            </controls:WrapPanel>
+                                            </CCToolKit:WrapPanel>
 
                                         </Flyout>
                                     </customUI:ButtonV2.Flyout>
@@ -423,7 +424,7 @@
 
                                 </Button>
 
-                            </controls:WrapPanel>
+                            </CCToolKit:WrapPanel>
                         </StackPanel>
                     </controls:SettingsCard.Content>
 
@@ -449,7 +450,7 @@
                                 <TextBlock Text="Local Feature" Foreground="Orange" FontWeight="SemiBold" FontSize="12" VerticalAlignment="Center"/>
                             </StackPanel>
 
-                            <controls:WrapPanel HorizontalSpacing="15" VerticalSpacing="15">
+                            <CCToolKit:WrapPanel HorizontalSpacing="15" VerticalSpacing="15">
 
                                 <customUI:ButtonV2 x:Uid="FileBrowseButton"
                                                    ObservedData="{x:Bind ViewModel.XMLFilesToConvertToCIP.Count, Mode=OneWay}"
@@ -459,7 +460,7 @@
                                     <customUI:ButtonV2.Flyout>
                                         <Flyout>
 
-                                            <controls:WrapPanel Orientation="Vertical" HorizontalSpacing="15" VerticalSpacing="15">
+                                            <CCToolKit:WrapPanel Orientation="Vertical" HorizontalSpacing="15" VerticalSpacing="15">
 
                                                 <Button x:Uid="ClearButton"
                                                         Click="{x:Bind ViewModel.BrowseForXMLPolicesButton_Flyout_Clear_Click}">
@@ -480,7 +481,7 @@
                                                          SelectionMode="Single"
                                                          ItemsSource="{x:Bind ViewModel.XMLFilesToConvertToCIP, Mode=OneWay}" />
 
-                                            </controls:WrapPanel>
+                                            </CCToolKit:WrapPanel>
 
                                         </Flyout>
                                     </customUI:ButtonV2.Flyout>
@@ -506,7 +507,7 @@
 
                                 </Button>
 
-                            </controls:WrapPanel>
+                            </CCToolKit:WrapPanel>
                         </StackPanel>
                     </controls:SettingsCard.Content>
 
