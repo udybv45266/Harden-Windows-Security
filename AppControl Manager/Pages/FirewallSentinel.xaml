@@ -60,7 +60,8 @@
                                             Orientation="Horizontal"
                                             HorizontalAlignment="Center"
                                             HorizontalSpacing="12"
-                                            VerticalSpacing="8">
+                                            VerticalSpacing="8"
+                                            XYFocusKeyboardNavigation="Enabled">
 
                             <!-- Main Header Title and Description -->
                             <StackPanel Spacing="4" HorizontalAlignment="Center" Orientation="Vertical">
@@ -118,7 +119,7 @@
                         </CCToolKit:WrapPanel>
 
                         <!-- Cards Container -->
-                        <CCToolKit:WrapPanel Grid.Row="1" HorizontalSpacing="16" VerticalSpacing="16" HorizontalAlignment="Center">
+                        <CCToolKit:WrapPanel Grid.Row="1" HorizontalSpacing="16" VerticalSpacing="16" HorizontalAlignment="Center" XYFocusKeyboardNavigation="Enabled">
 
                             <!-- Default Windows Card -->
                             <Grid x:Name="DefaultWindowsCard"

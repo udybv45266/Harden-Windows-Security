@@ -165,6 +165,7 @@
                 <Setter Property="VerticalSpacing" Value="8"/>
                 <Setter Property="HorizontalSpacing" Value="8"/>
                 <Setter Property="Orientation" Value="Horizontal"/>
+                <Setter Property="XYFocusKeyboardNavigation" Value="Enabled" />
             </Style>
 
 

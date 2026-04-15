@@ -216,7 +216,7 @@
 		<PackageReference Include="Microsoft.Identity.Client.NativeInterop" Version="0.20.4" />
 		<PackageReference Include="Microsoft.WindowsAppSDK.Base" Version="1.8.251216001" />
 		<PackageReference Include="Microsoft.WindowsAppSDK.Foundation" Version="1.8.260222000" />
-		<PackageReference Include="Microsoft.WindowsAppSDK.InteractiveExperiences" Version="1.8.260125001" />		
+		<PackageReference Include="Microsoft.WindowsAppSDK.InteractiveExperiences" Version="1.8.260125001" />
 		<PackageReference Include="Microsoft.Windows.SDK.BuildTools.MSIX" Version="1.7.260316102">
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>

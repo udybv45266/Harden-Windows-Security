@@ -232,6 +232,7 @@
                     </SplitButton>
 
                     <customUI:AnimatedCancellableButton
+                    AccessKey="A"
                     IsEnabled="{x:Bind ViewModel.IsApplyButtonEnabled, Mode=OneWay}"
                     CancelMethod="{x:Bind ViewModel.ApplyCancellableButton.Cancel, Mode=OneWay}"
                     ExternalOperationInProgress="{x:Bind ViewModel.ApplyCancellableButton.IsOperationInProgress, Mode=OneWay}"
@@ -250,6 +251,7 @@
                     Click="{x:Bind ViewModel.ApplySecurityHardeningUI}"/>
 
                     <customUI:AnimatedCancellableButton
+                    AccessKey="V"
                     IsEnabled="{x:Bind ViewModel.IsVerifyButtonEnabled, Mode=OneWay}"
                     CancelMethod="{x:Bind ViewModel.VerifyCancellableButton.Cancel, Mode=OneWay}"
                     ExternalOperationInProgress="{x:Bind ViewModel.VerifyCancellableButton.IsOperationInProgress, Mode=OneWay}"
@@ -268,6 +270,7 @@
                     Click="{x:Bind ViewModel.VerifySecurityHardeningUI}" />
 
                     <customUI:AnimatedCancellableButton
+                    AccessKey="R"
                     IsEnabled="{x:Bind ViewModel.IsRemoveButtonEnabled, Mode=OneWay}"
                     CancelMethod="{x:Bind ViewModel.RemoveCancellableButton.Cancel, Mode=OneWay}"
                     ExternalOperationInProgress="{x:Bind ViewModel.RemoveCancellableButton.IsOperationInProgress, Mode=OneWay}"

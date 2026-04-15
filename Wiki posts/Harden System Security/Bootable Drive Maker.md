@@ -6,9 +6,9 @@ The **Bootable Drive Maker** is a utility integrated into [the Harden System Sec
 
 ## How It Works
 
-Creating a bootable Windows installation drive typically requires specific formatting to support modern UEFI systems while circumventing the 4GB file size limit of FAT32 for the `install.wim` file. The Bootable Drive Maker handles this by utilizing a dual-partition layout (a BOOT partition and a DATA partition) or by automatically preparing the physical disk for you. 
+Creating a bootable Windows installation drive typically requires specific formatting to support modern UEFI systems while circumventing the 4GB file size limit of FAT32 for the `install.wim` file. The Bootable Drive Maker handles this by utilizing a dual-partition layout (a BOOT partition and a DATA partition) or by automatically preparing the physical disk for you.
 
-**Supported Operations:** 
+**Supported Operations:**
 
 1. Creating bootable media via Manual Partitioning
 2. Creating bootable media via Automatic Partitioning
@@ -21,14 +21,14 @@ Creating a bootable Windows installation drive typically requires specific forma
 To begin, you need a valid Windows ISO file.
 
 * **Download Link:** A convenient shortcut is provided in the UI to directly download the official Windows 11 ISO files from Microsoft.
-* **Browse Button:** Click the Browse button to open a file picker and select your `.iso` file. 
+* **Browse Button:** Click the Browse button to open a file picker and select your `.iso` file.
 * **ISO Details:** Once loaded, the app instantly reads and displays the size of the selected ISO file. You can right-click the arrow next to the Browse button to view the exact path or clear the selection.
 
 <br>
 
 ## Creating a Bootable Drive
 
-The tool offers two distinct modes for preparing your USB drive. You can switch between them using the selector bar. 
+The tool offers two distinct modes for preparing your USB drive. You can switch between them using the selector bar.
 
 ### Manual Partitioning
 

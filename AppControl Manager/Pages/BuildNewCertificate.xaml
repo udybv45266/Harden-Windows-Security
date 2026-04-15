@@ -64,7 +64,7 @@
             </customUI:InfoBarV2>
 
             <StackPanel HorizontalAlignment="Stretch" Spacing="{StaticResource SettingsCardSpacing}"
-                        Grid.Row="2" Margin="0,5,0,0">
+                        Grid.Row="2" Margin="0,5,0,0" XYFocusKeyboardNavigation="Enabled">
 
                 <win:StackPanel.ChildrenTransitions>
                     <win:EntranceThemeTransition FromVerticalOffset="50" />

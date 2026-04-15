@@ -19,11 +19,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
 using System.Threading.Tasks;
-using CommonCore;
-using CommonCore.Others;
 using Microsoft.UI.Xaml;
-using Windows.ApplicationModel.DataTransfer;
-using Windows.Storage;
 
 namespace HardenSystemSecurity.ViewModels;
 

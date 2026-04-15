@@ -25,9 +25,10 @@
         <Border Grid.Row="1" Margin="0,5,0,5" Style="{StaticResource GridCardStyle}" Padding="8">
 
             <CCToolKit:WrapPanel Orientation="Horizontal" HorizontalAlignment="Center"
-                                VerticalAlignment="Center"
-                                HorizontalSpacing="10"
-                                VerticalSpacing="10">
+                                 VerticalAlignment="Center"
+                                 HorizontalSpacing="10"
+                                 VerticalSpacing="10"
+                                 XYFocusKeyboardNavigation="Enabled">
 
                 <ProgressRing Visibility="{x:Bind ViewModel.ProgressBarVisibility,Mode=OneWay}"
                               VerticalAlignment="Center"

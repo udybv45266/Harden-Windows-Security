@@ -39,7 +39,7 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PR_URL: ${{ github.event.pull_request.html_url }}
         run: |
-          echo "✅ Approving the PR as github-actions[bot]..."         
+          echo "✅ Approving the PR as github-actions[bot]..."
           gh pr review "$PR_URL" --approve || echo "✅ Already approved by github-actions[bot]."
 
       - name: Approve PR as Code Owner
@@ -48,7 +48,7 @@ jobs:
           # This ensures the approval satisfies the "require_code_owner_review" branch protection rule.
           GH_TOKEN: ${{ secrets.HOTCAKEX_PAT }}
           PR_URL: ${{ github.event.pull_request.html_url }}
-        run: |                   
+        run: |
           echo "✅ Approving the PR as Code Owner..."
           gh pr review "$PR_URL" --approve || echo "✅ Already approved by Code Owner."
 

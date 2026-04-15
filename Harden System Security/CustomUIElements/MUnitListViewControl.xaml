@@ -122,7 +122,8 @@
                                         Orientation="Horizontal"
                                         Spacing="8"
                                         HorizontalAlignment="Right"
-                                        VerticalAlignment="Center">
+                                        VerticalAlignment="Center"
+                                        XYFocusKeyboardNavigation="Enabled">
 
                                 <Button Click="{x:Bind ApplyMUnit}">
                                     <Button.Transitions>
@@ -200,7 +201,8 @@
                                 HorizontalAlignment="Center"
                                 VerticalAlignment="Center"
                                 HorizontalSpacing="15"
-                                VerticalSpacing="15">
+                                VerticalSpacing="15"
+                                XYFocusKeyboardNavigation="Enabled">
 
                 <CCToolKit:WrapPanel.ChildrenTransitions>
                     <TransitionCollection>
@@ -264,7 +266,7 @@
                                     CornerRadius="8"
                                     Padding="16"
                                     MinWidth="280">
-                                <StackPanel Spacing="12">
+                                <StackPanel Spacing="12" XYFocusKeyboardNavigation="Enabled">
 
                                     <!-- Flyout Header -->
                                     <TextBlock x:Uid="StatusOverviewText"
@@ -381,6 +383,7 @@
 
                 <!-- Apply All Button -->
                 <customUI:AnimatedCancellableButton
+                    AccessKey="A"
                     x:Uid="AnimatedApplyAllButton"
                     CancelMethod="{x:Bind ViewModel.ApplyAllCancellableButton.Cancel, Mode=OneWay}"
                     ExternalOperationInProgress="{x:Bind ViewModel.ApplyAllCancellableButton.IsOperationInProgress, Mode=OneWay}"
@@ -401,6 +404,7 @@
 
                 <!-- Verify All Button -->
                 <customUI:AnimatedCancellableButton
+                    AccessKey="V"
                     x:Uid="VerifyAllButton"
                     CancelMethod="{x:Bind ViewModel.VerifyAllCancellableButton.Cancel, Mode=OneWay}"
                     ExternalOperationInProgress="{x:Bind ViewModel.VerifyAllCancellableButton.IsOperationInProgress, Mode=OneWay}"
@@ -421,6 +425,7 @@
 
                 <!-- Remove All Button -->
                 <customUI:AnimatedCancellableButton
+                    AccessKey="R"
                     x:Uid="AnimatedRemoveAllButton"
                     CancelMethod="{x:Bind ViewModel.RemoveAllCancellableButton.Cancel, Mode=OneWay}"
                     ExternalOperationInProgress="{x:Bind ViewModel.RemoveAllCancellableButton.IsOperationInProgress, Mode=OneWay}"
@@ -439,7 +444,7 @@
                     Click="{x:Bind RemoveAllMUnits}"
                     IsEnabled="{x:Bind ComputeRemoveAllEnabled(ViewModel.RemoveAllCancellableButton.IsOperationInProgress, ViewModel.ApplyAllCancellableButton.IsOperationInProgress, ViewModel.VerifyAllCancellableButton.IsOperationInProgress, AnyItemOperationInProgress), Mode=OneWay}" />
 
-                <DropDownButton x:Uid="ManageSelectionsDropDownButton">
+                <DropDownButton x:Uid="ManageSelectionsDropDownButton" AccessKey="M">
                     <DropDownButton.Flyout>
                         <MenuFlyout Placement="Bottom">
                             <MenuFlyoutItem x:Uid="SelectAllMenuFlyoutItem" IsEnabled="{x:Bind ViewModel.ElementsAreEnabled, Mode=OneWay}" Click="{x:Bind SelectAllMenuFlyoutItem_Click}">

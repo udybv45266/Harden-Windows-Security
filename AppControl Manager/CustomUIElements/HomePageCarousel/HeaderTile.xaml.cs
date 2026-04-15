@@ -157,7 +157,7 @@ internal sealed partial class HeaderTile : Button
 			Canvas.SetZIndex(this, 10);
 			_textPanel.Visibility = Visibility.Visible;
 
-			// We only provide the final destination (1.0f keyframe). 
+			// We only provide the final destination (1.0f keyframe).
 			// Composition will perfectly interpolate from wherever it currently is.
 
 			Vector3KeyFrameAnimation scaleAnimation = compositor.CreateVector3KeyFrameAnimation();

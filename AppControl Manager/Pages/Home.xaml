@@ -127,7 +127,7 @@
                                TextWrapping="Wrap" />
 
                     <!-- Using ItemsControl with a VariableSizedWrapGrid to allow direct XAML content and wrap layout -->
-                    <ItemsControl Grid.Row="1">
+                    <ItemsControl Grid.Row="1" XYFocusKeyboardNavigation="Enabled">
                         <ItemsControl.ItemsPanel>
                             <ItemsPanelTemplate>
                                 <VariableSizedWrapGrid Orientation="Horizontal"
@@ -299,7 +299,7 @@
                                           FontSize="12"
                                           Foreground="{ThemeResource TextFillColorTertiaryBrush}"
                                           Glyph="&#xE76C;" />
-                                
+
                                 <StackPanel Style="{StaticResource CardHeaderStackStyle}">
                                     <FontIcon Style="{StaticResource CardHeaderIconStyle}"
                                               Glyph="&#xE81C;"/>

@@ -79,7 +79,8 @@
                     <Button x:Uid="ScanEventLogsButton"
                             Style="{StaticResource AccentButtonStyle}"
                             IsEnabled="{x:Bind ViewModel.AreElementsEnabled, Mode=OneWay}"
-                            Click="{x:Bind ViewModel.ScanLogs_Click}" >
+                            Click="{x:Bind ViewModel.ScanLogs_Click}"
+                            AccessKey="S">
                         <Button.ContentTemplate>
                             <DataTemplate x:DataType="x:String">
                                 <StackPanel Orientation="Horizontal" Spacing="8">
@@ -93,7 +94,8 @@
                     <SplitButton ToolTipService.ToolTip="Create the supplemental policy"
                                  x:Name="MainSplitButton"
                                  IsEnabled="{x:Bind ViewModel.AreElementsEnabled, Mode=OneWay}"
-                                 Click="{x:Bind ViewModel.CreatePolicyButton_Click}">
+                                 Click="{x:Bind ViewModel.CreatePolicyButton_Click}"
+                                 AccessKey="C">
 
                         <SplitButton.Content>
                             <StackPanel Orientation="Horizontal">

@@ -660,11 +660,11 @@
                                                                                            VerticalAlignment="Center"
                                                                                            Style="{ThemeResource BodyStrongTextBlockStyle}"/>
                                                                                 <!-- The Color Tag Indicator -->
-                                                                                <FontIcon Grid.Column="2"                                                                                          
-                                                                                          Glyph="&#xE8EC;" 
+                                                                                <FontIcon Grid.Column="2"
+                                                                                          Glyph="&#xE8EC;"
                                                                                           Foreground="{x:Bind TagColorBrush, Mode=OneWay}"
                                                                                           Visibility="{x:Bind IsTagVisible, Mode=OneWay}"
-                                                                                          FontSize="14" 
+                                                                                          FontSize="14"
                                                                                           VerticalAlignment="Center"/>
                                                                             </Grid>
 

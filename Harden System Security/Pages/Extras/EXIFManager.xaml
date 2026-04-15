@@ -45,9 +45,10 @@
                 VerticalAlignment="Center">
 
             <CCToolKit:WrapPanel Orientation="Horizontal"
-                                HorizontalSpacing="6"
-                                VerticalSpacing="6"
-                                VerticalAlignment="Center">
+                                 HorizontalSpacing="6"
+                                 VerticalSpacing="6"
+                                 VerticalAlignment="Center"
+                                 XYFocusKeyboardNavigation="Enabled">
 
                 <!-- Browse Image -->
                 <customUI:ButtonV2 IsEnabled="{x:Bind ViewModel.AreElementsEnabled, Mode=OneWay}"

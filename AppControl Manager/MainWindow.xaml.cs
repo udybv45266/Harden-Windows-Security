@@ -128,7 +128,7 @@ internal sealed partial class MainWindow : Window
 		// Set the DataContext of the Grid to enable bindings in XAML
 		RootGrid.DataContext = this;
 
-		// We can't rely on "UpdateSystemBackDrop" method in "MainWindowVM" ckass because when it runs at startup due to AppSettings class instance creation, Window hasn't been initialized yet so it silently skips setting AcrylicThin backdrop that requires Window reference for setup.
+		// We can't rely on "UpdateSystemBackDrop" method in "MainWindowVM" class because when it runs at startup due to AppSettings class instance creation, Window hasn't been initialized yet so it silently skips setting AcrylicThin backdrop that requires Window reference for setup.
 		if (Enum.Parse<ViewModels.MainWindowVM.BackDropComboBoxItems>(Atlas.Settings.BackDropBackground) == ViewModels.MainWindowVM.BackDropComboBoxItems.AcrylicThin)
 			SetThinAcrylicBackdrop();
 

@@ -33,6 +33,8 @@ using CommonCore.ToolKits;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Input;
+using Microsoft.Windows.AppNotifications;
+using Microsoft.Windows.AppNotifications.Builder;
 
 namespace AppControlManager.ViewModels;
 
@@ -537,6 +539,39 @@ internal sealed partial class CreateSupplementalPolicyVM : ViewModelBase, IDispo
 
 					CiToolHelper.UpdatePolicy(Management.ConvertXMLToBinary(_FinalFilesAndFoldersSupplementalPolicy.PolicyObj));
 				}
+
+				// Display Toast Notification
+				if (AppNotificationManager.IsSupported() && Atlas.Settings.ToastNotificationsAreEnabled)
+				{
+					AppNotification notification;
+
+					if (OperationModeComboBoxSelectedIndex == 0)
+					{
+						notification = new AppNotificationBuilder()
+							.AddText("Supplemental policy creation completed.")
+							.AddText($"The '{FilesAndFoldersSupplementalPolicyName}' policy was added to the library.")
+							.SetAudioEvent(AppNotificationSoundEvent.SMS)
+							.SetTimeStamp(DateTime.Now)
+							.SetGroup("Policy Creation")
+							.SetScenario(AppNotificationScenario.Default)
+							.SetAttributionText("Access the library on the Sidebar for additional actions.")
+							.BuildNotification();
+					}
+					else
+					{
+						notification = new AppNotificationBuilder()
+							.AddText("Your policy has been updated.")
+							.AddText("New rules have been added to your selected policy.")
+							.SetAudioEvent(AppNotificationSoundEvent.SMS)
+							.SetTimeStamp(DateTime.Now)
+							.SetGroup("Policy Creation")
+							.SetScenario(AppNotificationScenario.Default)
+							.SetAttributionText($"Successfully Updated '{PolicyFileToMergeWith?.PolicyIdentifier}'.")
+							.BuildNotification();
+					}
+
+					AppNotificationManager.Default.Show(notification);
+				}
 			});
 
 		}
@@ -917,6 +952,39 @@ internal sealed partial class CreateSupplementalPolicyVM : ViewModelBase, IDispo
 
 					CiToolHelper.UpdatePolicy(Management.ConvertXMLToBinary(_FinalCertificatesSupplementalPolicy.PolicyObj));
 				}
+
+				// Display Toast Notification
+				if (AppNotificationManager.IsSupported() && Atlas.Settings.ToastNotificationsAreEnabled)
+				{
+					AppNotification notification;
+
+					if (OperationModeComboBoxSelectedIndex == 0)
+					{
+						notification = new AppNotificationBuilder()
+							.AddText("Supplemental policy creation completed.")
+							.AddText($"The '{CertificatesBasedSupplementalPolicyName}' policy was added to the library.")
+							.SetAudioEvent(AppNotificationSoundEvent.SMS)
+							.SetTimeStamp(DateTime.Now)
+							.SetGroup("Policy Creation")
+							.SetScenario(AppNotificationScenario.Default)
+							.SetAttributionText("Access the library on the Sidebar for additional actions.")
+							.BuildNotification();
+					}
+					else
+					{
+						notification = new AppNotificationBuilder()
+							.AddText("Your policy has been updated.")
+							.AddText("New rules have been added to your selected policy.")
+							.SetAudioEvent(AppNotificationSoundEvent.SMS)
+							.SetTimeStamp(DateTime.Now)
+							.SetGroup("Policy Creation")
+							.SetScenario(AppNotificationScenario.Default)
+							.SetAttributionText($"Successfully Updated '{PolicyFileToMergeWith?.PolicyIdentifier}'.")
+							.BuildNotification();
+					}
+
+					AppNotificationManager.Default.Show(notification);
+				}
 			});
 		}
 		catch (Exception ex)
@@ -1083,6 +1151,39 @@ internal sealed partial class CreateSupplementalPolicyVM : ViewModelBase, IDispo
 
 					// Deploy the signed CIP file
 					CiToolHelper.UpdatePolicy(Management.ConvertXMLToBinary(_FinalISGSupplementalPolicy.PolicyObj));
+				}
+
+				// Display Toast Notification
+				if (AppNotificationManager.IsSupported() && Atlas.Settings.ToastNotificationsAreEnabled)
+				{
+					AppNotification notification;
+
+					if (OperationModeComboBoxSelectedIndex == 0)
+					{
+						notification = new AppNotificationBuilder()
+							.AddText("Supplemental policy creation completed.")
+							.AddText($"The '{ISGBasedSupplementalPolicyName}' policy was added to the library.")
+							.SetAudioEvent(AppNotificationSoundEvent.SMS)
+							.SetTimeStamp(DateTime.Now)
+							.SetGroup("Policy Creation")
+							.SetScenario(AppNotificationScenario.Default)
+							.SetAttributionText("Access the library on the Sidebar for additional actions.")
+							.BuildNotification();
+					}
+					else
+					{
+						notification = new AppNotificationBuilder()
+							.AddText("Your policy has been updated.")
+							.AddText("New rules have been added to your selected policy.")
+							.SetAudioEvent(AppNotificationSoundEvent.SMS)
+							.SetTimeStamp(DateTime.Now)
+							.SetGroup("Policy Creation")
+							.SetScenario(AppNotificationScenario.Default)
+							.SetAttributionText($"Successfully Updated '{PolicyFileToMergeWith?.PolicyIdentifier}'.")
+							.BuildNotification();
+					}
+
+					AppNotificationManager.Default.Show(notification);
 				}
 			});
 		}
@@ -1440,6 +1541,39 @@ internal sealed partial class CreateSupplementalPolicyVM : ViewModelBase, IDispo
 					StrictKernelModeInfoBar.WriteInfo(Atlas.GetStr("DeployingThePolicy"));
 
 					CiToolHelper.UpdatePolicy(Management.ConvertXMLToBinary(_FinalStrictKernelModeSupplementalPolicy.PolicyObj));
+				}
+
+				// Display Toast Notification
+				if (AppNotificationManager.IsSupported() && Atlas.Settings.ToastNotificationsAreEnabled)
+				{
+					AppNotification notification;
+
+					if (OperationModeComboBoxSelectedIndex == 0)
+					{
+						notification = new AppNotificationBuilder()
+							.AddText("Supplemental policy creation completed.")
+							.AddText($"The '{StrictKernelModePolicyName}' policy was added to the library.")
+							.SetAudioEvent(AppNotificationSoundEvent.SMS)
+							.SetTimeStamp(DateTime.Now)
+							.SetGroup("Policy Creation")
+							.SetScenario(AppNotificationScenario.Default)
+							.SetAttributionText("Access the library on the Sidebar for additional actions.")
+							.BuildNotification();
+					}
+					else
+					{
+						notification = new AppNotificationBuilder()
+							.AddText("Your policy has been updated.")
+							.AddText("New rules have been added to your selected policy.")
+							.SetAudioEvent(AppNotificationSoundEvent.SMS)
+							.SetTimeStamp(DateTime.Now)
+							.SetGroup("Policy Creation")
+							.SetScenario(AppNotificationScenario.Default)
+							.SetAttributionText($"Successfully Updated '{PolicyFileToMergeWith?.PolicyIdentifier}'.")
+							.BuildNotification();
+					}
+
+					AppNotificationManager.Default.Show(notification);
 				}
 			});
 		}
@@ -2021,6 +2155,39 @@ internal sealed partial class CreateSupplementalPolicyVM : ViewModelBase, IDispo
 
 					CiToolHelper.UpdatePolicy(Management.ConvertXMLToBinary(_FinalPFNSupplementalPolicy.PolicyObj));
 				}
+
+				// Display Toast Notification
+				if (AppNotificationManager.IsSupported() && Atlas.Settings.ToastNotificationsAreEnabled)
+				{
+					AppNotification notification;
+
+					if (OperationModeComboBoxSelectedIndex == 0)
+					{
+						notification = new AppNotificationBuilder()
+							.AddText("Supplemental policy creation completed.")
+							.AddText($"The '{PFNBasedSupplementalPolicyName}' policy was added to the library.")
+							.SetAudioEvent(AppNotificationSoundEvent.SMS)
+							.SetTimeStamp(DateTime.Now)
+							.SetGroup("Policy Creation")
+							.SetScenario(AppNotificationScenario.Default)
+							.SetAttributionText("Access the library on the Sidebar for additional actions.")
+							.BuildNotification();
+					}
+					else
+					{
+						notification = new AppNotificationBuilder()
+							.AddText("Your policy has been updated.")
+							.AddText("New rules have been added to your selected policy.")
+							.SetAudioEvent(AppNotificationSoundEvent.SMS)
+							.SetTimeStamp(DateTime.Now)
+							.SetGroup("Policy Creation")
+							.SetScenario(AppNotificationScenario.Default)
+							.SetAttributionText($"Successfully Updated '{PolicyFileToMergeWith?.PolicyIdentifier}'.")
+							.BuildNotification();
+					}
+
+					AppNotificationManager.Default.Show(notification);
+				}
 			});
 		}
 		catch (Exception ex)
@@ -2373,6 +2540,39 @@ internal sealed partial class CreateSupplementalPolicyVM : ViewModelBase, IDispo
 					CustomFilePathRulesInfoBar.WriteInfo(Atlas.GetStr("DeployingThePolicy"));
 
 					CiToolHelper.UpdatePolicy(Management.ConvertXMLToBinary(_FinalCustomPatternBasedFileRuleSupplementalPolicy.PolicyObj));
+				}
+
+				// Display Toast Notification
+				if (AppNotificationManager.IsSupported() && Atlas.Settings.ToastNotificationsAreEnabled)
+				{
+					AppNotification notification;
+
+					if (OperationModeComboBoxSelectedIndex == 0)
+					{
+						notification = new AppNotificationBuilder()
+							.AddText("Supplemental policy creation completed.")
+							.AddText($"The '{CustomPatternBasedFileRuleBasedSupplementalPolicyName}' policy was added to the library.")
+							.SetAudioEvent(AppNotificationSoundEvent.SMS)
+							.SetTimeStamp(DateTime.Now)
+							.SetGroup("Policy Creation")
+							.SetScenario(AppNotificationScenario.Default)
+							.SetAttributionText("Access the library on the Sidebar for additional actions.")
+							.BuildNotification();
+					}
+					else
+					{
+						notification = new AppNotificationBuilder()
+							.AddText("Your policy has been updated.")
+							.AddText("New rules have been added to your selected policy.")
+							.SetAudioEvent(AppNotificationSoundEvent.SMS)
+							.SetTimeStamp(DateTime.Now)
+							.SetGroup("Policy Creation")
+							.SetScenario(AppNotificationScenario.Default)
+							.SetAttributionText($"Successfully Updated '{PolicyFileToMergeWith?.PolicyIdentifier}'.")
+							.BuildNotification();
+					}
+
+					AppNotificationManager.Default.Show(notification);
 				}
 			});
 		}

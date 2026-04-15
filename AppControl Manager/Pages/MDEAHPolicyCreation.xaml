@@ -55,7 +55,7 @@
             </customUI:InfoBarV2.ActionButton>
         </customUI:InfoBarV2>
 
-        <CCToolKit:WrapPanel Grid.Row="1" Orientation="Horizontal" VerticalAlignment="Center" HorizontalSpacing="10" VerticalSpacing="10">
+        <CCToolKit:WrapPanel Grid.Row="1" Orientation="Horizontal" VerticalAlignment="Center" HorizontalSpacing="10" VerticalSpacing="10" XYFocusKeyboardNavigation="Enabled">
 
             <ProgressRing Visibility="{x:Bind ViewModel.ScanLogsProgressRingVisibility, Mode=OneWay}"
                           IsActive="{x:Bind ViewModel.ScanLogsProgressRingIsActive, Mode=OneWay}"/>
@@ -106,13 +106,14 @@
 
                     <Border Visibility="{x:Bind ViewModel.IsLocalSelected, Mode=OneWay}">
 
-                        <CCToolKit:WrapPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalSpacing="10" VerticalSpacing="10">
+                        <CCToolKit:WrapPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalSpacing="10" VerticalSpacing="10" XYFocusKeyboardNavigation="Enabled">
 
                             <!-- Scan MDE Advanced Hunting button -->
                             <Button IsEnabled="{x:Bind ViewModel.AreElementsEnabled, Mode=OneWay}"
                                     x:Uid="ScanMDEAHDataButton"
                                     Style="{StaticResource AccentButtonStyle}"
-                                    Click="{x:Bind ViewModel.ScanLogs_Click}" >
+                                    Click="{x:Bind ViewModel.ScanLogs_Click}"
+                                    AccessKey="S">
                                 <Button.ContentTemplate>
                                     <DataTemplate x:DataType="x:String">
                                         <StackPanel Orientation="Horizontal" Spacing="8">
@@ -126,7 +127,8 @@
                             <customUI:ButtonV2 x:Uid="BrowseForMDELogsButton"
                                                ObservedData="{x:Bind ViewModel.MDEAdvancedHuntingLogs.Count, Mode=OneWay}"
                                                IsEnabled="{x:Bind ViewModel.AreElementsEnabled, Mode=OneWay}"
-                                               Click="{x:Bind ViewModel.BrowseForLogs_Click}">
+                                               Click="{x:Bind ViewModel.BrowseForLogs_Click}"
+                                               AccessKey="B">
 
                                 <customUI:ButtonV2.Flyout>
                                     <Flyout>
@@ -167,7 +169,7 @@
 
                     <Border Visibility="{x:Bind ViewModel.IsCloudSelected, Mode=OneWay}">
 
-                        <CCToolKit:WrapPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalSpacing="10" VerticalSpacing="10">
+                        <CCToolKit:WrapPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalSpacing="10" VerticalSpacing="10" XYFocusKeyboardNavigation="Enabled">
 
                             <customUI:GraphAuthPanel Host="{x:Bind ViewModel}" />
 
@@ -272,13 +274,14 @@
 
                     <Border Visibility="{x:Bind ViewModel.IsCreateSelected, Mode=OneWay}">
 
-                        <CCToolKit:WrapPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalSpacing="10" VerticalSpacing="10">
+                        <CCToolKit:WrapPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalSpacing="10" VerticalSpacing="10" XYFocusKeyboardNavigation="Enabled">
 
 
                             <SplitButton IsEnabled="{x:Bind ViewModel.AreElementsEnabled, Mode=OneWay}"
                                          x:Name="MainSplitButton"
                                          ToolTipService.ToolTip="Create the supplemental policy based on the MDE Advanced Hunting logs"
-                                         Click="{x:Bind ViewModel.CreatePolicyButton_Click}">
+                                         Click="{x:Bind ViewModel.CreatePolicyButton_Click}"
+                                         AccessKey="C">
 
                                 <SplitButton.Content>
                                     <StackPanel Orientation="Horizontal">

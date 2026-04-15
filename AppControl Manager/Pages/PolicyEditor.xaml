@@ -31,7 +31,7 @@
                 Style="{StaticResource GridCardStyle}"
                 Padding="8">
 
-            <CCToolKit:WrapPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalSpacing="10" VerticalSpacing="10">
+            <CCToolKit:WrapPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalSpacing="10" VerticalSpacing="10" XYFocusKeyboardNavigation="Enabled">
 
                 <ProgressRing IsIndeterminate="True" Visibility="{x:Bind ViewModel.ProgressBarVisibility, Mode=OneWay}" />
 
@@ -172,7 +172,8 @@
                         x:Uid="PolicyEditorDiamondButton"
                         Margin="0,0,3,-6"
                         Padding="0"
-                        BorderThickness="0">
+                        BorderThickness="0"
+                        AutomationProperties.Name="Policy Details">
                     <Button.Content>
                         <AnimatedIcon Height="28" Width="28" Margin="0">
                             <AnimatedIcon.Source>

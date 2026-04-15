@@ -87,7 +87,7 @@
                     BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}"
                     Background="{ThemeResource CardBackgroundFillColorDefaultBrush}"
                     VerticalAlignment="Center">
-                <StackPanel Orientation="Horizontal" Spacing="6">
+                <StackPanel Orientation="Horizontal" Spacing="6" XYFocusKeyboardNavigation="Enabled">
                     <!-- Progress Ring -->
                     <ProgressRing IsActive="{x:Bind ViewModel.IsLoading, Mode=OneWay}"
                                   Visibility="{x:Bind ViewModel.ProgressRingVisibility, Mode=OneWay}"

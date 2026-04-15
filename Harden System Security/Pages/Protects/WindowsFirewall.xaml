@@ -73,10 +73,11 @@
                                 Style="{StaticResource GridCardStyle}" Padding="8">
 
                             <CCToolKit:WrapPanel Orientation="Horizontal"
-                                                HorizontalAlignment="Center"
-                                                VerticalAlignment="Center"
-                                                HorizontalSpacing="10"
-                                                VerticalSpacing="10">
+                                                 HorizontalAlignment="Center"
+                                                 VerticalAlignment="Center"
+                                                 HorizontalSpacing="10"
+                                                 VerticalSpacing="10"
+                                                 XYFocusKeyboardNavigation="Enabled">
 
                                 <ProgressRing Visibility="{x:Bind ViewModel.ManagementProgressVisibility, Mode=OneWay}"
                                               VerticalAlignment="Center"

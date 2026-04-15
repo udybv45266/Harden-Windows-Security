@@ -19,7 +19,7 @@
         <DropDownButton.Flyout>
             <Flyout>
 
-                <StackPanel Orientation="Vertical">
+                <StackPanel Orientation="Vertical" XYFocusKeyboardNavigation="Enabled">
 
                     <!-- Select All / Deselect All Buttons -->
                     <Button x:Uid="SelectAllButton" Margin="0,0,0,6" HorizontalAlignment="Center" Click="{x:Bind SelectAll_Click}">

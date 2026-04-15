@@ -20,16 +20,16 @@
         </Grid.RowDefinitions>
 
         <customUI:InfoBarV2 Grid.Row="0"
-                 IsOpen="{x:Bind ViewModel.MainInfoBar.IsOpen, Mode=TwoWay}"
-                 Message="{x:Bind ViewModel.MainInfoBar.Message, Mode=OneWay}"
-                 Severity="{x:Bind ViewModel.MainInfoBar.Severity, Mode=OneWay}"
-                 IsClosable="{x:Bind ViewModel.MainInfoBar.IsClosable, Mode=OneWay}" />
+                            IsOpen="{x:Bind ViewModel.MainInfoBar.IsOpen, Mode=TwoWay}"
+                            Message="{x:Bind ViewModel.MainInfoBar.Message, Mode=OneWay}"
+                            Severity="{x:Bind ViewModel.MainInfoBar.Severity, Mode=OneWay}"
+                            IsClosable="{x:Bind ViewModel.MainInfoBar.IsClosable, Mode=OneWay}" />
 
         <Border Grid.Row="1" Margin="0,0,0,5" Style="{StaticResource GridCardStyle}" Padding="10">
 
-            <CCToolKit:WrapPanel Orientation="Horizontal" HorizontalAlignment="Center" HorizontalSpacing="12" VerticalSpacing="12">
+            <CCToolKit:WrapPanel Orientation="Horizontal" HorizontalAlignment="Center" HorizontalSpacing="12" VerticalSpacing="12" XYFocusKeyboardNavigation="Enabled">
 
-                <Button>
+                <Button AccessKey="F">
                     <Button.Content>
                         <StackPanel Orientation="Horizontal">
                             <FontIcon Glyph="&#xE71C;" />
@@ -69,7 +69,7 @@
                     </Button.Flyout>
                 </Button>
 
-                <Button IsEnabled="{x:Bind ViewModel.UIElementsEnabledState, Mode=OneWay}" Click="{x:Bind ViewModel.RetrievePolicies}" HorizontalAlignment="Center" VerticalAlignment="Center" x:Uid="RetrievePoliciesButton">
+                <Button IsEnabled="{x:Bind ViewModel.UIElementsEnabledState, Mode=OneWay}" Click="{x:Bind ViewModel.RetrievePolicies}" HorizontalAlignment="Center" VerticalAlignment="Center" x:Uid="RetrievePoliciesButton" AccessKey="R">
                     <Button.Content>
                         <StackPanel Orientation="Horizontal">
                             <AnimatedIcon Height="25" Width="25" Margin="-5,-5,0,-5">

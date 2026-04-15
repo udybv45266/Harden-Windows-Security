@@ -84,6 +84,7 @@ internal sealed partial class Main : ViewModelBase
 		AcrylicThinLuminosityOpacity = ReadValue(nameof(AcrylicThinLuminosityOpacity), AcrylicThinLuminosityOpacity);
 		AcrylicThinTintOpacity = ReadValue(nameof(AcrylicThinTintOpacity), AcrylicThinTintOpacity);
 		AcrylicThinTintColor = ReadValue(nameof(AcrylicThinTintColor), AcrylicThinTintColor);
+		ToastNotificationsAreEnabled = ReadValue(nameof(ToastNotificationsAreEnabled), ToastNotificationsAreEnabled);
 	}
 
 	/// <summary>
@@ -648,4 +649,18 @@ internal sealed partial class Main : ViewModelBase
 			}
 		}
 	} = "#E9A6FF";
+
+	/// <summary>
+	/// Controls whether toast notifications must be shown or not by the app.
+	/// </summary>
+	internal bool ToastNotificationsAreEnabled
+	{
+		get; set
+		{
+			if (SP(ref field, value))
+			{
+				SaveValue(nameof(ToastNotificationsAreEnabled), field);
+			}
+		}
+	} = true;
 }

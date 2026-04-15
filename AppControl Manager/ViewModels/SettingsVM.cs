@@ -21,7 +21,7 @@ using Microsoft.Windows.Globalization;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Dispatching;
 using CommonCore.AppSettings;
-using WinRT;
+using Microsoft.Windows.AppNotifications;
 
 #if HARDEN_SYSTEM_SECURITY
 using HardenSystemSecurity.WindowComponents;
@@ -283,6 +283,11 @@ internal sealed partial class SettingsVM : ViewModelBase
 	internal void AcrylicThinLuminosityOpacitySlider_ValueChanged(object sender, Microsoft.UI.Xaml.Controls.Primitives.RangeBaseValueChangedEventArgs e)
 	{
 		_ = (ViewModelProvider.MainWindowVM.AcrylicController?.LuminosityOpacity = (float)e.NewValue);
+	}
+
+	internal async void RemoveAllToastNotifications(object sender, RoutedEventArgs e)
+	{
+		await AppNotificationManager.Default.RemoveAllAsync();
 	}
 
 

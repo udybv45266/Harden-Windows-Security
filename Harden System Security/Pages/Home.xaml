@@ -127,7 +127,7 @@
                                TextWrapping="Wrap" />
 
                     <!-- Using ItemsControl with a VariableSizedWrapGrid to allow direct XAML content and wrap layout -->
-                    <ItemsControl Grid.Row="1">
+                    <ItemsControl Grid.Row="1" XYFocusKeyboardNavigation="Enabled">
                         <ItemsControl.ItemsPanel>
                             <ItemsPanelTemplate>
                                 <VariableSizedWrapGrid Orientation="Horizontal"

@@ -30,7 +30,8 @@
         <StackPanel HorizontalAlignment="Stretch"
                     Spacing="{StaticResource SettingsCardSpacing}"
                     Grid.Row="1"
-                    Margin="0,5,0,0">
+                    Margin="0,5,0,0"
+                    XYFocusKeyboardNavigation="Enabled">
 
             <win:StackPanel.ChildrenTransitions>
                 <win:EntranceThemeTransition FromVerticalOffset="50" />
@@ -62,7 +63,7 @@
 
         </StackPanel>
 
-        <CCToolKit:WrapPanel Margin="10,5,10,5" Grid.Row="2" Orientation="Horizontal" HorizontalSpacing="10" VerticalSpacing="10" HorizontalAlignment="Center">
+        <CCToolKit:WrapPanel Margin="10,5,10,5" Grid.Row="2" Orientation="Horizontal" HorizontalSpacing="10" VerticalSpacing="10" HorizontalAlignment="Center" XYFocusKeyboardNavigation="Enabled">
 
             <DropDownButton x:Uid="FirmwareInfoDropdownButton"
                             IsEnabled="{x:Bind ViewModel.IsElevated}">

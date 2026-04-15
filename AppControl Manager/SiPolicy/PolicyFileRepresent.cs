@@ -15,15 +15,15 @@
 // See here for more information: https://github.com/HotCakeX/Harden-Windows-Security/blob/main/LICENSE
 //
 
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using AppControlManager.XMLOps;
-using Windows.System;
-using Microsoft.UI.Xaml.Media;
 using Microsoft.UI.Xaml;
-using System.Text.Json.Serialization;
-using System.Collections.Generic;
+using Microsoft.UI.Xaml.Media;
+using Windows.System;
 
 namespace AppControlManager.SiPolicy;
 

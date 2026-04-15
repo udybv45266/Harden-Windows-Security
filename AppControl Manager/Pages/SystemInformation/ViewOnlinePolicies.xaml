@@ -26,7 +26,7 @@
 
         <Border Grid.Row="1" Margin="0,0,0,5" Style="{StaticResource GridCardStyle}" Padding="10">
 
-            <CCToolKit:WrapPanel Orientation="Horizontal" HorizontalAlignment="Center" HorizontalSpacing="12" VerticalSpacing="12">
+            <CCToolKit:WrapPanel Orientation="Horizontal" HorizontalAlignment="Center" HorizontalSpacing="12" VerticalSpacing="12" XYFocusKeyboardNavigation="Enabled">
 
                 <customUI:GraphAuthPanel Host="{x:Bind ViewModel}" />
 

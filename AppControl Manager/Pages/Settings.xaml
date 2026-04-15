@@ -128,7 +128,7 @@
                                     SmallChange="0.01" Value="{x:Bind ViewModel.AppSettings.AcrylicThinLuminosityOpacity, Mode=TwoWay}" />
                         </controls:SettingsCard>
 
-                        <controls:SettingsCard x:Uid="AcrylicThinTintOpacitySettingsCard"                                          
+                        <controls:SettingsCard x:Uid="AcrylicThinTintOpacitySettingsCard"
                                                Visibility="{x:Bind ViewModel.AcrylicThinConfigurationsSettingsCardVisibility, Mode=OneWay}">
                             <Slider Width="200" Minimum="0" Maximum="1" StepFrequency="0.01"
                                     SmallChange="0.01" Value="{x:Bind ViewModel.AppSettings.AcrylicThinTintOpacity, Mode=TwoWay}" />
@@ -142,7 +142,7 @@
                                          IsColorSliderVisible="False"
                                          IsColorChannelTextInputVisible="False"
                                          IsHexInputVisible="True"
-                                         IsAlphaEnabled="False"                                         
+                                         IsAlphaEnabled="False"
                                          ColorChanged="{x:Bind ViewModel.TintColorPicker_ColorChanged}"
                                          IsAlphaSliderVisible="False"
                                          IsAlphaTextInputVisible="False" />
@@ -345,6 +345,33 @@
                         </customUI:SettingsCardV2>
 
                     </controls:SettingsExpander.Items>
+                </controls:SettingsExpander>
+
+                <!-- Notifications section -->
+                <TextBlock Style="{StaticResource SettingsSectionHeaderTextBlockStyle}" x:Uid="Notifications" />
+                <controls:SettingsExpander IsExpanded="True" x:Uid="NotificationSettingsSettingsExpander">
+                    <controls:SettingsExpander.HeaderIcon>
+                        <FontIcon Glyph="&#xE7E7;" />
+                    </controls:SettingsExpander.HeaderIcon>
+
+                    <controls:SettingsExpander.Items>
+                        <customUI:SettingsCardV2 x:Uid="EnableToastNotificationsSettingsCard">
+                            <customUI:SettingsCardV2.HeaderIcon>
+                                <FontIcon Glyph="&#xF6C5;" />
+                            </customUI:SettingsCardV2.HeaderIcon>
+                            <ToggleSwitch IsOn="{x:Bind ViewModel.AppSettings.ToastNotificationsAreEnabled, Mode=TwoWay}"
+                                          x:Uid="ToggleSwitchGeneral"/>
+                        </customUI:SettingsCardV2>
+
+                        <customUI:SettingsCardV2 x:Uid="RemoveAllToastNotificationsSettingsCard">
+                            <customUI:SettingsCardV2.HeaderIcon>
+                                <FontIcon Glyph="&#xE894;" />
+                            </customUI:SettingsCardV2.HeaderIcon>
+                            <Button Click="{x:Bind ViewModel.RemoveAllToastNotifications}" x:Uid="RemoveAllToastNotificationsButton" />
+                        </customUI:SettingsCardV2>
+
+                    </controls:SettingsExpander.Items>
+
                 </controls:SettingsExpander>
 
                 <!-- Language section -->

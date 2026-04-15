@@ -1416,7 +1416,7 @@ internal sealed partial class MainWindowVM : ViewModelBase, IDisposable
 	internal Visibility SidebarProgressRingVisibility { get; private set => SP(ref field, value); } = Visibility.Collapsed;
 
 	/// <summary>
-	/// Removes a policy's color from the JSON cache. 
+	/// Removes a policy's color from the JSON cache.
 	/// NOTE: This must be called from within a block that already holds the PoliciesLibraryCacheLock.
 	/// </summary>
 	internal async Task RemoveColorFromCacheInternalAsync(Guid policyId)

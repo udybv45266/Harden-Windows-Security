@@ -28,7 +28,7 @@
               Background="Transparent">
 
             <ScrollViewer>
-                <StackPanel Spacing="10">
+                <StackPanel Spacing="10" XYFocusKeyboardNavigation="Enabled">
 
                     <!-- Drive Selection Section -->
                     <Border CornerRadius="10" Padding="16" BorderThickness="1"
@@ -114,7 +114,7 @@
                                 <TextBlock Text="{x:Bind ViewModel.IsoDetails, Mode=OneWay}"
                                            VerticalAlignment="Center"
                                            Margin="15,0,0,0"
-                                           Style="{StaticResource CaptionTextBlockStyle}" 
+                                           Style="{StaticResource CaptionTextBlockStyle}"
                                            Foreground="{ThemeResource SystemFillColorSuccessBrush}"/>
 
                             </CCToolKit:WrapPanel>

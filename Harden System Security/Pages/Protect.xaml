@@ -295,11 +295,11 @@
         </SelectorBar>
 
         <customUI:InfoBarV2 Grid.Row="1"
-          Margin="15,0,15,10"
-          IsOpen="{x:Bind ViewModel.MainInfoBar.IsOpen, Mode=TwoWay}"
-          Message="{x:Bind ViewModel.MainInfoBar.Message, Mode=OneWay}"
-          Severity="{x:Bind ViewModel.MainInfoBar.Severity, Mode=OneWay}"
-          IsClosable="{x:Bind ViewModel.MainInfoBar.IsClosable, Mode=OneWay}"/>
+                            Margin="15,0,15,10"
+                            IsOpen="{x:Bind ViewModel.MainInfoBar.IsOpen, Mode=TwoWay}"
+                            Message="{x:Bind ViewModel.MainInfoBar.Message, Mode=OneWay}"
+                            Severity="{x:Bind ViewModel.MainInfoBar.Severity, Mode=OneWay}"
+                            IsClosable="{x:Bind ViewModel.MainInfoBar.IsClosable, Mode=OneWay}"/>
 
         <ScrollViewer Grid.Row="2"
                       Visibility="{x:Bind ViewModel.IsDeviceIntentSectionVisible, Mode=OneWay}"
@@ -353,11 +353,12 @@
                     <Expander.Header>
 
                         <CCToolKit:WrapPanel Orientation="Horizontal"
-                                            Padding="8"
-                                            HorizontalSpacing="10"
-                                            VerticalSpacing="6"
-                                            HorizontalAlignment="Center"
-                                            VerticalAlignment="Center">
+                                             Padding="8"
+                                             HorizontalSpacing="10"
+                                             VerticalSpacing="6"
+                                             HorizontalAlignment="Center"
+                                             VerticalAlignment="Center"
+                                             XYFocusKeyboardNavigation="Enabled">
 
                             <StackPanel Orientation="Vertical" VerticalAlignment="Center" Spacing="2">
                                 <TextBlock x:Uid="ResultingSecurityMeasures"
@@ -456,11 +457,12 @@
                         CornerRadius="18">
 
                     <CCToolKit:WrapPanel Orientation="Horizontal"
-                                        Margin="10"
-                                        HorizontalSpacing="15"
-                                        VerticalSpacing="12"
-                                        HorizontalAlignment="Center"
-                                        VerticalAlignment="Center">
+                                         Margin="10"
+                                         HorizontalSpacing="15"
+                                         VerticalSpacing="12"
+                                         HorizontalAlignment="Center"
+                                         VerticalAlignment="Center"
+                                         XYFocusKeyboardNavigation="Enabled">
 
                         <ComboBox x:Uid="ProtectionPresetsComboBox"
                                   IsEnabled="{x:Bind ViewModel.ElementsAreEnabled, Mode=OneWay}"
@@ -478,6 +480,7 @@
 
                         <!-- Apply Selected Button -->
                         <customUI:AnimatedCancellableButton x:Uid="ProtectPageApplySelectedButton"
+                                                            AccessKey="A"
                                                             IsEnabled="{x:Bind ViewModel.IsApplyButtonEnabled, Mode=OneWay}"
                                                             CancelMethod="{x:Bind ViewModel.ApplySelectedCancellableButton.Cancel, Mode=OneWay}"
                                                             ExternalOperationInProgress="{x:Bind ViewModel.ApplySelectedCancellableButton.IsOperationInProgress, Mode=OneWay}"
@@ -498,6 +501,7 @@
                         <!-- Verify Selected Button -->
                         <customUI:AnimatedCancellableButton x:Uid="ProtectPageVerifySelectedButton"
                                                             x:Name="ProtectPageVerifySelectedButton"
+                                                            AccessKey="V"
                                                             IsEnabled="{x:Bind ViewModel.IsVerifyButtonEnabled, Mode=OneWay}"
                                                             CancelMethod="{x:Bind ViewModel.VerifySelectedCancellableButton.Cancel, Mode=OneWay}"
                                                             ExternalOperationInProgress="{x:Bind ViewModel.VerifySelectedCancellableButton.IsOperationInProgress, Mode=OneWay}"
@@ -517,6 +521,7 @@
 
                         <!-- Remove Selected Button -->
                         <customUI:AnimatedCancellableButton x:Uid="ProtectPageRemoveSelectedButton"
+                                                            AccessKey="R"
                                                             IsEnabled="{x:Bind ViewModel.IsRemoveButtonEnabled, Mode=OneWay}"
                                                             CancelMethod="{x:Bind ViewModel.RemoveSelectedCancellableButton.Cancel, Mode=OneWay}"
                                                             ExternalOperationInProgress="{x:Bind ViewModel.RemoveSelectedCancellableButton.IsOperationInProgress, Mode=OneWay}"
@@ -533,6 +538,7 @@
                                                             Click="{x:Bind ViewModel.RemoveSelectedCategories}"/>
 
                         <Button x:Uid="SystemStateButton"
+                                AccessKey="S"
                                 IsEnabled="{x:Bind ViewModel.ElementsAreEnabled, Mode=OneWay}"
                                 VerticalAlignment="Center">
                             <Button.ContentTemplate>

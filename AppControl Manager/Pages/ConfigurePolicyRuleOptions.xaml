@@ -29,7 +29,8 @@
                                 VerticalSpacing="10"
                                 HorizontalAlignment="Center"
                                 Margin="0,0,0,20"
-                                Grid.Row="1">
+                                Grid.Row="1"
+                                XYFocusKeyboardNavigation="Enabled">
 
                 <customUI:ButtonV2 x:Name="PickPolicyFileButton"
                                    ObservedData="{x:Bind ViewModel.SelectedPolicy.PolicyIdentifier, Mode=OneWay,FallbackValue=''}"
@@ -116,7 +117,7 @@
                         <FontIcon Glyph="&#xE71D;" />
                     </controls:SettingsExpander.HeaderIcon>
 
-                    <CCToolKit:WrapPanel Orientation="Horizontal" HorizontalSpacing="15" VerticalSpacing="10">
+                    <CCToolKit:WrapPanel Orientation="Horizontal" HorizontalSpacing="15" VerticalSpacing="10" XYFocusKeyboardNavigation="Enabled">
                         <Button x:Uid="ApplyThePolicyRuleOptionsChangesButton"
                                 Click="{x:Bind ViewModel.ApplyTheChangesButton_Click}"
                                 IsEnabled="{x:Bind ViewModel.ElementsAreEnabled, Mode=OneWay}"
@@ -316,7 +317,7 @@
                         <FontIcon Glyph="&#xE799;" />
                     </controls:SettingsCard.HeaderIcon>
 
-                    <CCToolKit:WrapPanel Orientation="Horizontal">
+                    <CCToolKit:WrapPanel Orientation="Horizontal" XYFocusKeyboardNavigation="Enabled">
 
                         <Button Click="{x:Bind ViewModel.SetPolicyTemplate_Click}"
                                 x:Uid="SetPolicyTemplateButton"

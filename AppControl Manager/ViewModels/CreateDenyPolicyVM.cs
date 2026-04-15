@@ -31,6 +31,9 @@ using CommonCore.ToolKits;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Input;
+using Microsoft.Windows.AppNotifications;
+using Microsoft.Windows.AppNotifications.Builder;
+using Windows.UI.Notifications;
 
 namespace AppControlManager.ViewModels;
 
@@ -397,6 +400,39 @@ internal sealed partial class CreateDenyPolicyVM : ViewModelBase, IDisposable
 					FilesAndFoldersInfoBar.WriteInfo(Atlas.GetStr("DeployingThePolicy"));
 
 					CiToolHelper.UpdatePolicy(Management.ConvertXMLToBinary(_FilesAndFoldersDenyPolicyPath.PolicyObj));
+				}
+
+				// Display Toast Notification
+				if (AppNotificationManager.IsSupported() && Atlas.Settings.ToastNotificationsAreEnabled)
+				{
+					AppNotification notification;
+
+					if (OperationModeComboBoxSelectedIndex == 0)
+					{
+						notification = new AppNotificationBuilder()
+							.AddText("Deny policy creation completed.")
+							.AddText($"The '{filesAndFoldersDenyPolicyName}' policy was added to the library.")
+							.SetAudioEvent(AppNotificationSoundEvent.SMS)
+							.SetTimeStamp(DateTime.Now)
+							.SetGroup("Policy Creation")
+							.SetScenario(AppNotificationScenario.Default)
+							.SetAttributionText("Access the library on the Sidebar for additional actions.")
+							.BuildNotification();
+					}
+					else
+					{
+						notification = new AppNotificationBuilder()
+							.AddText("Your policy has been updated.")
+							.AddText("New deny rules have been added to your selected policy.")
+							.SetAudioEvent(AppNotificationSoundEvent.SMS)
+							.SetTimeStamp(DateTime.Now)
+							.SetGroup("Policy Creation")
+							.SetScenario(AppNotificationScenario.Default)
+							.SetAttributionText($"Successfully Updated '{PolicyFileToMergeWith?.PolicyIdentifier}'.")
+							.BuildNotification();
+					}
+
+					AppNotificationManager.Default.Show(notification);
 				}
 			});
 		}
@@ -787,6 +823,39 @@ internal sealed partial class CreateDenyPolicyVM : ViewModelBase, IDisposable
 
 					CiToolHelper.UpdatePolicy(Management.ConvertXMLToBinary(_PFNDenyPolicyPath.PolicyObj));
 				}
+
+				// Display Toast Notification
+				if (AppNotificationManager.IsSupported() && Atlas.Settings.ToastNotificationsAreEnabled)
+				{
+					AppNotification notification;
+
+					if (OperationModeComboBoxSelectedIndex == 0)
+					{
+						notification = new AppNotificationBuilder()
+							.AddText("Deny policy creation completed.")
+							.AddText($"The '{PFNBasedDenyPolicyName}' policy was added to the library.")
+							.SetAudioEvent(AppNotificationSoundEvent.SMS)
+							.SetTimeStamp(DateTime.Now)
+							.SetGroup("Policy Creation")
+							.SetScenario(AppNotificationScenario.Default)
+							.SetAttributionText("Access the library on the Sidebar for additional actions.")
+							.BuildNotification();
+					}
+					else
+					{
+						notification = new AppNotificationBuilder()
+							.AddText("Your policy has been updated.")
+							.AddText("New deny rules have been added to your selected policy.")
+							.SetAudioEvent(AppNotificationSoundEvent.SMS)
+							.SetTimeStamp(DateTime.Now)
+							.SetGroup("Policy Creation")
+							.SetScenario(AppNotificationScenario.Default)
+							.SetAttributionText($"Successfully Updated '{PolicyFileToMergeWith?.PolicyIdentifier}'.")
+							.BuildNotification();
+					}
+
+					AppNotificationManager.Default.Show(notification);
+				}
 			});
 		}
 		catch (Exception ex)
@@ -1087,6 +1156,39 @@ internal sealed partial class CreateDenyPolicyVM : ViewModelBase, IDisposable
 					CustomFilePathRulesInfoBar.WriteInfo(Atlas.GetStr("DeployingThePolicy"));
 
 					CiToolHelper.UpdatePolicy(Management.ConvertXMLToBinary(_CustomPatternBasedFileRuleDenyPolicyPath.PolicyObj));
+				}
+
+				// Display Toast Notification
+				if (AppNotificationManager.IsSupported() && Atlas.Settings.ToastNotificationsAreEnabled)
+				{
+					AppNotification notification;
+
+					if (OperationModeComboBoxSelectedIndex == 0)
+					{
+						notification = new AppNotificationBuilder()
+							.AddText("Deny policy creation completed.")
+							.AddText($"The '{CustomPatternBasedFileRuleBasedDenyPolicyName}' policy was added to the library.")
+							.SetAudioEvent(AppNotificationSoundEvent.SMS)
+							.SetTimeStamp(DateTime.Now)
+							.SetGroup("Policy Creation")
+							.SetScenario(AppNotificationScenario.Default)
+							.SetAttributionText("Access the library on the Sidebar for additional actions.")
+							.BuildNotification();
+					}
+					else
+					{
+						notification = new AppNotificationBuilder()
+							.AddText("Your policy has been updated.")
+							.AddText("New deny rules have been added to your selected policy.")
+							.SetAudioEvent(AppNotificationSoundEvent.SMS)
+							.SetTimeStamp(DateTime.Now)
+							.SetGroup("Policy Creation")
+							.SetScenario(AppNotificationScenario.Default)
+							.SetAttributionText($"Successfully Updated '{PolicyFileToMergeWith?.PolicyIdentifier}'.")
+							.BuildNotification();
+					}
+
+					AppNotificationManager.Default.Show(notification);
 				}
 			});
 		}

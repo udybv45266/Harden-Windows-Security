@@ -47,7 +47,8 @@
 
             <StackPanel HorizontalAlignment="Stretch"
                         Spacing="{StaticResource SettingsCardSpacing}"
-                        Grid.Row="2">
+                        Grid.Row="2"
+                        XYFocusKeyboardNavigation="Enabled">
 
                 <win:StackPanel.ChildrenTransitions>
                     <win:EntranceThemeTransition FromVerticalOffset="50" />
@@ -74,7 +75,8 @@
                                 x:Uid="UpdatePageCheckForUpdateButton"
                                 Style="{StaticResource AccentButtonStyle}"
                                 Click="{x:Bind ViewModel.CheckForUpdateButton_Click}"
-                                Margin="0,0,15,0">
+                                Margin="0,0,15,0"
+                                AccessKey="C">
                             <Button.ContentTemplate>
                                 <DataTemplate x:DataType="x:String">
                                     <StackPanel Orientation="Horizontal" Spacing="8">

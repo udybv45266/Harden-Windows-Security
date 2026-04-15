@@ -531,7 +531,7 @@
 
                             <ScrollViewer>
 
-                                <CCToolKit:WrapPanel HorizontalSpacing="20" VerticalSpacing="20" Orientation="Vertical" Margin="10,0,10,0" HorizontalAlignment="Center">
+                                <CCToolKit:WrapPanel HorizontalSpacing="20" VerticalSpacing="20" Orientation="Vertical" Margin="10,0,10,0" HorizontalAlignment="Center" XYFocusKeyboardNavigation="Enabled">
 
                                     <TextBlock x:Name="SidebarTextBlock" x:Uid="SidebarTextBlock" Style="{ThemeResource TitleTextBlockStyle}" HorizontalAlignment="Center" Margin="0,15,0,0" HorizontalTextAlignment="Center"/>
 
