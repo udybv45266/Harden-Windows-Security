@@ -543,11 +543,8 @@ internal sealed partial class CreateSupplementalPolicyVM : ViewModelBase, IDispo
 				// Display Toast Notification
 				if (AppNotificationManager.IsSupported() && Atlas.Settings.ToastNotificationsAreEnabled)
 				{
-					AppNotification notification;
-
-					if (OperationModeComboBoxSelectedIndex == 0)
-					{
-						notification = new AppNotificationBuilder()
+					AppNotification notification = OperationModeComboBoxSelectedIndex == 0
+						? new AppNotificationBuilder()
 							.AddText("Supplemental policy creation completed.")
 							.AddText($"The '{FilesAndFoldersSupplementalPolicyName}' policy was added to the library.")
 							.SetAudioEvent(AppNotificationSoundEvent.SMS)
@@ -555,11 +552,8 @@ internal sealed partial class CreateSupplementalPolicyVM : ViewModelBase, IDispo
 							.SetGroup("Policy Creation")
 							.SetScenario(AppNotificationScenario.Default)
 							.SetAttributionText("Access the library on the Sidebar for additional actions.")
-							.BuildNotification();
-					}
-					else
-					{
-						notification = new AppNotificationBuilder()
+							.BuildNotification()
+						: new AppNotificationBuilder()
 							.AddText("Your policy has been updated.")
 							.AddText("New rules have been added to your selected policy.")
 							.SetAudioEvent(AppNotificationSoundEvent.SMS)
@@ -568,8 +562,6 @@ internal sealed partial class CreateSupplementalPolicyVM : ViewModelBase, IDispo
 							.SetScenario(AppNotificationScenario.Default)
 							.SetAttributionText($"Successfully Updated '{PolicyFileToMergeWith?.PolicyIdentifier}'.")
 							.BuildNotification();
-					}
-
 					AppNotificationManager.Default.Show(notification);
 				}
 			});
@@ -956,11 +948,8 @@ internal sealed partial class CreateSupplementalPolicyVM : ViewModelBase, IDispo
 				// Display Toast Notification
 				if (AppNotificationManager.IsSupported() && Atlas.Settings.ToastNotificationsAreEnabled)
 				{
-					AppNotification notification;
-
-					if (OperationModeComboBoxSelectedIndex == 0)
-					{
-						notification = new AppNotificationBuilder()
+					AppNotification notification = OperationModeComboBoxSelectedIndex == 0
+						? new AppNotificationBuilder()
 							.AddText("Supplemental policy creation completed.")
 							.AddText($"The '{CertificatesBasedSupplementalPolicyName}' policy was added to the library.")
 							.SetAudioEvent(AppNotificationSoundEvent.SMS)
@@ -968,11 +957,8 @@ internal sealed partial class CreateSupplementalPolicyVM : ViewModelBase, IDispo
 							.SetGroup("Policy Creation")
 							.SetScenario(AppNotificationScenario.Default)
 							.SetAttributionText("Access the library on the Sidebar for additional actions.")
-							.BuildNotification();
-					}
-					else
-					{
-						notification = new AppNotificationBuilder()
+							.BuildNotification()
+						: new AppNotificationBuilder()
 							.AddText("Your policy has been updated.")
 							.AddText("New rules have been added to your selected policy.")
 							.SetAudioEvent(AppNotificationSoundEvent.SMS)
@@ -981,8 +967,6 @@ internal sealed partial class CreateSupplementalPolicyVM : ViewModelBase, IDispo
 							.SetScenario(AppNotificationScenario.Default)
 							.SetAttributionText($"Successfully Updated '{PolicyFileToMergeWith?.PolicyIdentifier}'.")
 							.BuildNotification();
-					}
-
 					AppNotificationManager.Default.Show(notification);
 				}
 			});
@@ -1156,11 +1140,8 @@ internal sealed partial class CreateSupplementalPolicyVM : ViewModelBase, IDispo
 				// Display Toast Notification
 				if (AppNotificationManager.IsSupported() && Atlas.Settings.ToastNotificationsAreEnabled)
 				{
-					AppNotification notification;
-
-					if (OperationModeComboBoxSelectedIndex == 0)
-					{
-						notification = new AppNotificationBuilder()
+					AppNotification notification = OperationModeComboBoxSelectedIndex == 0
+						? new AppNotificationBuilder()
 							.AddText("Supplemental policy creation completed.")
 							.AddText($"The '{ISGBasedSupplementalPolicyName}' policy was added to the library.")
 							.SetAudioEvent(AppNotificationSoundEvent.SMS)
@@ -1168,11 +1149,8 @@ internal sealed partial class CreateSupplementalPolicyVM : ViewModelBase, IDispo
 							.SetGroup("Policy Creation")
 							.SetScenario(AppNotificationScenario.Default)
 							.SetAttributionText("Access the library on the Sidebar for additional actions.")
-							.BuildNotification();
-					}
-					else
-					{
-						notification = new AppNotificationBuilder()
+							.BuildNotification()
+						: new AppNotificationBuilder()
 							.AddText("Your policy has been updated.")
 							.AddText("New rules have been added to your selected policy.")
 							.SetAudioEvent(AppNotificationSoundEvent.SMS)
@@ -1181,8 +1159,6 @@ internal sealed partial class CreateSupplementalPolicyVM : ViewModelBase, IDispo
 							.SetScenario(AppNotificationScenario.Default)
 							.SetAttributionText($"Successfully Updated '{PolicyFileToMergeWith?.PolicyIdentifier}'.")
 							.BuildNotification();
-					}
-
 					AppNotificationManager.Default.Show(notification);
 				}
 			});
@@ -1546,11 +1522,8 @@ internal sealed partial class CreateSupplementalPolicyVM : ViewModelBase, IDispo
 				// Display Toast Notification
 				if (AppNotificationManager.IsSupported() && Atlas.Settings.ToastNotificationsAreEnabled)
 				{
-					AppNotification notification;
-
-					if (OperationModeComboBoxSelectedIndex == 0)
-					{
-						notification = new AppNotificationBuilder()
+					AppNotification notification = OperationModeComboBoxSelectedIndex == 0
+						? new AppNotificationBuilder()
 							.AddText("Supplemental policy creation completed.")
 							.AddText($"The '{StrictKernelModePolicyName}' policy was added to the library.")
 							.SetAudioEvent(AppNotificationSoundEvent.SMS)
@@ -1558,11 +1531,8 @@ internal sealed partial class CreateSupplementalPolicyVM : ViewModelBase, IDispo
 							.SetGroup("Policy Creation")
 							.SetScenario(AppNotificationScenario.Default)
 							.SetAttributionText("Access the library on the Sidebar for additional actions.")
-							.BuildNotification();
-					}
-					else
-					{
-						notification = new AppNotificationBuilder()
+							.BuildNotification()
+						: new AppNotificationBuilder()
 							.AddText("Your policy has been updated.")
 							.AddText("New rules have been added to your selected policy.")
 							.SetAudioEvent(AppNotificationSoundEvent.SMS)
@@ -1571,8 +1541,6 @@ internal sealed partial class CreateSupplementalPolicyVM : ViewModelBase, IDispo
 							.SetScenario(AppNotificationScenario.Default)
 							.SetAttributionText($"Successfully Updated '{PolicyFileToMergeWith?.PolicyIdentifier}'.")
 							.BuildNotification();
-					}
-
 					AppNotificationManager.Default.Show(notification);
 				}
 			});
@@ -2159,11 +2127,8 @@ internal sealed partial class CreateSupplementalPolicyVM : ViewModelBase, IDispo
 				// Display Toast Notification
 				if (AppNotificationManager.IsSupported() && Atlas.Settings.ToastNotificationsAreEnabled)
 				{
-					AppNotification notification;
-
-					if (OperationModeComboBoxSelectedIndex == 0)
-					{
-						notification = new AppNotificationBuilder()
+					AppNotification notification = OperationModeComboBoxSelectedIndex == 0
+						? new AppNotificationBuilder()
 							.AddText("Supplemental policy creation completed.")
 							.AddText($"The '{PFNBasedSupplementalPolicyName}' policy was added to the library.")
 							.SetAudioEvent(AppNotificationSoundEvent.SMS)
@@ -2171,11 +2136,8 @@ internal sealed partial class CreateSupplementalPolicyVM : ViewModelBase, IDispo
 							.SetGroup("Policy Creation")
 							.SetScenario(AppNotificationScenario.Default)
 							.SetAttributionText("Access the library on the Sidebar for additional actions.")
-							.BuildNotification();
-					}
-					else
-					{
-						notification = new AppNotificationBuilder()
+							.BuildNotification()
+						: new AppNotificationBuilder()
 							.AddText("Your policy has been updated.")
 							.AddText("New rules have been added to your selected policy.")
 							.SetAudioEvent(AppNotificationSoundEvent.SMS)
@@ -2184,8 +2146,6 @@ internal sealed partial class CreateSupplementalPolicyVM : ViewModelBase, IDispo
 							.SetScenario(AppNotificationScenario.Default)
 							.SetAttributionText($"Successfully Updated '{PolicyFileToMergeWith?.PolicyIdentifier}'.")
 							.BuildNotification();
-					}
-
 					AppNotificationManager.Default.Show(notification);
 				}
 			});
@@ -2545,11 +2505,8 @@ internal sealed partial class CreateSupplementalPolicyVM : ViewModelBase, IDispo
 				// Display Toast Notification
 				if (AppNotificationManager.IsSupported() && Atlas.Settings.ToastNotificationsAreEnabled)
 				{
-					AppNotification notification;
-
-					if (OperationModeComboBoxSelectedIndex == 0)
-					{
-						notification = new AppNotificationBuilder()
+					AppNotification notification = OperationModeComboBoxSelectedIndex == 0
+						? new AppNotificationBuilder()
 							.AddText("Supplemental policy creation completed.")
 							.AddText($"The '{CustomPatternBasedFileRuleBasedSupplementalPolicyName}' policy was added to the library.")
 							.SetAudioEvent(AppNotificationSoundEvent.SMS)
@@ -2557,11 +2514,8 @@ internal sealed partial class CreateSupplementalPolicyVM : ViewModelBase, IDispo
 							.SetGroup("Policy Creation")
 							.SetScenario(AppNotificationScenario.Default)
 							.SetAttributionText("Access the library on the Sidebar for additional actions.")
-							.BuildNotification();
-					}
-					else
-					{
-						notification = new AppNotificationBuilder()
+							.BuildNotification()
+						: new AppNotificationBuilder()
 							.AddText("Your policy has been updated.")
 							.AddText("New rules have been added to your selected policy.")
 							.SetAudioEvent(AppNotificationSoundEvent.SMS)
@@ -2570,8 +2524,6 @@ internal sealed partial class CreateSupplementalPolicyVM : ViewModelBase, IDispo
 							.SetScenario(AppNotificationScenario.Default)
 							.SetAttributionText($"Successfully Updated '{PolicyFileToMergeWith?.PolicyIdentifier}'.")
 							.BuildNotification();
-					}
-
 					AppNotificationManager.Default.Show(notification);
 				}
 			});

@@ -1715,7 +1715,7 @@
   <data name="PromptForElevationSettingsCard.AutomationProperties.HelpText" xml:space="preserve">
     <value>אם זה מופעל, מנהל AppControl יבקש הרשאות מנהל בעת ההפעלה.</value>
   </data>
-  <data name="OnlyIncludeSelectedItemsToggleButton.Content" xml:space="preserve">
+  <data name="OnlyIncludeSelectedItemsToggleMenuFlyoutItem.Text" xml:space="preserve">
     <value>השתמש רק בפריטים שנבחרו</value>
   </data>
   <data name="OnlyIncludeSelectedItemsToggleButton.ToolTipService.ToolTip" xml:space="preserve">

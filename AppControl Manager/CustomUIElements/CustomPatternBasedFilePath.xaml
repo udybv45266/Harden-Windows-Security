@@ -5,7 +5,6 @@
     xmlns:local="using:AppControlManager.CustomUIElements"
     xmlns:customUI="using:AppControlManager.CustomUIElements"
     xmlns:CCToolKit="using:CommonCore.ToolKits"
-    xmlns:win="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     x:Uid="CustomPatternBasedFilePathsDialog"
     IsPrimaryButtonEnabled="False"
     DefaultButton="Close">

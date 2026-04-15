@@ -3,7 +3,6 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:customUI="using:AppControlManager.CustomUIElements"
-    xmlns:win="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:controls="using:CommunityToolkit.WinUI.Controls"
     xmlns:CCToolKit="using:CommonCore.ToolKits"
     xmlns:animatedvisuals="using:AnimatedVisuals"
@@ -105,10 +104,10 @@
                         Spacing="{StaticResource SettingsCardSpacing}"
                         Grid.Row="2">
 
-                <win:StackPanel.ChildrenTransitions>
-                    <win:EntranceThemeTransition FromVerticalOffset="50" />
-                    <win:RepositionThemeTransition IsStaggeringEnabled="False" />
-                </win:StackPanel.ChildrenTransitions>
+                <StackPanel.ChildrenTransitions>
+                    <EntranceThemeTransition FromVerticalOffset="50" />
+                    <RepositionThemeTransition IsStaggeringEnabled="False" />
+                </StackPanel.ChildrenTransitions>
 
                 <controls:SettingsExpander x:Uid="PolicyRuleExpander"
                                            IsEnabled="{x:Bind ViewModel.ElementsAreEnabled, Mode=OneWay}"

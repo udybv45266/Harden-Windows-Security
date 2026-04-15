@@ -1715,7 +1715,7 @@
   <data name="PromptForElevationSettingsCard.AutomationProperties.HelpText" xml:space="preserve">
     <value>有効にすると、AppControl Managerは起動時に管理者権限で実行するための昇格を要求します。</value>
   </data>
-  <data name="OnlyIncludeSelectedItemsToggleButton.Content" xml:space="preserve">
+  <data name="OnlyIncludeSelectedItemsToggleMenuFlyoutItem.Text" xml:space="preserve">
     <value>選択項目のみを使用</value>
   </data>
   <data name="OnlyIncludeSelectedItemsToggleButton.ToolTipService.ToolTip" xml:space="preserve">

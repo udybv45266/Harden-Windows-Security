@@ -1,11 +1,7 @@
-* Removed multiple dependencies by implementing them natively.
-
-* Reduced the app package size by over 20MBs.
-
-* Added a new backdrop option for the app called "Acrylic Thin", available in the app's settings page. This backdrop option provides a sleek and modern look to the app's interface, enhancing the overall user experience. It offers new options to further customize the Acrylic backdrop, such as controlling the tint color, tint opacity or luminosity opacity. You can view the changes you make to the Acrylic backdrop in real-time, allowing you to find the perfect settings for your preferences and your configurations will be saved for the next time you open the app.
-
 * Added Toast Notifications for the AppControl Manager. Users can easily turn this feature off or on in the app's settings page. Whenever certain actions happen in the app such as policy creation or event logs retrieval and so on, a toast notification with a few details will be displayed in Windows notifying you about it.
 
 * Improved keyboard navigation and accessibility: You can now use arrow keys on your keyboard to navigate between the buttons on the toolbars of each page.
 
 * You can now press the ALT access key to reveal keyboard shortcuts on various user interface elements, helping with keyboard navigation and accessibility scenarios.
+
+* The System Information page is now available even if running as Standard user (unelevated). Only the "Online Policies" tab is available and the rest of the features in the page still require Administrator privileges.

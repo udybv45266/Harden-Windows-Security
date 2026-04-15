@@ -27,8 +27,7 @@
     x:Class="CommonCore.ToolKits.SegmentedStyles"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:CCToolKit="using:CommonCore.ToolKits"
-    xmlns:win="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+    xmlns:CCToolKit="using:CommonCore.ToolKits">
 
     <!-- Theme Resources for Segmented Control -->
     <ResourceDictionary.ThemeDictionaries>
@@ -263,9 +262,9 @@
                               BorderThickness="{TemplateBinding BorderThickness}"
                               Control.IsTemplateFocusTarget="True"
                               CornerRadius="{TemplateBinding CornerRadius}">
-                            <win:Grid.BackgroundTransition>
-                                <win:BrushTransition Duration="0:0:0.083" />
-                            </win:Grid.BackgroundTransition>
+                            <Grid.BackgroundTransition>
+                                <BrushTransition Duration="0:0:0.083" />
+                            </Grid.BackgroundTransition>
                             <VisualStateManager.VisualStateGroups>
                                 <VisualStateGroup x:Name="SegmentedOrientationStates">
                                     <VisualState x:Name="Horizontal" />
@@ -432,9 +431,9 @@
                                     Background="Transparent"
                                     CornerRadius="{TemplateBinding CornerRadius}"
                                     RenderTransformOrigin="0.5, 0.5">
-                                <win:Border.BackgroundTransition>
-                                    <win:BrushTransition Duration="0:0:0.083" />
-                                </win:Border.BackgroundTransition>
+                                <Border.BackgroundTransition>
+                                    <BrushTransition Duration="0:0:0.083" />
+                                </Border.BackgroundTransition>
                                 <Border.RenderTransform>
                                     <CompositeTransform />
                                 </Border.RenderTransform>
@@ -452,7 +451,7 @@
                                          Margin="0,7,0,7"
                                          VerticalAlignment="Center">
                                     <ContentPresenter x:Name="PART_IconPresenter"
-                                                      win:HighContrastAdjustment="None"
+                                                      HighContrastAdjustment="None"
                                                       Content="{TemplateBinding Icon}"
                                                       Foreground="{TemplateBinding Foreground}" />
                                 </Viewbox>
@@ -460,8 +459,8 @@
                                 <ContentPresenter x:Name="PART_ContentPresenter"
                                                   Margin="0,5,0,6"
                                                   VerticalAlignment="Center"
-                                                  win:HighContrastAdjustment="None"
-                                                  win:OpticalMarginAlignment="TrimSideBearings"
+                                                  HighContrastAdjustment="None"
+                                                  OpticalMarginAlignment="TrimSideBearings"
                                                   BackgroundSizing="{TemplateBinding BackgroundSizing}"
                                                   Content="{TemplateBinding Content}"
                                                   ContentTransitions="{TemplateBinding ContentTransitions}"
@@ -504,7 +503,7 @@
             <Setter Property="SelectionMode" Value="Single" />
             <Setter Property="Orientation" Value="Horizontal" />
             <Setter Property="IsItemClickEnabled" Value="False" />
-            <win:Setter Property="SingleSelectionFollowsFocus" Value="False" />
+            <Setter Property="SingleSelectionFollowsFocus" Value="False" />
             <Setter Property="IsTabStop" Value="False" />
             <Setter Property="TabNavigation" Value="Once" />
             <Setter Property="ItemsPanel">
@@ -680,7 +679,7 @@
                                          Margin="0,11,0,11"
                                          VerticalAlignment="Center">
                                     <ContentPresenter x:Name="PART_IconPresenter"
-                                                      win:HighContrastAdjustment="None"
+                                                      HighContrastAdjustment="None"
                                                       Content="{TemplateBinding Icon}"
                                                       Foreground="{TemplateBinding Foreground}" />
                                 </Viewbox>
@@ -688,8 +687,8 @@
                                 <ContentPresenter x:Name="PART_ContentPresenter"
                                                   Margin="0,9,0,10"
                                                   VerticalAlignment="Center"
-                                                  win:HighContrastAdjustment="None"
-                                                  win:OpticalMarginAlignment="TrimSideBearings"
+                                                  HighContrastAdjustment="None"
+                                                  OpticalMarginAlignment="TrimSideBearings"
                                                   BackgroundSizing="{TemplateBinding BackgroundSizing}"
                                                   Content="{TemplateBinding Content}"
                                                   ContentTransitions="{TemplateBinding ContentTransitions}"
@@ -754,9 +753,9 @@
                               BackgroundSizing="{TemplateBinding BackgroundSizing}"
                               Control.IsTemplateFocusTarget="True"
                               CornerRadius="{TemplateBinding CornerRadius}">
-                            <win:Grid.BackgroundTransition>
-                                <win:BrushTransition Duration="0:0:0.083" />
-                            </win:Grid.BackgroundTransition>
+                            <Grid.BackgroundTransition>
+                                <BrushTransition Duration="0:0:0.083" />
+                            </Grid.BackgroundTransition>
                             <VisualStateManager.VisualStateGroups>
                                 <VisualStateGroup x:Name="SegmentedIconPositionStates">
                                     <VisualState x:Name="IconOnLeft" />
@@ -866,7 +865,7 @@
                                          Width="16"
                                          VerticalAlignment="Center">
                                     <ContentPresenter x:Name="PART_IconPresenter"
-                                                      win:HighContrastAdjustment="None"
+                                                      HighContrastAdjustment="None"
                                                       Content="{TemplateBinding Icon}"
                                                       Foreground="{TemplateBinding Foreground}" />
                                 </Viewbox>
@@ -874,8 +873,8 @@
                                 <ContentPresenter x:Name="PART_ContentPresenter"
                                                   Grid.Column="1"
                                                   VerticalAlignment="Center"
-                                                  win:HighContrastAdjustment="None"
-                                                  win:OpticalMarginAlignment="TrimSideBearings"
+                                                  HighContrastAdjustment="None"
+                                                  OpticalMarginAlignment="TrimSideBearings"
                                                   BackgroundSizing="{TemplateBinding BackgroundSizing}"
                                                   Content="{TemplateBinding Content}"
                                                   ContentTransitions="{TemplateBinding ContentTransitions}"

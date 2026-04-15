@@ -5,7 +5,6 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:customUI="using:AppControlManager.CustomUIElements"
     xmlns:controls="using:CommunityToolkit.WinUI.Controls"
-    xmlns:win="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     FlowDirection="{x:Bind ViewModel.AppSettings.ApplicationGlobalFlowDirection, Mode=OneWay}">
 
     <ScrollViewer>
@@ -66,10 +65,10 @@
             <StackPanel HorizontalAlignment="Stretch" Spacing="{StaticResource SettingsCardSpacing}"
                         Grid.Row="2" Margin="0,5,0,0" XYFocusKeyboardNavigation="Enabled">
 
-                <win:StackPanel.ChildrenTransitions>
-                    <win:EntranceThemeTransition FromVerticalOffset="50" />
-                    <win:RepositionThemeTransition IsStaggeringEnabled="False" />
-                </win:StackPanel.ChildrenTransitions>
+                <StackPanel.ChildrenTransitions>
+                    <EntranceThemeTransition FromVerticalOffset="50" />
+                    <RepositionThemeTransition IsStaggeringEnabled="False" />
+                </StackPanel.ChildrenTransitions>
 
                 <customUI:SettingsCardV2 x:Uid="KeySizeSettingsCard"
                                          IsClickEnabled="True"

@@ -6,7 +6,6 @@
     xmlns:controls="using:CommunityToolkit.WinUI.Controls"
     xmlns:customUI="using:AppControlManager.CustomUIElements"
     xmlns:CCToolKit="using:CommonCore.ToolKits"
-    xmlns:win="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     FlowDirection="{x:Bind ViewModel.AppSettings.ApplicationGlobalFlowDirection, Mode=OneWay}">
 
     <ScrollViewer>
@@ -50,10 +49,10 @@
                         Grid.Row="2"
                         XYFocusKeyboardNavigation="Enabled">
 
-                <win:StackPanel.ChildrenTransitions>
-                    <win:EntranceThemeTransition FromVerticalOffset="50" />
-                    <win:RepositionThemeTransition IsStaggeringEnabled="False" />
-                </win:StackPanel.ChildrenTransitions>
+                <StackPanel.ChildrenTransitions>
+                    <EntranceThemeTransition FromVerticalOffset="50" />
+                    <RepositionThemeTransition IsStaggeringEnabled="False" />
+                </StackPanel.ChildrenTransitions>
 
                 <customUI:SettingsCardV2 x:Uid="CheckForUpdateSettingsCard"
                                          IsEnabled="{x:Bind ViewModel.ElementsAreEnabled, Mode=OneWay}">

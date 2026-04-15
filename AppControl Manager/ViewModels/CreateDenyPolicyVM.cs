@@ -33,7 +33,6 @@ using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Input;
 using Microsoft.Windows.AppNotifications;
 using Microsoft.Windows.AppNotifications.Builder;
-using Windows.UI.Notifications;
 
 namespace AppControlManager.ViewModels;
 
@@ -405,11 +404,8 @@ internal sealed partial class CreateDenyPolicyVM : ViewModelBase, IDisposable
 				// Display Toast Notification
 				if (AppNotificationManager.IsSupported() && Atlas.Settings.ToastNotificationsAreEnabled)
 				{
-					AppNotification notification;
-
-					if (OperationModeComboBoxSelectedIndex == 0)
-					{
-						notification = new AppNotificationBuilder()
+					AppNotification notification = OperationModeComboBoxSelectedIndex == 0
+						? new AppNotificationBuilder()
 							.AddText("Deny policy creation completed.")
 							.AddText($"The '{filesAndFoldersDenyPolicyName}' policy was added to the library.")
 							.SetAudioEvent(AppNotificationSoundEvent.SMS)
@@ -417,11 +413,8 @@ internal sealed partial class CreateDenyPolicyVM : ViewModelBase, IDisposable
 							.SetGroup("Policy Creation")
 							.SetScenario(AppNotificationScenario.Default)
 							.SetAttributionText("Access the library on the Sidebar for additional actions.")
-							.BuildNotification();
-					}
-					else
-					{
-						notification = new AppNotificationBuilder()
+							.BuildNotification()
+						: new AppNotificationBuilder()
 							.AddText("Your policy has been updated.")
 							.AddText("New deny rules have been added to your selected policy.")
 							.SetAudioEvent(AppNotificationSoundEvent.SMS)
@@ -430,8 +423,6 @@ internal sealed partial class CreateDenyPolicyVM : ViewModelBase, IDisposable
 							.SetScenario(AppNotificationScenario.Default)
 							.SetAttributionText($"Successfully Updated '{PolicyFileToMergeWith?.PolicyIdentifier}'.")
 							.BuildNotification();
-					}
-
 					AppNotificationManager.Default.Show(notification);
 				}
 			});
@@ -827,11 +818,8 @@ internal sealed partial class CreateDenyPolicyVM : ViewModelBase, IDisposable
 				// Display Toast Notification
 				if (AppNotificationManager.IsSupported() && Atlas.Settings.ToastNotificationsAreEnabled)
 				{
-					AppNotification notification;
-
-					if (OperationModeComboBoxSelectedIndex == 0)
-					{
-						notification = new AppNotificationBuilder()
+					AppNotification notification = OperationModeComboBoxSelectedIndex == 0
+						? new AppNotificationBuilder()
 							.AddText("Deny policy creation completed.")
 							.AddText($"The '{PFNBasedDenyPolicyName}' policy was added to the library.")
 							.SetAudioEvent(AppNotificationSoundEvent.SMS)
@@ -839,11 +827,8 @@ internal sealed partial class CreateDenyPolicyVM : ViewModelBase, IDisposable
 							.SetGroup("Policy Creation")
 							.SetScenario(AppNotificationScenario.Default)
 							.SetAttributionText("Access the library on the Sidebar for additional actions.")
-							.BuildNotification();
-					}
-					else
-					{
-						notification = new AppNotificationBuilder()
+							.BuildNotification()
+						: new AppNotificationBuilder()
 							.AddText("Your policy has been updated.")
 							.AddText("New deny rules have been added to your selected policy.")
 							.SetAudioEvent(AppNotificationSoundEvent.SMS)
@@ -852,8 +837,6 @@ internal sealed partial class CreateDenyPolicyVM : ViewModelBase, IDisposable
 							.SetScenario(AppNotificationScenario.Default)
 							.SetAttributionText($"Successfully Updated '{PolicyFileToMergeWith?.PolicyIdentifier}'.")
 							.BuildNotification();
-					}
-
 					AppNotificationManager.Default.Show(notification);
 				}
 			});
@@ -1161,11 +1144,8 @@ internal sealed partial class CreateDenyPolicyVM : ViewModelBase, IDisposable
 				// Display Toast Notification
 				if (AppNotificationManager.IsSupported() && Atlas.Settings.ToastNotificationsAreEnabled)
 				{
-					AppNotification notification;
-
-					if (OperationModeComboBoxSelectedIndex == 0)
-					{
-						notification = new AppNotificationBuilder()
+					AppNotification notification = OperationModeComboBoxSelectedIndex == 0
+						? new AppNotificationBuilder()
 							.AddText("Deny policy creation completed.")
 							.AddText($"The '{CustomPatternBasedFileRuleBasedDenyPolicyName}' policy was added to the library.")
 							.SetAudioEvent(AppNotificationSoundEvent.SMS)
@@ -1173,11 +1153,8 @@ internal sealed partial class CreateDenyPolicyVM : ViewModelBase, IDisposable
 							.SetGroup("Policy Creation")
 							.SetScenario(AppNotificationScenario.Default)
 							.SetAttributionText("Access the library on the Sidebar for additional actions.")
-							.BuildNotification();
-					}
-					else
-					{
-						notification = new AppNotificationBuilder()
+							.BuildNotification()
+						: new AppNotificationBuilder()
 							.AddText("Your policy has been updated.")
 							.AddText("New deny rules have been added to your selected policy.")
 							.SetAudioEvent(AppNotificationSoundEvent.SMS)
@@ -1186,8 +1163,6 @@ internal sealed partial class CreateDenyPolicyVM : ViewModelBase, IDisposable
 							.SetScenario(AppNotificationScenario.Default)
 							.SetAttributionText($"Successfully Updated '{PolicyFileToMergeWith?.PolicyIdentifier}'.")
 							.BuildNotification();
-					}
-
 					AppNotificationManager.Default.Show(notification);
 				}
 			});

@@ -1715,7 +1715,7 @@ NOTE: यदि कोई भी App Control UMCI नीति इसे सक�
   <data name="PromptForElevationSettingsCard.AutomationProperties.HelpText" xml:space="preserve">
     <value>यदि सक्षम है, तो AppControl Manager प्रारंभ पर प्रशासक विशेषाधिकारों के साथ चलाने के लिए एलिवेशन के लिए संकेत करेगा।</value>
   </data>
-  <data name="OnlyIncludeSelectedItemsToggleButton.Content" xml:space="preserve">
+  <data name="OnlyIncludeSelectedItemsToggleMenuFlyoutItem.Text" xml:space="preserve">
     <value>केवल चयनित आइटम शामिल करें</value>
   </data>
   <data name="OnlyIncludeSelectedItemsToggleButton.ToolTipService.ToolTip" xml:space="preserve">

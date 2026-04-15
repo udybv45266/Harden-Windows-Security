@@ -31,19 +31,31 @@ internal sealed partial class SystemInformation : Page, CommonCore.UI.IPageHeade
 
 		NavigationCacheMode = NavigationCacheMode.Disabled;
 
-		// Navigate to the CreatePolicy page when the window is loaded
-		_ = ContentFrame.Navigate(typeof(ViewCurrentPolicies));
+		if (Atlas.IsElevated)
+		{
+			// Navigate to a page when loaded
+			_ = ContentFrame.Navigate(typeof(ViewCurrentPolicies));
 
-		// Set the "CreatePolicy" item as selected in the NavigationView
-		SystemInformationNavigation.SelectedItem = SystemInformationNavigation.MenuItems.OfType<NavigationViewItem>()
-			.First(item => string.Equals(item.Tag.ToString(), "ViewCurrentPolicies", StringComparison.OrdinalIgnoreCase));
+			// Set the "ViewCurrentPolicies" item as selected in the NavigationView
+			SystemInformationNavigation.SelectedItem = SystemInformationNavigation.MenuItems.OfType<NavigationViewItem>()
+				.First(item => string.Equals(item.Tag.ToString(), "ViewCurrentPolicies", StringComparison.OrdinalIgnoreCase));
+		}
+		else
+		{
+			// Navigate to a page when loaded
+			_ = ContentFrame.Navigate(typeof(ViewOnlinePolicies));
+
+			// Set the "ViewOnlinePolicies" item as selected in the NavigationView
+			SystemInformationNavigation.SelectedItem = SystemInformationNavigation.MenuItems.OfType<NavigationViewItem>()
+				.First(item => string.Equals(item.Tag.ToString(), "ViewOnlinePolicies", StringComparison.OrdinalIgnoreCase));
+		}
 	}
 
 	// Event handler for the navigation menu
 	private void NavigationView_SelectionChanged(NavigationView sender, NavigationViewSelectionChangedEventArgs args)
 	{
-		// Check if the item is selected
-		if (args.SelectedItem is NavigationViewItem selectedItem)
+		// Check if the item is selected and it's enabled (because when running unelevated, some pages are unavailable)
+		if (args.SelectedItem is NavigationViewItem selectedItem && selectedItem.IsSelected)
 		{
 			string? selectedTag = selectedItem.Tag?.ToString();
 

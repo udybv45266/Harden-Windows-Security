@@ -67,7 +67,7 @@
             </customUI:InfoBarV2.ActionButton>
         </customUI:InfoBarV2>
 
-        <Expander Grid.Row="1" Margin="0,5,0,10" HorizontalAlignment="Stretch">
+        <Expander Grid.Row="1" Margin="0,5,0,5" HorizontalAlignment="Stretch">
             <Expander.Header>
 
                 <CCToolKit:WrapPanel Style="{StaticResource UnifiedToolbarStyle}">
@@ -409,11 +409,15 @@
                                     </MenuFlyoutItem.Icon>
                                 </MenuFlyoutItem>
 
+                                <MenuFlyoutSeparator />
+
                                 <MenuFlyoutItem x:Uid="DeSelectAllMenuFlyoutItem" Click="{x:Bind ViewModel.DeSelectAll_Click}">
                                     <MenuFlyoutItem.Icon>
                                         <FontIcon Glyph="&#xE8E6;"/>
                                     </MenuFlyoutItem.Icon>
                                 </MenuFlyoutItem>
+
+                                <MenuFlyoutSeparator />
 
                                 <MenuFlyoutItem Click="{x:Bind ViewModel.ClearDataButton_Click}" x:Uid="ClearDataMenuFlyoutItem">
                                     <MenuFlyoutItem.Icon>
@@ -429,7 +433,6 @@
                                     <ToggleMenuFlyoutItem.Icon>
                                         <FontIcon Glyph="&#xE896;"/>
                                     </ToggleMenuFlyoutItem.Icon>
-
                                 </ToggleMenuFlyoutItem>
 
                                 <MenuFlyoutSeparator/>
@@ -444,6 +447,16 @@
                                     <MenuFlyoutItem Click="{x:Bind ViewModel.ClearAppLockerOSLogs}"
                                                     x:Uid="ClearOSAppLockerLogsMenuFlyoutItem" />
                                 </MenuFlyoutSubItem>
+
+                                <MenuFlyoutSeparator />
+
+                                <ToggleMenuFlyoutItem IsChecked="{x:Bind ViewModel.OnlyIncludeSelectedItemsToggleButton, Mode=TwoWay}"
+                                              IsEnabled="{x:Bind ViewModel.AreElementsEnabled, Mode=OneWay}"
+                                              x:Uid="OnlyIncludeSelectedItemsToggleMenuFlyoutItem">
+                                    <ToggleMenuFlyoutItem.Icon>
+                                        <FontIcon Glyph="&#xEA98;"/>
+                                    </ToggleMenuFlyoutItem.Icon>
+                                </ToggleMenuFlyoutItem>
 
                             </MenuFlyout>
 
@@ -490,13 +503,10 @@
                                         <Setter Property="MaxWidth" Value="1234" />
                                     </Style>
                                 </Flyout.FlyoutPresenterStyle>
-
-                                <CCToolKit:WrapPanel Orientation="Vertical" HorizontalSpacing="3" VerticalSpacing="8">
-                                    <TextBox Width="300"
+                                <TextBox Width="300"
                                          Header="Optional: Choose a policy name"
                                          Text="{x:Bind ViewModel.PolicyNameTextBox, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                          PlaceholderText="Policy Name..."/>
-                                </CCToolKit:WrapPanel>
                             </Flyout>
                         </Button.Flyout>
                     </Button>
@@ -511,19 +521,6 @@
                               SelectedIndex="0"
                               ItemsSource="{x:Bind CommonCore:ViewModelBase.ScanLevelsSourceForLogs}"
                               ItemTemplate="{StaticResource ScanLevelComboBoxTemplate}"/>
-
-                    <ToggleButton IsChecked="{x:Bind ViewModel.OnlyIncludeSelectedItemsToggleButton, Mode=TwoWay}"
-                                  IsEnabled="{x:Bind ViewModel.AreElementsEnabled, Mode=OneWay}"
-                                  x:Uid="OnlyIncludeSelectedItemsToggleButton">
-                        <ToggleButton.ContentTemplate>
-                            <DataTemplate x:DataType="x:String">
-                                <StackPanel Orientation="Horizontal" Spacing="8">
-                                    <FontIcon Glyph="&#xEA98;" FontSize="16"/>
-                                    <TextBlock Text="{x:Bind}"/>
-                                </StackPanel>
-                            </DataTemplate>
-                        </ToggleButton.ContentTemplate>
-                    </ToggleButton>
 
                     <!-- Columns Selection Button -->
                     <customUI:ColumnSelector ItemsSource="{x:Bind ViewModel.ColumnManager.ColumnSelectionItems, Mode=OneWay}"

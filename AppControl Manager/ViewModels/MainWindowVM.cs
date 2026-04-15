@@ -135,7 +135,8 @@ internal sealed partial class MainWindowVM : ViewModelBase, IDisposable
 		typeof(Pages.CreateSupplementalPolicyFilesAndFoldersScanResults),
 		typeof(Pages.StrictKernelPolicyScanResults),
 		typeof(Pages.Simulation),
-		typeof(Pages.GetSecurePolicySettings)
+		typeof(Pages.GetSecurePolicySettings),
+		typeof(Pages.SystemInformation)
 		];
 
 

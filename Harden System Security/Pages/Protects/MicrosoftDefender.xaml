@@ -3,7 +3,6 @@
     x:Class="HardenSystemSecurity.Pages.Protects.MicrosoftDefender"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:win="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:CCToolKit="using:CommonCore.ToolKits"
     xmlns:customUI="using:AppControlManager.CustomUIElements"
     xmlns:CommonCore="using:CommonCore"
@@ -35,10 +34,10 @@
                 </TabViewItem.IconSource>
                 <TabViewItem.Content>
                     <Grid>
-                        <win:Grid.ChildrenTransitions>
-                            <win:EntranceThemeTransition FromVerticalOffset="50" />
-                            <win:RepositionThemeTransition IsStaggeringEnabled="False" />
-                        </win:Grid.ChildrenTransitions>
+                        <Grid.ChildrenTransitions>
+                            <EntranceThemeTransition FromVerticalOffset="50" />
+                            <RepositionThemeTransition IsStaggeringEnabled="False" />
+                        </Grid.ChildrenTransitions>
 
                         <customUI:MUnitListViewControl
                         x:Name="SecurityMeasuresList"
@@ -58,10 +57,10 @@
                 </TabViewItem.IconSource>
                 <TabViewItem.Content>
                     <Grid>
-                        <win:Grid.ChildrenTransitions>
-                            <win:EntranceThemeTransition FromVerticalOffset="50" />
-                            <win:RepositionThemeTransition IsStaggeringEnabled="False" />
-                        </win:Grid.ChildrenTransitions>
+                        <Grid.ChildrenTransitions>
+                            <EntranceThemeTransition FromVerticalOffset="50" />
+                            <RepositionThemeTransition IsStaggeringEnabled="False" />
+                        </Grid.ChildrenTransitions>
 
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto"/>

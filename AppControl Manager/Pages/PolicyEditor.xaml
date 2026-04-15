@@ -9,7 +9,6 @@
     xmlns:PolicyEditor="using:AppControlManager.PolicyEditor"
     xmlns:CCToolKit="using:CommonCore.ToolKits"
     xmlns:animatedvisuals="using:AnimatedVisuals"
-    xmlns:win="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     FlowDirection="{x:Bind ViewModel.AppSettings.ApplicationGlobalFlowDirection, Mode=OneWay}">
 
     <Grid>
@@ -241,10 +240,10 @@
                             <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
 
-                        <win:Grid.ChildrenTransitions>
-                            <win:EntranceThemeTransition FromVerticalOffset="50" />
-                            <win:RepositionThemeTransition IsStaggeringEnabled="False" />
-                        </win:Grid.ChildrenTransitions>
+                        <Grid.ChildrenTransitions>
+                            <EntranceThemeTransition FromVerticalOffset="50" />
+                            <RepositionThemeTransition IsStaggeringEnabled="False" />
+                        </Grid.ChildrenTransitions>
 
                         <!-- Columns Selection Button -->
                         <customUI:ColumnSelector ItemsSource="{x:Bind ViewModel.FileRulesColumnManager.ColumnSelectionItems, Mode=OneWay}"
@@ -411,10 +410,10 @@
                             <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
 
-                        <win:Grid.ChildrenTransitions>
-                            <win:EntranceThemeTransition FromVerticalOffset="50" />
-                            <win:RepositionThemeTransition IsStaggeringEnabled="False" />
-                        </win:Grid.ChildrenTransitions>
+                        <Grid.ChildrenTransitions>
+                            <EntranceThemeTransition FromVerticalOffset="50" />
+                            <RepositionThemeTransition IsStaggeringEnabled="False" />
+                        </Grid.ChildrenTransitions>
 
                         <!-- Columns Selection Button -->
                         <customUI:ColumnSelector ItemsSource="{x:Bind ViewModel.SignatureRulesColumnManager.ColumnSelectionItems, Mode=OneWay}"
@@ -528,10 +527,10 @@
                                         Grid.Row="0"
                                         Margin="0,40,0,0">
 
-                                <win:StackPanel.ChildrenTransitions>
-                                    <win:EntranceThemeTransition FromVerticalOffset="50" />
-                                    <win:RepositionThemeTransition IsStaggeringEnabled="False" />
-                                </win:StackPanel.ChildrenTransitions>
+                                <StackPanel.ChildrenTransitions>
+                                    <EntranceThemeTransition FromVerticalOffset="50" />
+                                    <RepositionThemeTransition IsStaggeringEnabled="False" />
+                                </StackPanel.ChildrenTransitions>
 
                                 <controls:SettingsCard x:Uid="PolicyEditorPolicyNameSettingsCard"
                                                        IsClickEnabled="False">

@@ -8,7 +8,6 @@
     xmlns:controls="using:CommunityToolkit.WinUI.Controls"
     xmlns:customUI="using:AppControlManager.CustomUIElements"
     xmlns:CCToolKit="using:CommonCore.ToolKits"
-    xmlns:win="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:animatedvisuals="using:AnimatedVisuals"
     xmlns:CommonCore="using:CommonCore"
     FlowDirection="{x:Bind ViewModel.AppSettings.ApplicationGlobalFlowDirection, Mode=OneWay}">
@@ -479,10 +478,10 @@
             <StackPanel HorizontalAlignment="Stretch" Spacing="{StaticResource SettingsCardSpacing}"
                         Grid.Row="1" Margin="0,15,0,0">
 
-                <win:StackPanel.ChildrenTransitions>
-                    <win:EntranceThemeTransition FromVerticalOffset="50" />
-                    <win:RepositionThemeTransition IsStaggeringEnabled="False" />
-                </win:StackPanel.ChildrenTransitions>
+                <StackPanel.ChildrenTransitions>
+                    <EntranceThemeTransition FromVerticalOffset="50" />
+                    <RepositionThemeTransition IsStaggeringEnabled="False" />
+                </StackPanel.ChildrenTransitions>
 
                 <!-- Files and Folders Scan -->
                 <controls:SettingsExpander x:Uid="SupplementalFilesAndFoldersSettingsCard"

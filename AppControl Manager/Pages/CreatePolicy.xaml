@@ -4,7 +4,6 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:customUI="using:AppControlManager.CustomUIElements"
-    xmlns:win="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:controls="using:CommunityToolkit.WinUI.Controls"
     xmlns:CCToolKit="using:CommonCore.ToolKits"
     FlowDirection="{x:Bind ViewModel.AppSettings.ApplicationGlobalFlowDirection, Mode=OneWay}">
@@ -13,10 +12,10 @@
 
         <StackPanel HorizontalAlignment="Stretch" Spacing="{StaticResource SettingsCardSpacing}">
 
-            <win:StackPanel.ChildrenTransitions>
-                <win:EntranceThemeTransition FromVerticalOffset="50" />
-                <win:RepositionThemeTransition IsStaggeringEnabled="False" />
-            </win:StackPanel.ChildrenTransitions>
+            <StackPanel.ChildrenTransitions>
+                <EntranceThemeTransition FromVerticalOffset="50" />
+                <RepositionThemeTransition IsStaggeringEnabled="False" />
+            </StackPanel.ChildrenTransitions>
 
             <!-- Allow Microsoft -->
             <controls:SettingsExpander

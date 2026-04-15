@@ -5,7 +5,6 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:CC="using:CommonCore.Others"
     xmlns:CCToolKit="using:CommonCore.ToolKits"
-    xmlns:win="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:controls="using:CommunityToolkit.WinUI.Controls"
     xmlns:customUI="using:AppControlManager.CustomUIElements"
     FlowDirection="{x:Bind ViewModel.AppSettings.ApplicationGlobalFlowDirection, Mode=OneWay}">
@@ -28,10 +27,10 @@
             <StackPanel HorizontalAlignment="Stretch"
                         Spacing="{StaticResource SettingsCardSpacing}"
                         Grid.Row="1">
-                <win:StackPanel.ChildrenTransitions>
-                    <win:EntranceThemeTransition FromVerticalOffset="50" />
-                    <win:RepositionThemeTransition IsStaggeringEnabled="False" />
-                </win:StackPanel.ChildrenTransitions>
+                <StackPanel.ChildrenTransitions>
+                    <EntranceThemeTransition FromVerticalOffset="50" />
+                    <RepositionThemeTransition IsStaggeringEnabled="False" />
+                </StackPanel.ChildrenTransitions>
 
                 <TextBlock Style="{StaticResource SettingsSectionHeaderTextBlockStyle}"
                            x:Uid="UserConfigurations" />
@@ -435,7 +434,7 @@
                         <BitmapIcon UriSource="ms-appx:///Assets/Square44x44Logo.altform-lightunplated_targetsize-256.png"
                                     ShowAsMonochrome="False" />
                     </controls:SettingsExpander.HeaderIcon>
-                    <TextBlock Text="{x:Bind ViewModel.VersionTextBlockText, Mode=OneTime}" win:IsTextSelectionEnabled="True"
+                    <TextBlock Text="{x:Bind ViewModel.VersionTextBlockText, Mode=OneTime}" IsTextSelectionEnabled="True"
                                Foreground="{ThemeResource TextFillColorSecondaryBrush}" />
                     <controls:SettingsExpander.Items>
                         <controls:SettingsCard HorizontalContentAlignment="Left" ContentAlignment="Left">

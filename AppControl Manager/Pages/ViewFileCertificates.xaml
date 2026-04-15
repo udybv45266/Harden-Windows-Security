@@ -7,7 +7,6 @@
     xmlns:customUI="using:AppControlManager.CustomUIElements"
     xmlns:CCToolKit="using:CommonCore.ToolKits"
     xmlns:CommonCore="using:CommonCore"
-    xmlns:win="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     AllowDrop="{x:Bind CommonCore:ViewModelBase.IsNotElevated}"
     DragOver="{x:Bind ViewModel.OnDragOver}"
     Drop="{x:Bind ViewModel.OnDrop}"
@@ -33,10 +32,10 @@
                     Margin="0,5,0,0"
                     XYFocusKeyboardNavigation="Enabled">
 
-            <win:StackPanel.ChildrenTransitions>
-                <win:EntranceThemeTransition FromVerticalOffset="50" />
-                <win:RepositionThemeTransition IsStaggeringEnabled="False" />
-            </win:StackPanel.ChildrenTransitions>
+            <StackPanel.ChildrenTransitions>
+                <EntranceThemeTransition FromVerticalOffset="50" />
+                <RepositionThemeTransition IsStaggeringEnabled="False" />
+            </StackPanel.ChildrenTransitions>
 
             <customUI:SettingsCardV2 x:Uid="BrowseForFilesSettingsCard">
 

@@ -1715,7 +1715,7 @@
   <data name="PromptForElevationSettingsCard.AutomationProperties.HelpText" xml:space="preserve">
     <value>ഇത് പ്രവർത്തനക്ഷമമാക്കിയിട്ടുണ്ടെങ്കിൽ, സ്റ്റാർട്ടപ്പിൽ അഡ്മിനിസ്ട്രേറ്റർ പ്രത്യേകാനുമതികളോടെ പ്രവർത്തിക്കാൻ ആപ്പ്കൺട്രോൾ മാനേജർ എലിവേഷനായി ആവശ്യപ്പെടും.</value>
   </data>
-  <data name="OnlyIncludeSelectedItemsToggleButton.Content" xml:space="preserve">
+  <data name="OnlyIncludeSelectedItemsToggleMenuFlyoutItem.Text" xml:space="preserve">
     <value>തിരഞ്ഞെടുത്ത ഇനങ്ങൾ മാത്രം ഉപയോഗിക്കുക</value>
   </data>
   <data name="OnlyIncludeSelectedItemsToggleButton.ToolTipService.ToolTip" xml:space="preserve">

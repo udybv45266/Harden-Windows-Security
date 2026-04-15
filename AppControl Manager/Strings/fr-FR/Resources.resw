@@ -1715,7 +1715,7 @@
   <data name="PromptForElevationSettingsCard.AutomationProperties.HelpText" xml:space="preserve">
     <value>Si activé, AppControl Manager demandera une élévation pour s'exécuter avec les privilèges d'administrateur au démarrage.</value>
   </data>
-  <data name="OnlyIncludeSelectedItemsToggleButton.Content" xml:space="preserve">
+  <data name="OnlyIncludeSelectedItemsToggleMenuFlyoutItem.Text" xml:space="preserve">
     <value>Utiliser Uniquement les Éléments Sélectionnés</value>
   </data>
   <data name="OnlyIncludeSelectedItemsToggleButton.ToolTipService.ToolTip" xml:space="preserve">

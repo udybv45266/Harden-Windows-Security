@@ -63,9 +63,21 @@
             <SelectorBar x:Name="MenuSelectorBar"
                          HorizontalAlignment="Left"
                          VerticalAlignment="Center">
-                <SelectorBarItem Tag="Local" x:Uid="LocalTextBlock"/>
-                <SelectorBarItem Tag="Cloud" x:Uid="CloudTextBlock"/>
-                <SelectorBarItem x:Name="CreateSelectorBarItem" Tag="Create" x:Uid="CreateTextBlock"/>
+                <SelectorBarItem Tag="Local" x:Uid="LocalTextBlock">
+                    <SelectorBarItem.Icon>
+                        <FontIcon Glyph="&#xE80F;" />
+                    </SelectorBarItem.Icon>
+                </SelectorBarItem>
+                <SelectorBarItem Tag="Cloud" x:Uid="CloudTextBlock">
+                    <SelectorBarItem.Icon>
+                        <FontIcon Glyph="&#xE753;" />
+                    </SelectorBarItem.Icon>
+                </SelectorBarItem>
+                <SelectorBarItem x:Name="CreateSelectorBarItem" Tag="Create" x:Uid="CreateTextBlock">
+                    <SelectorBarItem.Icon>
+                        <FontIcon Glyph="&#xF6A9;" />
+                    </SelectorBarItem.Icon>
+                </SelectorBarItem>
             </SelectorBar>
 
             <!-- Total chip -->
@@ -100,7 +112,7 @@
 
         </CCToolKit:WrapPanel>
 
-        <Expander Grid.Row="2" HorizontalAlignment="Stretch" Margin="0,10,0,10">
+        <Expander Grid.Row="2" HorizontalAlignment="Stretch" Margin="0,5,0,5">
             <Expander.Header>
                 <Grid Padding="8">
 
@@ -533,11 +545,15 @@
                                             </MenuFlyoutItem.Icon>
                                         </MenuFlyoutItem>
 
+                                        <MenuFlyoutSeparator />
+
                                         <MenuFlyoutItem x:Uid="DeSelectAllMenuFlyoutItem" Click="{x:Bind ViewModel.DeSelectAll_Click}">
                                             <MenuFlyoutItem.Icon>
                                                 <FontIcon Glyph="&#xE8E6;"/>
                                             </MenuFlyoutItem.Icon>
                                         </MenuFlyoutItem>
+
+                                        <MenuFlyoutSeparator />
 
                                         <MenuFlyoutItem Click="{x:Bind ViewModel.ClearDataButton_Click}" x:Uid="ClearDataMenuFlyoutItem">
                                             <MenuFlyoutItem.Icon>
@@ -552,6 +568,15 @@
                                                               IsChecked="{x:Bind ViewModel.DeployPolicyToggle, Mode=TwoWay}">
                                             <ToggleMenuFlyoutItem.Icon>
                                                 <FontIcon Glyph="&#xE896;"/>
+                                            </ToggleMenuFlyoutItem.Icon>
+                                        </ToggleMenuFlyoutItem>
+
+                                        <MenuFlyoutSeparator />
+
+                                        <ToggleMenuFlyoutItem IsChecked="{x:Bind ViewModel.OnlyIncludeSelectedItemsToggleButton, Mode=TwoWay}"
+                                                              x:Uid="OnlyIncludeSelectedItemsToggleMenuFlyoutItem">
+                                            <ToggleMenuFlyoutItem.Icon>
+                                                <FontIcon Glyph="&#xEA98;"/>
                                             </ToggleMenuFlyoutItem.Icon>
                                         </ToggleMenuFlyoutItem>
 
@@ -578,13 +603,10 @@
                                                 <Setter Property="MaxWidth" Value="1234" />
                                             </Style>
                                         </Flyout.FlyoutPresenterStyle>
-
-                                        <CCToolKit:WrapPanel Orientation="Vertical" HorizontalSpacing="3" VerticalSpacing="8">
-                                            <TextBox Width="300"
-                                                     Header="Optional: Choose a policy name"
-                                                     Text="{x:Bind ViewModel.PolicyNameTextBox, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                                                     PlaceholderText="Policy Name..."/>
-                                        </CCToolKit:WrapPanel>
+                                        <TextBox Width="300"
+                                                 Header="Optional: Choose a policy name"
+                                                 Text="{x:Bind ViewModel.PolicyNameTextBox, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                                 PlaceholderText="Policy Name..."/>
                                     </Flyout>
                                 </Button.Flyout>
                             </Button>
@@ -595,18 +617,6 @@
                                       ItemsSource="{x:Bind CommonCore:ViewModelBase.ScanLevelsSourceForLogs}"
                                       x:Uid="ScanLevelComboBox"
                                       ItemTemplate="{StaticResource ScanLevelComboBoxTemplate}"/>
-
-                            <ToggleButton IsChecked="{x:Bind ViewModel.OnlyIncludeSelectedItemsToggleButton, Mode=TwoWay}"
-                                          x:Uid="OnlyIncludeSelectedItemsToggleButton">
-                                <ToggleButton.ContentTemplate>
-                                    <DataTemplate x:DataType="x:String">
-                                        <StackPanel Orientation="Horizontal" Spacing="8">
-                                            <FontIcon Glyph="&#xEA98;" FontSize="16"/>
-                                            <TextBlock Text="{x:Bind}"/>
-                                        </StackPanel>
-                                    </DataTemplate>
-                                </ToggleButton.ContentTemplate>
-                            </ToggleButton>
 
                         </CCToolKit:WrapPanel>
 

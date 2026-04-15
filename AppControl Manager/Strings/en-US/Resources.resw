@@ -1715,7 +1715,7 @@ NOTE: This option is always enforced if any App Control UMCI policy enables it. 
   <data name="PromptForElevationSettingsCard.AutomationProperties.HelpText" xml:space="preserve">
     <value>If this is enabled, AppControl Manager will prompt for elevation to run with Administrator privileges on startup.</value>
   </data>
-  <data name="OnlyIncludeSelectedItemsToggleButton.Content" xml:space="preserve">
+  <data name="OnlyIncludeSelectedItemsToggleMenuFlyoutItem.Text" xml:space="preserve">
     <value>Only Use Selected Items</value>
   </data>
   <data name="OnlyIncludeSelectedItemsToggleButton.ToolTipService.ToolTip" xml:space="preserve">

@@ -1715,7 +1715,7 @@
   <data name="PromptForElevationSettingsCard.AutomationProperties.HelpText" xml:space="preserve">
     <value>Εάν αυτό είναι ενεργοποιημένο, ο AppControl Manager θα ζητήσει ανύψωση για να εκτελεστεί με δικαιώματα Διαχειριστή κατά την εκκίνηση.</value>
   </data>
-  <data name="OnlyIncludeSelectedItemsToggleButton.Content" xml:space="preserve">
+  <data name="OnlyIncludeSelectedItemsToggleMenuFlyoutItem.Text" xml:space="preserve">
     <value>Χρήση Μόνο Επιλεγμένων Στοιχείων</value>
   </data>
   <data name="OnlyIncludeSelectedItemsToggleButton.ToolTipService.ToolTip" xml:space="preserve">

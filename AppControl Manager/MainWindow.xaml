@@ -84,7 +84,8 @@
               Height="48"
               AutomationProperties.LandmarkType="Custom"
               AutomationProperties.LocalizedLandmarkType="Title Bar"
-              Grid.Row="0">
+              Grid.Row="0"
+              XYFocusKeyboardNavigation="Enabled">
 
             <Grid.ColumnDefinitions>
                 <ColumnDefinition x:Name="LeftPaddingColumn" Width="0"/>
