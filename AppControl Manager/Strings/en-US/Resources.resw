@@ -7163,7 +7163,6 @@ NOTE: This option is always enforced if any App Control UMCI policy enables it. 
   <data name="AcrylicThinTintColorSettingsCard.AutomationProperties.HelpText" xml:space="preserve">
     <value>Adjust the Tint Color of the Acrylic thin backdrop.</value>
   </data>
-  <!--NEW-->
   <data name="EnableToastNotificationsSettingsCard.Description" xml:space="preserve">
     <value>Enabling this allows the app to display toast notifications in Windows.</value>
   </data>
@@ -7175,7 +7174,7 @@ NOTE: This option is always enforced if any App Control UMCI policy enables it. 
   </data>
   <data name="EnableToastNotificationsSettingsCard.AutomationProperties.HelpText" xml:space="preserve">
     <value>Enabling this allows the app to display toast notifications in Windows.</value>
-  </data>  
+  </data>
   <data name="RemoveAllToastNotificationsSettingsCard.Description" xml:space="preserve">
     <value>Remove all toast notifications that belong to this app from the Notifications Center in Windows.</value>
   </data>

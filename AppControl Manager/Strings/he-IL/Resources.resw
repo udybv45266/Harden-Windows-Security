@@ -7163,4 +7163,49 @@
   <data name="AcrylicThinTintColorSettingsCard.AutomationProperties.HelpText" xml:space="preserve">
     <value>התאם את צבע הגוון של רקע האקריליק הדק.</value>
   </data>
+  <data name="EnableToastNotificationsSettingsCard.Description" xml:space="preserve">
+    <value>הפעלת אפשרות זו מתירה לאפליקציה להציג התראות מוקפצות ב-Windows.</value>
+  </data>
+  <data name="EnableToastNotificationsSettingsCard.Header" xml:space="preserve">
+    <value>הצג התראות מוקפצות ב-Windows</value>
+  </data>
+  <data name="EnableToastNotificationsSettingsCard.ToolTipService.ToolTip" xml:space="preserve">
+    <value>הפעלת אפשרות זו מתירה לאפליקציה להציג התראות מוקפצות ב-Windows.</value>
+  </data>
+  <data name="EnableToastNotificationsSettingsCard.AutomationProperties.HelpText" xml:space="preserve">
+    <value>הפעלת אפשרות זו מתירה לאפליקציה להציג התראות מוקפצות ב-Windows.</value>
+  </data>
+  <data name="RemoveAllToastNotificationsSettingsCard.Description" xml:space="preserve">
+    <value>הסר את כל ההתראות המוקפצות השייכות לאפליקציה זו ממרכז ההתראות ב-Windows.</value>
+  </data>
+  <data name="RemoveAllToastNotificationsSettingsCard.Header" xml:space="preserve">
+    <value>הסר את כל ההתראות</value>
+  </data>
+  <data name="RemoveAllToastNotificationsSettingsCard.ToolTipService.ToolTip" xml:space="preserve">
+    <value>הסר את כל ההתראות המוקפצות השייכות לאפליקציה זו ממרכז ההתראות ב-Windows.</value>
+  </data>
+  <data name="RemoveAllToastNotificationsSettingsCard.AutomationProperties.HelpText" xml:space="preserve">
+    <value>הסר את כל ההתראות המוקפצות השייכות לאפליקציה זו ממרכז ההתראות ב-Windows.</value>
+  </data>
+  <data name="RemoveAllToastNotificationsButton.Content" xml:space="preserve">
+    <value>הסר הכל</value>
+  </data>
+  <data name="RemoveAllToastNotificationsButton.ToolTipService.ToolTip" xml:space="preserve">
+    <value>הסר את כל ההתראות המוקפצות השייכות לאפליקציה זו ממרכז ההתראות ב-Windows.</value>
+  </data>
+  <data name="RemoveAllToastNotificationsButton.AutomationProperties.HelpText" xml:space="preserve">
+    <value>הסר את כל ההתראות המוקפצות השייכות לאפליקציה זו ממרכז ההתראות ב-Windows.</value>
+  </data>
+  <data name="Notifications.Text" xml:space="preserve">
+    <value>התראות</value>
+  </data>
+  <data name="NotificationSettingsSettingsExpander.Header" xml:space="preserve">
+    <value>הגדרות התראה</value>
+  </data>
+  <data name="NotificationSettingsSettingsExpander.ToolTipService.ToolTip" xml:space="preserve">
+    <value>נהל הגדרות הקשורות להתראות והודעות.</value>
+  </data>
+  <data name="NotificationSettingsSettingsExpander.AutomationProperties.HelpText" xml:space="preserve">
+    <value>נהל הגדרות הקשורות להתראות והודעות.</value>
+  </data>
 </root>

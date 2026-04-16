@@ -7163,4 +7163,49 @@ NOTA: Esta opción siempre se aplica si alguna directiva UMCI de App Control la 
   <data name="AcrylicThinTintColorSettingsCard.AutomationProperties.HelpText" xml:space="preserve">
     <value>Ajuste el color de matiz del fondo acrílico delgado.</value>
   </data>
+  <data name="EnableToastNotificationsSettingsCard.Description" xml:space="preserve">
+    <value>Habilitar esto permite que la aplicación muestre notificaciones del sistema en Windows.</value>
+  </data>
+  <data name="EnableToastNotificationsSettingsCard.Header" xml:space="preserve">
+    <value>Mostrar notificaciones del sistema en Windows</value>
+  </data>
+  <data name="EnableToastNotificationsSettingsCard.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Habilitar esto permite que la aplicación muestre notificaciones del sistema en Windows.</value>
+  </data>
+  <data name="EnableToastNotificationsSettingsCard.AutomationProperties.HelpText" xml:space="preserve">
+    <value>Habilitar esto permite que la aplicación muestre notificaciones del sistema en Windows.</value>
+  </data>
+  <data name="RemoveAllToastNotificationsSettingsCard.Description" xml:space="preserve">
+    <value>Quite todas las notificaciones del sistema que pertenecen a esta aplicación del Centro de actividades en Windows.</value>
+  </data>
+  <data name="RemoveAllToastNotificationsSettingsCard.Header" xml:space="preserve">
+    <value>Quitar todas las notificaciones</value>
+  </data>
+  <data name="RemoveAllToastNotificationsSettingsCard.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Quite todas las notificaciones del sistema que pertenecen a esta aplicación del Centro de actividades en Windows.</value>
+  </data>
+  <data name="RemoveAllToastNotificationsSettingsCard.AutomationProperties.HelpText" xml:space="preserve">
+    <value>Quite todas las notificaciones del sistema que pertenecen a esta aplicación del Centro de actividades en Windows.</value>
+  </data>
+  <data name="RemoveAllToastNotificationsButton.Content" xml:space="preserve">
+    <value>Quitar todo</value>
+  </data>
+  <data name="RemoveAllToastNotificationsButton.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Quite todas las notificaciones del sistema que pertenecen a esta aplicación del Centro de actividades en Windows.</value>
+  </data>
+  <data name="RemoveAllToastNotificationsButton.AutomationProperties.HelpText" xml:space="preserve">
+    <value>Quite todas las notificaciones del sistema que pertenecen a esta aplicación del Centro de actividades en Windows.</value>
+  </data>
+  <data name="Notifications.Text" xml:space="preserve">
+    <value>Notificaciones</value>
+  </data>
+  <data name="NotificationSettingsSettingsExpander.Header" xml:space="preserve">
+    <value>Configuración de notificaciones</value>
+  </data>
+  <data name="NotificationSettingsSettingsExpander.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Administre la configuración relacionada con las notificaciones y los avisos.</value>
+  </data>
+  <data name="NotificationSettingsSettingsExpander.AutomationProperties.HelpText" xml:space="preserve">
+    <value>Administre la configuración relacionada con las notificaciones y los avisos.</value>
+  </data>
 </root>

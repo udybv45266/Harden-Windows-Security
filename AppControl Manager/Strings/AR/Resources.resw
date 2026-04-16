@@ -7127,4 +7127,49 @@
   <data name="SetColorMenuFlyoutSubItem.ToolTipService.ToolTip" xml:space="preserve">
     <value>عيّن لوناً للنهج في المكتبة كطريقة لتمييزه.</value>
   </data>
+  <data name="EnableToastNotificationsSettingsCard.Description" xml:space="preserve">
+    <value>يسمح تمكين هذا للتطبيق بعرض إعلامات منبثقة في Windows.</value>
+  </data>
+  <data name="EnableToastNotificationsSettingsCard.Header" xml:space="preserve">
+    <value>عرض إعلامات منبثقة في Windows</value>
+  </data>
+  <data name="EnableToastNotificationsSettingsCard.ToolTipService.ToolTip" xml:space="preserve">
+    <value>يسمح تمكين هذا للتطبيق بعرض إعلامات منبثقة في Windows.</value>
+  </data>
+  <data name="EnableToastNotificationsSettingsCard.AutomationProperties.HelpText" xml:space="preserve">
+    <value>يسمح تمكين هذا للتطبيق بعرض إعلامات منبثقة في Windows.</value>
+  </data>
+  <data name="RemoveAllToastNotificationsSettingsCard.Description" xml:space="preserve">
+    <value>قم بإزالة كافة الإعلامات المنبثقة التي تنتمي إلى هذا التطبيق من مركز الإعلامات في Windows.</value>
+  </data>
+  <data name="RemoveAllToastNotificationsSettingsCard.Header" xml:space="preserve">
+    <value>إزالة كافة الإعلامات</value>
+  </data>
+  <data name="RemoveAllToastNotificationsSettingsCard.ToolTipService.ToolTip" xml:space="preserve">
+    <value>قم بإزالة كافة الإعلامات المنبثقة التي تنتمي إلى هذا التطبيق من مركز الإعلامات في Windows.</value>
+  </data>
+  <data name="RemoveAllToastNotificationsSettingsCard.AutomationProperties.HelpText" xml:space="preserve">
+    <value>قم بإزالة كافة الإعلامات المنبثقة التي تنتمي إلى هذا التطبيق من مركز الإعلامات في Windows.</value>
+  </data>
+  <data name="RemoveAllToastNotificationsButton.Content" xml:space="preserve">
+    <value>إزالة الكل</value>
+  </data>
+  <data name="RemoveAllToastNotificationsButton.ToolTipService.ToolTip" xml:space="preserve">
+    <value>قم بإزالة كافة الإعلامات المنبثقة التي تنتمي إلى هذا التطبيق من مركز الإعلامات في Windows.</value>
+  </data>
+  <data name="RemoveAllToastNotificationsButton.AutomationProperties.HelpText" xml:space="preserve">
+    <value>قم بإزالة كافة الإعلامات المنبثقة التي تنتمي إلى هذا التطبيق من مركز الإعلامات في Windows.</value>
+  </data>
+  <data name="Notifications.Text" xml:space="preserve">
+    <value>الإعلامات</value>
+  </data>
+  <data name="NotificationSettingsSettingsExpander.Header" xml:space="preserve">
+    <value>إعدادات الإعلامات</value>
+  </data>
+  <data name="NotificationSettingsSettingsExpander.ToolTipService.ToolTip" xml:space="preserve">
+    <value>إدارة الإعدادات المتعلقة بالإعلامات والإشعارات.</value>
+  </data>
+  <data name="NotificationSettingsSettingsExpander.AutomationProperties.HelpText" xml:space="preserve">
+    <value>إدارة الإعدادات المتعلقة بالإعلامات والإشعارات.</value>
+  </data>
 </root>

@@ -7163,4 +7163,49 @@
   <data name="AcrylicThinTintColorSettingsCard.AutomationProperties.HelpText" xml:space="preserve">
     <value>അക്രിലിക് തിൻ ബാക്ക്ഡ്രോപ്പിന്റെ ടിന്റ് നിറം ക്രമീകരിക്കുക.</value>
   </data>
+  <data name="EnableToastNotificationsSettingsCard.Description" xml:space="preserve">
+    <value>ഇത് പ്രവർത്തനക്ഷമമാക്കുന്നത് Windows-ൽ ടോസ്റ്റ് അറിയിപ്പുകൾ പ്രദർശിപ്പിക്കാൻ ആപ്പിനെ അനുവദിക്കുന്നു.</value>
+  </data>
+  <data name="EnableToastNotificationsSettingsCard.Header" xml:space="preserve">
+    <value>Windows-ൽ ടോസ്റ്റ് അറിയിപ്പുകൾ പ്രദർശിപ്പിക്കുക</value>
+  </data>
+  <data name="EnableToastNotificationsSettingsCard.ToolTipService.ToolTip" xml:space="preserve">
+    <value>ഇത് പ്രവർത്തനക്ഷമമാക്കുന്നത് Windows-ൽ ടോസ്റ്റ് അറിയിപ്പുകൾ പ്രദർശിപ്പിക്കാൻ ആപ്പിനെ അനുവദിക്കുന്നു.</value>
+  </data>
+  <data name="EnableToastNotificationsSettingsCard.AutomationProperties.HelpText" xml:space="preserve">
+    <value>ഇത് പ്രവർത്തനക്ഷമമാക്കുന്നത് Windows-ൽ ടോസ്റ്റ് അറിയിപ്പുകൾ പ്രദർശിപ്പിക്കാൻ ആപ്പിനെ അനുവദിക്കുന്നു.</value>
+  </data>
+  <data name="RemoveAllToastNotificationsSettingsCard.Description" xml:space="preserve">
+    <value>Windows-ലെ പ്രവർത്തന കേന്ദ്രത്തിൽ നിന്ന് ഈ ആപ്പുമായി ബന്ധപ്പെട്ട എല്ലാ ടോസ്റ്റ് അറിയിപ്പുകളും നീക്കംചെയ്യുക.</value>
+  </data>
+  <data name="RemoveAllToastNotificationsSettingsCard.Header" xml:space="preserve">
+    <value>എല്ലാ അറിയിപ്പുകളും നീക്കംചെയ്യുക</value>
+  </data>
+  <data name="RemoveAllToastNotificationsSettingsCard.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Windows-ലെ പ്രവർത്തന കേന്ദ്രത്തിൽ നിന്ന് ഈ ആപ്പുമായി ബന്ധപ്പെട്ട എല്ലാ ടോസ്റ്റ് അറിയിപ്പുകളും നീക്കംചെയ്യുക.</value>
+  </data>
+  <data name="RemoveAllToastNotificationsSettingsCard.AutomationProperties.HelpText" xml:space="preserve">
+    <value>Windows-ലെ പ്രവർത്തന കേന്ദ്രത്തിൽ നിന്ന് ഈ ആപ്പുമായി ബന്ധപ്പെട്ട എല്ലാ ടോസ്റ്റ് അറിയിപ്പുകളും നീക്കംചെയ്യുക.</value>
+  </data>
+  <data name="RemoveAllToastNotificationsButton.Content" xml:space="preserve">
+    <value>എല്ലാം നീക്കംചെയ്യുക</value>
+  </data>
+  <data name="RemoveAllToastNotificationsButton.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Windows-ലെ പ്രവർത്തന കേന്ദ്രത്തിൽ നിന്ന് ഈ ആപ്പുമായി ബന്ധപ്പെട്ട എല്ലാ ടോസ്റ്റ് അറിയിപ്പുകളും നീക്കംചെയ്യുക.</value>
+  </data>
+  <data name="RemoveAllToastNotificationsButton.AutomationProperties.HelpText" xml:space="preserve">
+    <value>Windows-ലെ പ്രവർത്തന കേന്ദ്രത്തിൽ നിന്ന് ഈ ആപ്പുമായി ബന്ധപ്പെട്ട എല്ലാ ടോസ്റ്റ് അറിയിപ്പുകളും നീക്കംചെയ്യുക.</value>
+  </data>
+  <data name="Notifications.Text" xml:space="preserve">
+    <value>അറിയിപ്പുകൾ</value>
+  </data>
+  <data name="NotificationSettingsSettingsExpander.Header" xml:space="preserve">
+    <value>അറിയിപ്പ് ക്രമീകരണങ്ങൾ</value>
+  </data>
+  <data name="NotificationSettingsSettingsExpander.ToolTipService.ToolTip" xml:space="preserve">
+    <value>അറിയിപ്പുകളുമായും നോട്ടീസുകളുമായും ബന്ധപ്പെട്ട ക്രമീകരണങ്ങൾ മാനേജ് ചെയ്യുക.</value>
+  </data>
+  <data name="NotificationSettingsSettingsExpander.AutomationProperties.HelpText" xml:space="preserve">
+    <value>അറിയിപ്പുകളുമായും നോട്ടീസുകളുമായും ബന്ധപ്പെട്ട ക്രമീകരണങ്ങൾ മാനേജ് ചെയ്യുക.</value>
+  </data>
 </root>
