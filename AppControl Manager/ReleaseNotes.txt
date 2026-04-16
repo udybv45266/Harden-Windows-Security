@@ -1,3 +1,5 @@
+* Updated dependencies to the latest versions.
+
 * Added Toast Notifications for the AppControl Manager. Users can easily turn this feature off or on in the app's settings page. Whenever certain actions happen in the app such as policy creation or event logs retrieval and so on, a toast notification with a few details will be displayed in Windows notifying you about it.
 
 * Improved keyboard navigation and accessibility: You can now use arrow keys on your keyboard to navigate between the buttons on the toolbars of each page.
