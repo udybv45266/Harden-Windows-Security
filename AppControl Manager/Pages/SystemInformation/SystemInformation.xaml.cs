@@ -55,7 +55,7 @@ internal sealed partial class SystemInformation : Page, CommonCore.UI.IPageHeade
 	private void NavigationView_SelectionChanged(NavigationView sender, NavigationViewSelectionChangedEventArgs args)
 	{
 		// Check if the item is selected and it's enabled (because when running unelevated, some pages are unavailable)
-		if (args.SelectedItem is NavigationViewItem selectedItem && selectedItem.IsSelected)
+		if (args.SelectedItem is NavigationViewItem selectedItem && selectedItem.IsEnabled)
 		{
 			string? selectedTag = selectedItem.Tag?.ToString();
 

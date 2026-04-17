@@ -20,8 +20,12 @@
 
                 <CCToolKit:WrapPanel HorizontalSpacing="10" VerticalSpacing="10" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" XYFocusKeyboardNavigation="Enabled">
 
-                    <Button x:Uid="RetrieveSecureSettingsButton" Click="{x:Bind ViewModel.InvokeButton_Click}" Margin="0,12,5,0"
-                            HorizontalAlignment="Center" Style="{StaticResource AccentButtonStyle}">
+                    <Button x:Uid="RetrieveSecureSettingsButton"
+                            Click="{x:Bind ViewModel.InvokeButton_Click}"
+                            Margin="0,12,5,0"
+                            HorizontalAlignment="Center"
+                            Style="{StaticResource AccentButtonStyle}"
+                            AccessKey="R">
                         <Button.ContentTemplate>
                             <DataTemplate x:DataType="x:String">
                                 <StackPanel Orientation="Horizontal" Spacing="8">

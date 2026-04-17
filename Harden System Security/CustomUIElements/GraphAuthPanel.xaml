@@ -107,7 +107,7 @@
                         <CCToolKit:Case TargetValue="Active">
                             <StackPanel Style="{StaticResource PanelStyle}" HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal" Spacing="10" Padding="10">
 
-                                <CCToolKit:WrapPanel Orientation="Vertical" VerticalSpacing="5" HorizontalSpacing="10" HorizontalAlignment="Center">
+                                <CCToolKit:WrapPanel Orientation="Vertical" VerticalSpacing="5" HorizontalSpacing="10" HorizontalAlignment="Center" XYFocusKeyboardNavigation="Enabled">
 
                                     <CCToolKit:WrapPanel.Resources>
                                         <ResourceDictionary
@@ -132,9 +132,9 @@
                         </CCToolKit:Case>
 
                         <CCToolKit:Case TargetValue="Authentication">
-                            <StackPanel Style="{StaticResource PanelStyle}" HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Vertical" Spacing="10" Padding="10">
+                            <StackPanel Style="{StaticResource PanelStyle}" HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Vertical" Spacing="10" Padding="10" XYFocusKeyboardNavigation="Enabled">
 
-                                <StackPanel Orientation="Horizontal" Spacing="10" HorizontalAlignment="Center">
+                                <StackPanel Orientation="Horizontal" Spacing="10" HorizontalAlignment="Center" XYFocusKeyboardNavigation="Enabled">
 
                                     <Button IsEnabled="{x:Bind Host.AuthCompanionCLS.SignInButtonState, Mode=OneWay}"
                                             x:Uid="SignInButton" Click="{x:Bind Host.AuthCompanionCLS.SignIn}">
@@ -249,8 +249,8 @@
                                                   HorizontalAlignment="Center"/>
 
                                         <Button x:Uid="ClearLocalCacheButton"
-                                        Click="{x:Bind Host.AuthCompanionCLS.ClearLocalCacheButton_Click}"
-                                        HorizontalAlignment="Center">
+                                                Click="{x:Bind Host.AuthCompanionCLS.ClearLocalCacheButton_Click}"
+                                                HorizontalAlignment="Center">
                                             <Button.ContentTemplate>
                                                 <DataTemplate x:DataType="x:String">
                                                     <StackPanel Orientation="Horizontal" Spacing="8">
@@ -276,7 +276,7 @@
 
                             <StackPanel Style="{StaticResource PanelStyle}" HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Vertical" Spacing="5" Padding="3">
 
-                                <StackPanel Orientation="Horizontal" Spacing="10" HorizontalAlignment="Center" VerticalAlignment="Top">
+                                <StackPanel Orientation="Horizontal" Spacing="10" HorizontalAlignment="Center" VerticalAlignment="Top" XYFocusKeyboardNavigation="Enabled">
 
                                     <Button HorizontalAlignment="Center" VerticalAlignment="Top" x:Uid="RemoveAccountButton" Click="{x:Bind Host.AuthCompanionCLS.LogOutOfSelectedAccount}">
                                         <Button.Content>

@@ -35,12 +35,13 @@
                     </Grid.RowDefinitions>
 
                     <!-- Button container for browse and clear buttons -->
-                    <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center" Spacing="10" Margin="0,0,0,15">
+                    <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center" Spacing="10" Margin="0,0,0,15" XYFocusKeyboardNavigation="Enabled">
 
                         <customUI:ButtonV2 Click="{x:Bind ViewModel.PickFile_Click}"
                                            ObservedData="{x:Bind ViewModel.selectedFile, Mode=OneWay}"
                                            IsEnabled="{x:Bind ViewModel.ElementsAreEnabled, Mode=OneWay}"
                                            x:Uid="FileBrowseButton"
+                                           AccessKey="B"
                                            Style="{StaticResource AccentButtonStyle}">
 
                             <Button.ContentTemplate>
@@ -82,6 +83,7 @@
                         </customUI:ButtonV2>
 
                         <Button Click="{x:Bind ViewModel.Clear_Click}"
+                                AccessKey="D"
                                 IsEnabled="{x:Bind ViewModel.ElementsAreEnabled, Mode=OneWay}">
                             <Button.Content>
                                 <StackPanel Orientation="Horizontal">
@@ -259,7 +261,7 @@
                     </LinearGradientBrush>
                 </ScrollViewer.BorderBrush>
 
-                <Grid>
+                <Grid XYFocusKeyboardNavigation="Enabled">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto" />
                         <RowDefinition Height="Auto" />
