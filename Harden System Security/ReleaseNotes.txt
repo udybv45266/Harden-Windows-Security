@@ -7,3 +7,7 @@
 * Improved keyboard navigation and accessibility: You can now use arrow keys on your keyboard to navigate between the buttons on the toolbars of each page.
 
 * You can now press the ALT access key to reveal keyboard shortcuts on various user interface elements, helping with keyboard navigation and accessibility scenarios.
+
+* You can now change the display mode of the Sidebar pane and switch between Overlay or Inline modes.
+
+* The individual Apply/Verify/Remove buttons of each security measures have hover animations now.

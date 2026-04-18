@@ -40,6 +40,7 @@ using AppControlManager.CustomUIElements;
 using Microsoft.UI.Composition.SystemBackdrops;
 using Microsoft.UI.Composition;
 using WinRT;
+using System.ComponentModel;
 
 #if APP_CONTROL_MANAGER
 using AppControlManager.ViewModels;
@@ -59,8 +60,13 @@ namespace HardenSystemSecurity;
 /// MainWindow is a sealed class that represents the main application window, managing navigation, UI elements, and
 /// event handling.
 /// </summary>
-internal sealed partial class MainWindow : Window
+internal sealed partial class MainWindow : Window, INPCImplant
 {
+	#region IPropertyChangeHost Implementation
+	public event PropertyChangedEventHandler? PropertyChanged;
+	public void RaisePropertyChanged(string? propertyName) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+	#endregion
+
 	private MainWindowVM ViewModel => ViewModelProvider.MainWindowVM;
 
 #if APP_CONTROL_MANAGER
@@ -575,6 +581,8 @@ internal sealed partial class MainWindow : Window
 					break;
 				}
 		}
+
+		Evaluate_SidebarSplitViewDisplayModeChangerButtonIsChecked(); // The sidebar border's background must be re-assigned since it uses ThemeResource background.
 	}
 
 	/// <summary>
@@ -1976,6 +1984,38 @@ internal sealed partial class MainWindow : Window
 	// Subtitle text for the UI's TeachingTip
 	private readonly string ElevationContextSwitchButtonTeachingTipSubtitle = Atlas.GetStr(Atlas.IsElevated ? "ElevationContextSwitchButtonTeachingTipSubtitleElevated" : "ElevationContextSwitchButtonTeachingTipSubtitleUnelevated");
 
-	private void ElevationContextSwitchButton_Click(object sender, RoutedEventArgs e) =>
-		ElevationContextSwitchButtonTeachingTip.IsOpen = true;
+	private void ElevationContextSwitchButton_Click(object sender, RoutedEventArgs e) => ElevationContextSwitchButtonTeachingTip.IsOpen = true;
+
+	// The display Mode of the Sidebar's SplitView pane.
+	private SplitViewDisplayMode SidebarSplitViewDisplayMode { get; set => this.SP(ref field, value); } = Atlas.Settings.SidebarPaneDisplayMode == 0 ? SplitViewDisplayMode.Inline : SplitViewDisplayMode.Overlay;
+
+	// Controls the Display Mode of the Sidebar's SplitView pane.
+	private bool SidebarSplitViewDisplayModeChangerButtonIsChecked
+	{
+		get; set
+		{
+			if (this.SP(ref field, value))
+			{
+				Evaluate_SidebarSplitViewDisplayModeChangerButtonIsChecked();
+			}
+		}
+
+	} = Atlas.Settings.SidebarPaneDisplayMode != 0;
+
+	private void Evaluate_SidebarSplitViewDisplayModeChangerButtonIsChecked()
+	{
+		// Overlay mode is when the toggle button is checked
+		if (SidebarSplitViewDisplayModeChangerButtonIsChecked)
+		{
+			SidebarSplitViewDisplayMode = SplitViewDisplayMode.Overlay;
+			SidebarBorder.Background = SolidBackgroundFillColorSecondaryBrush_Helper.Background; // Get the ThemeResource background from the theme-aware border and assign it to our border.
+			Atlas.Settings.SidebarPaneDisplayMode = 1; // Save the change to the app settings.
+		}
+		else // Inline Mode when the toggle button is unchecked
+		{
+			SidebarSplitViewDisplayMode = SplitViewDisplayMode.Inline;
+			SidebarBorder.Background = CardBackgroundFillColorDefaultBrush_Helper.Background; // Get the ThemeResource background from the theme-aware border and assign it to our border.
+			Atlas.Settings.SidebarPaneDisplayMode = 0; // Save the change to the app settings.
+		}
+	}
 }

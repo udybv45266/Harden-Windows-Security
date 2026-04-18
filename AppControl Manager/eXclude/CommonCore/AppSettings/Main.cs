@@ -85,6 +85,7 @@ internal sealed partial class Main : ViewModelBase
 		AcrylicThinTintOpacity = ReadValue(nameof(AcrylicThinTintOpacity), AcrylicThinTintOpacity);
 		AcrylicThinTintColor = ReadValue(nameof(AcrylicThinTintColor), AcrylicThinTintColor);
 		ToastNotificationsAreEnabled = ReadValue(nameof(ToastNotificationsAreEnabled), ToastNotificationsAreEnabled);
+		SidebarPaneDisplayMode = ReadValue(nameof(SidebarPaneDisplayMode), SidebarPaneDisplayMode);
 	}
 
 	/// <summary>
@@ -663,4 +664,20 @@ internal sealed partial class Main : ViewModelBase
 			}
 		}
 	} = true;
+
+	/// <summary>
+	/// Controls the display mode of the Sidebar's pane.
+	/// 0 = Inline - Default
+	/// 1 = Overlay
+	/// </summary>
+	internal int SidebarPaneDisplayMode
+	{
+		get; set
+		{
+			if (SP(ref field, value))
+			{
+				SaveValue(nameof(SidebarPaneDisplayMode), field);
+			}
+		}
+	}
 }

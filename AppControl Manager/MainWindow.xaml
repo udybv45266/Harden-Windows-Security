@@ -76,6 +76,10 @@
             </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>
 
+        <!-- Helpers to retrieve the ThemeResource values of the brushes for use in C# -->
+        <Border x:Name="CardBackgroundFillColorDefaultBrush_Helper" Background="{ThemeResource CardBackgroundFillColorDefaultBrush}" Visibility="Collapsed" Opacity="0" />
+        <Border x:Name="SolidBackgroundFillColorSecondaryBrush_Helper" Background="{ThemeResource SolidBackgroundFillColorSecondaryBrush}" Visibility="Collapsed" Opacity="0" />
+
         <!-- Titlebar -->
         <!-- https://learn.microsoft.com/windows/apps/develop/title-bar#full-customization-example -->
         <Grid x:Name="AppTitleBar"
@@ -403,7 +407,7 @@
                        IsPaneOpen="{x:Bind ViewModel.SidebarPaneIsOpen, Mode=TwoWay}"
                        OpenPaneLength="340"
                        CompactPaneLength="150"
-                       DisplayMode="Inline"
+                       DisplayMode="{x:Bind SidebarSplitViewDisplayMode, Mode=TwoWay}"
                        PanePlacement="Right"
                        AutomationProperties.LandmarkType="Custom"
                        AutomationProperties.LocalizedLandmarkType="Sidebar">
@@ -412,16 +416,28 @@
                     <!-- Wrap pane content in a Grid so we can overlay a left-edge sizer -->
                     <Grid>
                         <Border BorderThickness="1"
+                                x:Name="SidebarBorder"
                                 Background="{ThemeResource CardBackgroundFillColorDefaultBrush}"
                                 BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}"
                                 CornerRadius="5">
 
                             <ScrollViewer>
 
-                                <StackPanel Spacing="20" Orientation="Vertical" Margin="10,0,10,0" HorizontalAlignment="Stretch">
+                                <StackPanel Spacing="15" Orientation="Vertical" Margin="10,0,10,10" HorizontalAlignment="Stretch">
+
+                                    <ToggleButton HorizontalAlignment="Right"
+                                                  x:Uid="SidebarSplitViewDisplayModeChangerToggleButton"
+                                                  Margin="0,5,4,-25"                                                  
+                                                  IsChecked="{x:Bind SidebarSplitViewDisplayModeChangerButtonIsChecked, Mode=TwoWay}">
+                                        <ToggleButton.ContentTemplate>
+                                            <DataTemplate>
+                                                <FontIcon Glyph="&#xE90C;" FontSize="14"/>
+                                            </DataTemplate>
+                                        </ToggleButton.ContentTemplate>
+                                    </ToggleButton>
 
                                     <!-- Sidebar TextBlocks and Buttons -->
-                                    <TextBlock x:Name="SidebarPoliciesLibraryTextBlock" x:Uid="SidebarPoliciesLibraryTextBlock" Style="{ThemeResource TitleTextBlockStyle}" HorizontalAlignment="Center" Margin="0,15,0,0" HorizontalTextAlignment="Center"/>
+                                    <TextBlock x:Name="SidebarPoliciesLibraryTextBlock" x:Uid="SidebarPoliciesLibraryTextBlock" Style="{ThemeResource TitleTextBlockStyle}" HorizontalAlignment="Center" HorizontalTextAlignment="Center"/>
 
                                     <TextBlock x:Name="SidebarMainCaptionTextBlock" x:Uid="SidebarMainCaptionTextBlock" Style="{ThemeResource CaptionTextBlockStyle}" HorizontalAlignment="Center" HorizontalTextAlignment="Center"/>
 

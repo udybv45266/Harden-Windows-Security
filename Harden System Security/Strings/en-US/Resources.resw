@@ -5750,4 +5750,11 @@ Thumbprint: {3}</value>
   <data name="AcrylicThinTintColorSettingsCard.AutomationProperties.HelpText" xml:space="preserve">
     <value>Adjust the Tint Color of the Acrylic thin backdrop.</value>
   </data>
+  <!--NEW-->
+  <data name="SidebarSplitViewDisplayModeChangerToggleButton.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Switch between the Overlay and Inline modes of the sidebar pane.</value>
+  </data>
+  <data name="SidebarSplitViewDisplayModeChangerToggleButton.AutomationProperties.HelpText" xml:space="preserve">
+    <value>Switch between the Overlay and Inline modes of the sidebar pane.</value>
+  </data>
 </root>
