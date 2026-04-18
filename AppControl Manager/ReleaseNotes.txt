@@ -9,3 +9,5 @@
 * The System Information page is now available even if running as Standard user (unelevated). Only the "Online Policies" tab is available and the rest of the features in the page still require Administrator privileges.
 
 * You can now change the display mode of the Sidebar pane and switch between Overlay or Inline modes.
+
+* The AppControl Manager app now responds to the Windows theme/color changes if the app's theme in the settings page is set to "Use System Setting".

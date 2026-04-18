@@ -41,6 +41,7 @@ using Microsoft.UI.Composition.SystemBackdrops;
 using Microsoft.UI.Composition;
 using WinRT;
 using System.ComponentModel;
+using Windows.UI.ViewManagement;
 
 #if APP_CONTROL_MANAGER
 using AppControlManager.ViewModels;
@@ -153,6 +154,9 @@ internal sealed partial class MainWindow : Window, INPCImplant
 		// Subscribe to the AppWindow Closing event
 		AppWindow.Closing += AppWindow_Closing;
 
+		// Subscribe to the system-wide theme changes triggered when user changes color/theme in Windows personalization settings
+		UISettingInstance.ColorValuesChanged += SystemWideThemeChangedEventHandler;
+
 		// Set the initial background setting based on the user's settings
 		OnNavigationBackgroundChanged(null, new(Atlas.Settings.NavViewBackground));
 
@@ -197,6 +201,20 @@ internal sealed partial class MainWindow : Window, INPCImplant
 	}
 
 #endif
+
+	private readonly UISettings UISettingInstance = new();
+
+	private async void SystemWideThemeChangedEventHandler(UISettings sender, object args)
+	{
+		// Only respond to system-wide theme changes if the app's theme is set to "Use System Setting"
+		if (string.Equals(Atlas.Settings.AppTheme, "Use System Setting", StringComparison.OrdinalIgnoreCase))
+		{
+			await Atlas.AppDispatcher.EnqueueAsync(() =>
+			{
+				OnAppThemeChanged(null, new(Application.Current.RequestedTheme.ToString()));
+			});
+		}
+	}
 
 	/// <summary>
 	/// Specifies the interactive (passthrough) regions of the title bar-including proper RTL mirroring.
