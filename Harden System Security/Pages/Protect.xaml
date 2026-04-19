@@ -344,7 +344,13 @@
                     <GridView.ItemsPanel>
                         <ItemsPanelTemplate>
                             <!-- Wrap across width; presenter uses container width -->
-                            <ItemsWrapGrid Orientation="Horizontal"/>
+                            <ItemsWrapGrid Orientation="Horizontal">
+                                <ItemsWrapGrid.ChildrenTransitions>
+                                    <TransitionCollection>
+                                        <RepositionThemeTransition IsStaggeringEnabled="False"/>
+                                    </TransitionCollection>
+                                </ItemsWrapGrid.ChildrenTransitions>
+                            </ItemsWrapGrid>
                         </ItemsPanelTemplate>
                     </GridView.ItemsPanel>
                 </GridView>
