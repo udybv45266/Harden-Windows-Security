@@ -35,7 +35,7 @@ internal sealed partial class MainWindowVM : ViewModelBase
 	/// <summary>
 	/// Pages that are allowed to run when running without Administrator privileges
 	/// </summary>
-	internal List<Type> UnelevatedPages = [
+	internal readonly List<Type> UnelevatedPages = [
 		typeof(Pages.Logs),
 		typeof(Pages.Settings),
 		typeof(Pages.UpdatePage),

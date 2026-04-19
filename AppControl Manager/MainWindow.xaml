@@ -423,7 +423,7 @@
 
                             <ScrollViewer>
 
-                                <StackPanel Spacing="15" Orientation="Vertical" Margin="10,0,10,10" HorizontalAlignment="Stretch">
+                                <StackPanel Spacing="15" Orientation="Vertical" Margin="10,0,10,10" HorizontalAlignment="Stretch" XYFocusKeyboardNavigation="Enabled">
 
                                     <ToggleButton HorizontalAlignment="Right"
                                                   x:Uid="SidebarSplitViewDisplayModeChangerToggleButton"
@@ -461,19 +461,79 @@
                                             </LinearGradientBrush>
                                         </Border.BorderBrush>
 
-                                        <StackPanel Spacing="10" Orientation="Vertical" Margin="5" HorizontalAlignment="Stretch" VerticalAlignment="Center">
+                                        <StackPanel Spacing="10" Orientation="Vertical" Margin="5" HorizontalAlignment="Stretch" VerticalAlignment="Center" XYFocusKeyboardNavigation="Enabled">
 
-                                            <TextBox x:Uid="SearchBoxTextBox"
-                                                     Margin="10,15,10,0"
-                                                     Text="{x:Bind ViewModel.SidebarSearchText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
-                                                <TextBox.Header>
-                                                    <StackPanel Orientation="Horizontal" Spacing="5">
-                                                        <FontIcon Glyph="&#xE721;" FontSize="14" />
-                                                        <TextBlock x:Uid="SearchThePoliciesLibrary" Style="{StaticResource CaptionTextBlockStyle}" VerticalAlignment="Center"/>
-                                                        <ProgressRing Margin="8,0,0,0" Visibility="{x:Bind ViewModel.SidebarProgressRingVisibility, Mode=OneWay}" IsActive="True" />
-                                                    </StackPanel>
-                                                </TextBox.Header>
-                                            </TextBox>
+                                            <CCToolKit:WrapPanel Orientation="Horizontal" HorizontalSpacing="5" VerticalSpacing="5" HorizontalAlignment="Center" VerticalAlignment="Top" XYFocusKeyboardNavigation="Enabled">
+                                                <Button>
+                                                    <Button.ContentTemplate>
+                                                        <DataTemplate>
+                                                            <FontIcon Glyph="&#xE721;" FontSize="14" />
+                                                        </DataTemplate>
+                                                    </Button.ContentTemplate>
+                                                    <Button.Flyout>
+                                                        <MenuFlyout>
+                                                            <MenuFlyout.SystemBackdrop>
+                                                                <MicaBackdrop Kind="BaseAlt"/>
+                                                            </MenuFlyout.SystemBackdrop>
+
+                                                            <ToggleMenuFlyoutItem x:Uid="PoliciesLibraryContextualSearchToggleMenuFlyoutItem" IsChecked="{x:Bind ViewModel.PoliciesLibraryContextualSearch, Mode=TwoWay}">
+                                                                <ToggleMenuFlyoutItem.Icon>
+                                                                    <FontIcon Glyph="&#xE7BC;" />
+                                                                </ToggleMenuFlyoutItem.Icon>
+                                                            </ToggleMenuFlyoutItem>
+                                                        </MenuFlyout>
+                                                    </Button.Flyout>
+                                                </Button>
+                                                <TextBlock x:Uid="SearchThePoliciesLibrary" TextWrapping="Wrap" Style="{StaticResource CaptionTextBlockStyle}" VerticalAlignment="Center"/>
+                                                <ProgressRing Margin="8,0,0,0" Visibility="{x:Bind ViewModel.SidebarProgressRingVisibility, Mode=OneWay}" IsActive="True" />
+                                            </CCToolKit:WrapPanel>
+
+                                            <CCToolKit:WrapPanel HorizontalSpacing="5" VerticalSpacing="5" Margin="10,-5,10,0" Orientation="Horizontal" HorizontalAlignment="Center" XYFocusKeyboardNavigation="Enabled">
+
+                                                <TextBox x:Uid="SearchBoxTextBox"
+                                                         Margin="0,0,3,0"
+                                                         Text="{x:Bind ViewModel.SidebarSearchText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+
+                                                <ToggleButton Padding="5"
+                                                              x:Uid="ShowBasePoliciesInLibraryToggleButton"
+                                                              Margin="0,0,0,2"
+                                                              HorizontalAlignment="Center"
+                                                              IsChecked="{x:Bind ViewModel.ShowBasePoliciesInLibrary,Mode=TwoWay}"
+                                                              VerticalAlignment="Bottom">
+                                                    <ToggleButton.ContentTemplate>
+                                                        <DataTemplate>
+                                                            <FontIcon Glyph="&#xEE94;" FontSize="14"/>
+                                                        </DataTemplate>
+                                                    </ToggleButton.ContentTemplate>
+                                                </ToggleButton>
+
+                                                <ToggleButton Padding="5"
+                                                              x:Uid="ShowSupplementalPoliciesInLibraryToggleButton"
+                                                              Margin="0,0,0,2"
+                                                              HorizontalAlignment="Center"
+                                                              IsChecked="{x:Bind ViewModel.ShowSupplementalPoliciesInLibrary,Mode=TwoWay}"
+                                                              VerticalAlignment="Bottom">
+                                                    <ToggleButton.ContentTemplate>
+                                                        <DataTemplate>
+                                                            <FontIcon Glyph="&#xE8BE;" FontSize="14"/>
+                                                        </DataTemplate>
+                                                    </ToggleButton.ContentTemplate>
+                                                </ToggleButton>
+
+                                                <ToggleButton Padding="5"
+                                                              x:Uid="ShowAppIDTaggingPoliciesInLibraryToggleButton"
+                                                              Margin="0,0,0,2"
+                                                              HorizontalAlignment="Center"
+                                                              IsChecked="{x:Bind ViewModel.ShowAppIDTaggingPoliciesInLibrary,Mode=TwoWay}"
+                                                              VerticalAlignment="Bottom">
+                                                    <ToggleButton.ContentTemplate>
+                                                        <DataTemplate>
+                                                            <FontIcon Glyph="&#xF034;" FontSize="14"/>
+                                                        </DataTemplate>
+                                                    </ToggleButton.ContentTemplate>
+                                                </ToggleButton>
+
+                                            </CCToolKit:WrapPanel>
 
                                             <ScrollViewer x:Name="Animated_ScrollViewer"
                                                           Height="350"

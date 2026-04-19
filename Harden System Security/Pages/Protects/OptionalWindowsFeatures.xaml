@@ -22,11 +22,11 @@
             <DataTemplate x:Key="DISMOutputListViewTemplate"
               x:DataType="viewModels:DISMOutputEntry">
                 <Border BorderThickness="2"
-            BorderBrush="{x:Bind BorderBrush, Mode=OneWay}"
-            CornerRadius="8"
-            Padding="16"
-            Margin="0,4,0,4"
-            Background="{ThemeResource CardBackgroundFillColorDefaultBrush}">
+                        BorderBrush="{x:Bind BorderBrush, Mode=OneWay}"
+                        CornerRadius="8"
+                        Padding="16"
+                        Margin="0,4,0,4"
+                        Background="{ThemeResource CardBackgroundFillColorDefaultBrush}">
                     <Grid>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto"/>
@@ -175,6 +175,7 @@
                     <CCToolKit:WrapPanel.ChildrenTransitions>
                         <TransitionCollection>
                             <EntranceThemeTransition IsStaggeringEnabled="False" />
+                            <RepositionThemeTransition />
                         </TransitionCollection>
                     </CCToolKit:WrapPanel.ChildrenTransitions>
 

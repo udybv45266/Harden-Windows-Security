@@ -132,7 +132,13 @@
                             <ItemsPanelTemplate>
                                 <VariableSizedWrapGrid Orientation="Horizontal"
                                                        ItemWidth="282"
-                                                       ItemHeight="104"/>
+                                                       ItemHeight="104">
+                                    <VariableSizedWrapGrid.ChildrenTransitions>
+                                        <TransitionCollection>
+                                            <RepositionThemeTransition IsStaggeringEnabled="False"/>
+                                        </TransitionCollection>
+                                    </VariableSizedWrapGrid.ChildrenTransitions>
+                                </VariableSizedWrapGrid>
                             </ItemsPanelTemplate>
                         </ItemsControl.ItemsPanel>
 
@@ -596,7 +602,13 @@
                             <ItemsPanelTemplate>
                                 <VariableSizedWrapGrid Orientation="Horizontal"
                                                        ItemWidth="282"
-                                                       ItemHeight="104"/>
+                                                       ItemHeight="104">
+                                    <VariableSizedWrapGrid.ChildrenTransitions>
+                                        <TransitionCollection>
+                                            <RepositionThemeTransition IsStaggeringEnabled="False"/>
+                                        </TransitionCollection>
+                                    </VariableSizedWrapGrid.ChildrenTransitions>
+                                </VariableSizedWrapGrid>
                             </ItemsPanelTemplate>
                         </ItemsControl.ItemsPanel>
 

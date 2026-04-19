@@ -3,3 +3,5 @@
 * The individual Apply/Verify/Remove buttons of each security measures have hover animations now.
 
 * The Harden System Security app now responds to the Windows theme/color changes if the app's theme in the settings page is set to "Use System Setting".
+
+* Various small UI and UX improvements.

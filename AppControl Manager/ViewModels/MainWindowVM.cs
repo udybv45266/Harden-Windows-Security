@@ -64,6 +64,50 @@ internal sealed partial class MainWindowVM : ViewModelBase, IDisposable
 	/// </summary>
 	internal readonly ObservableCollection<PolicyFileRepresent> FilteredSidebarPolicies = [];
 
+	// Used by the ToggleButtons on the Sidebar Policies Library. By default, all types are shown.
+	internal bool ShowBasePoliciesInLibrary
+	{
+		get; set
+		{
+			if (SP(ref field, value))
+			{
+				PerformSidebarSearch();
+			}
+		}
+	} = true;
+	internal bool ShowSupplementalPoliciesInLibrary
+	{
+		get; set
+		{
+			if (SP(ref field, value))
+			{
+				PerformSidebarSearch();
+			}
+		}
+	} = true;
+	internal bool ShowAppIDTaggingPoliciesInLibrary
+	{
+		get; set
+		{
+			if (SP(ref field, value))
+			{
+				PerformSidebarSearch();
+			}
+		}
+	} = true;
+
+	// Controls whether searching through contents of each policy is enabled or disabled.
+	internal bool PoliciesLibraryContextualSearch
+	{
+		get; set
+		{
+			if (SP(ref field, value))
+			{
+				PerformSidebarSearch();
+			}
+		}
+	}
+
 	/// <summary>
 	/// The text used to filter the sidebar policies library.
 	/// </summary>
@@ -87,23 +131,70 @@ internal sealed partial class MainWindowVM : ViewModelBase, IDisposable
 
 		if (string.IsNullOrWhiteSpace(SidebarSearchText))
 		{
-			// If search is empty, add all items
+			// If search is empty, loop over all items
 			foreach (PolicyFileRepresent policy in SidebarPoliciesLibrary)
 			{
-				FilteredSidebarPolicies.Add(policy);
-			}
-		}
-		else
-		{
-			// Filter items
-			foreach (PolicyFileRepresent policy in SidebarPoliciesLibrary)
-			{
-				if (policy.PolicyIdentifier.Contains(SidebarSearchText, StringComparison.OrdinalIgnoreCase) ||
-					(policy.FileName is not null && policy.FileName.Contains(SidebarSearchText, StringComparison.OrdinalIgnoreCase)) ||
-					policy.SigningStatus.Contains(SidebarSearchText, StringComparison.OrdinalIgnoreCase)
-					)
+				if (ShowBasePoliciesInLibrary && policy.PolicyObj.PolicyType == PolicyType.BasePolicy)
 				{
 					FilteredSidebarPolicies.Add(policy);
+				}
+				if (ShowSupplementalPoliciesInLibrary && policy.PolicyObj.PolicyType == PolicyType.SupplementalPolicy)
+				{
+					FilteredSidebarPolicies.Add(policy);
+				}
+				if (ShowAppIDTaggingPoliciesInLibrary && policy.PolicyObj.PolicyType == PolicyType.AppIDTaggingPolicy)
+				{
+					FilteredSidebarPolicies.Add(policy);
+				}
+			}
+		}
+		// Filter items
+		else
+		{
+			foreach (PolicyFileRepresent policy in SidebarPoliciesLibrary)
+			{
+				if (!PoliciesLibraryContextualSearch)
+				{
+					if (policy.PolicyIdentifier.Contains(SidebarSearchText, StringComparison.OrdinalIgnoreCase) ||
+						(policy.FileName is not null && policy.FileName.Contains(SidebarSearchText, StringComparison.OrdinalIgnoreCase)) ||
+						(policy.PolicyObj.VersionEx.Contains(SidebarSearchText, StringComparison.OrdinalIgnoreCase)) ||
+						policy.SigningStatus.Contains(SidebarSearchText, StringComparison.OrdinalIgnoreCase)
+						)
+					{
+						if (ShowBasePoliciesInLibrary && policy.PolicyObj.PolicyType == PolicyType.BasePolicy)
+						{
+							FilteredSidebarPolicies.Add(policy);
+						}
+						if (ShowSupplementalPoliciesInLibrary && policy.PolicyObj.PolicyType == PolicyType.SupplementalPolicy)
+						{
+							FilteredSidebarPolicies.Add(policy);
+						}
+						if (ShowAppIDTaggingPoliciesInLibrary && policy.PolicyObj.PolicyType == PolicyType.AppIDTaggingPolicy)
+						{
+							FilteredSidebarPolicies.Add(policy);
+						}
+					}
+				}
+				// If Contextual search is enabled.
+				else
+				{
+					XmlDocument xmlObj = CustomSerialization.CreateXmlFromSiPolicy(policy.PolicyObj);
+
+					if (xmlObj.InnerXml.Contains(SidebarSearchText, StringComparison.OrdinalIgnoreCase))
+					{
+						if (ShowBasePoliciesInLibrary && policy.PolicyObj.PolicyType == PolicyType.BasePolicy)
+						{
+							FilteredSidebarPolicies.Add(policy);
+						}
+						if (ShowSupplementalPoliciesInLibrary && policy.PolicyObj.PolicyType == PolicyType.SupplementalPolicy)
+						{
+							FilteredSidebarPolicies.Add(policy);
+						}
+						if (ShowAppIDTaggingPoliciesInLibrary && policy.PolicyObj.PolicyType == PolicyType.AppIDTaggingPolicy)
+						{
+							FilteredSidebarPolicies.Add(policy);
+						}
+					}
 				}
 			}
 		}
@@ -112,7 +203,7 @@ internal sealed partial class MainWindowVM : ViewModelBase, IDisposable
 	/// <summary>
 	/// Pages that are allowed to run when running without Administrator privileges
 	/// </summary>
-	internal List<Type> UnelevatedPages = [
+	internal readonly List<Type> UnelevatedPages = [
 		typeof(Pages.ValidatePolicy),
 		typeof(Pages.GitHubDocumentation),
 		typeof(Pages.MicrosoftDocumentation),
@@ -1428,12 +1519,12 @@ internal sealed partial class MainWindowVM : ViewModelBase, IDisposable
 			try
 			{
 				string json = await File.ReadAllTextAsync(cachePath);
-				Dictionary<Guid, string> colorCache = System.Text.Json.JsonSerializer.Deserialize(json, PolicyColorsJsonContext.Default.DictionaryGuidString) ?? [];
+				Dictionary<Guid, string> colorCache = JsonSerializer.Deserialize(json, PolicyColorsJsonContext.Default.DictionaryGuidString) ?? [];
 
 				// If the policy ID existed and was removed, write the updated JSON back to the file
 				if (colorCache.Remove(policyId))
 				{
-					string newJson = System.Text.Json.JsonSerializer.Serialize(colorCache, PolicyColorsJsonContext.Default.DictionaryGuidString);
+					string newJson = JsonSerializer.Serialize(colorCache, PolicyColorsJsonContext.Default.DictionaryGuidString);
 					await File.WriteAllTextAsync(cachePath, newJson);
 				}
 			}
