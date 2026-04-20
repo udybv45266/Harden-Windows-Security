@@ -5750,4 +5750,10 @@
   <data name="AcrylicThinTintColorSettingsCard.AutomationProperties.HelpText" xml:space="preserve">
     <value>اضبط لون الدرجة للخلفية الأكريليك الرقيقة.</value>
   </data>
+  <data name="SidebarSplitViewDisplayModeChangerToggleButton.ToolTipService.ToolTip" xml:space="preserve">
+    <value>التبديل بين وضعي التراكب والمضمن لجزء الشريط الجانبي.</value>
+  </data>
+  <data name="SidebarSplitViewDisplayModeChangerToggleButton.AutomationProperties.HelpText" xml:space="preserve">
+    <value>التبديل بين وضعي التراكب والمضمن لجزء الشريط الجانبي.</value>
+  </data>
 </root>

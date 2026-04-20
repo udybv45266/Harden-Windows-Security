@@ -7208,7 +7208,7 @@ NOTA: Esta opción siempre se aplica si alguna directiva UMCI de App Control la 
   <data name="NotificationSettingsSettingsExpander.AutomationProperties.HelpText" xml:space="preserve">
     <value>Administre la configuración relacionada con las notificaciones y los avisos.</value>
   </data>
-   <data name="SidebarSplitViewDisplayModeChangerToggleButton.ToolTipService.ToolTip" xml:space="preserve">
+  <data name="SidebarSplitViewDisplayModeChangerToggleButton.ToolTipService.ToolTip" xml:space="preserve">
     <value>Cambiar entre los modos superpuesto e integrado del panel lateral.</value>
   </data>
   <data name="SidebarSplitViewDisplayModeChangerToggleButton.AutomationProperties.HelpText" xml:space="preserve">

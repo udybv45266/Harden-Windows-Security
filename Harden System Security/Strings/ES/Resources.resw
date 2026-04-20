@@ -5750,4 +5750,10 @@ Huella Digital: {3}</value>
   <data name="AcrylicThinTintColorSettingsCard.AutomationProperties.HelpText" xml:space="preserve">
     <value>Ajuste el color de matiz del fondo acrílico delgado.</value>
   </data>
+  <data name="SidebarSplitViewDisplayModeChangerToggleButton.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Cambiar entre los modos superpuesto e integrado del panel lateral.</value>
+  </data>
+  <data name="SidebarSplitViewDisplayModeChangerToggleButton.AutomationProperties.HelpText" xml:space="preserve">
+    <value>Cambiar entre los modos superpuesto e integrado del panel lateral.</value>
+  </data>
 </root>

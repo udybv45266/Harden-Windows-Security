@@ -5750,4 +5750,10 @@
   <data name="AcrylicThinTintColorSettingsCard.AutomationProperties.HelpText" xml:space="preserve">
     <value>അക്രിലിക് തിൻ ബാക്ക്ഡ്രോപ്പിന്റെ ടിന്റ് നിറം ക്രമീകരിക്കുക.</value>
   </data>
+  <data name="SidebarSplitViewDisplayModeChangerToggleButton.ToolTipService.ToolTip" xml:space="preserve">
+    <value>സൈഡ്‌ബാർ പാളിയുടെ ഓവർലേ, ഇൻലൈൻ മോഡുകൾക്കിടയിൽ മാറുക.</value>
+  </data>
+  <data name="SidebarSplitViewDisplayModeChangerToggleButton.AutomationProperties.HelpText" xml:space="preserve">
+    <value>സൈഡ്‌ബാർ പാളിയുടെ ഓവർലേ, ഇൻലൈൻ മോഡുകൾക്കിടയിൽ മാറുക.</value>
+  </data>
 </root>

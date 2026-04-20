@@ -5750,4 +5750,10 @@ Odcisk Palca: {3}</value>
   <data name="AcrylicThinTintColorSettingsCard.AutomationProperties.HelpText" xml:space="preserve">
     <value>Dostosuj kolor odcienia cienkiego tła akrylowego.</value>
   </data>
+  <data name="SidebarSplitViewDisplayModeChangerToggleButton.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Przełącz między trybami nakładki i wbudowanym w panelu paska bocznego.</value>
+  </data>
+  <data name="SidebarSplitViewDisplayModeChangerToggleButton.AutomationProperties.HelpText" xml:space="preserve">
+    <value>Przełącz między trybami nakładki i wbudowanym w panelu paska bocznego.</value>
+  </data>
 </root>

@@ -5750,4 +5750,10 @@
   <data name="AcrylicThinTintColorSettingsCard.AutomationProperties.HelpText" xml:space="preserve">
     <value>התאם את צבע הגוון של רקע האקריליק הדק.</value>
   </data>
+  <data name="SidebarSplitViewDisplayModeChangerToggleButton.ToolTipService.ToolTip" xml:space="preserve">
+    <value>עבור בין תצוגת שכבת-על לתצוגה משולבת בחלונית סרגל הצד.</value>
+  </data>
+  <data name="SidebarSplitViewDisplayModeChangerToggleButton.AutomationProperties.HelpText" xml:space="preserve">
+    <value>עבור בין תצוגת שכבת-על לתצוגה משולבת בחלונית סרגל הצד.</value>
+  </data>
 </root>

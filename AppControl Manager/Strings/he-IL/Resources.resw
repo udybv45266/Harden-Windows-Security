@@ -7208,7 +7208,7 @@
   <data name="NotificationSettingsSettingsExpander.AutomationProperties.HelpText" xml:space="preserve">
     <value>נהל הגדרות הקשורות להתראות והודעות.</value>
   </data>
-   <data name="SidebarSplitViewDisplayModeChangerToggleButton.ToolTipService.ToolTip" xml:space="preserve">
+  <data name="SidebarSplitViewDisplayModeChangerToggleButton.ToolTipService.ToolTip" xml:space="preserve">
     <value>עבור בין תצוגת שכבת-על לתצוגה משולבת בחלונית סרגל הצד.</value>
   </data>
   <data name="SidebarSplitViewDisplayModeChangerToggleButton.AutomationProperties.HelpText" xml:space="preserve">

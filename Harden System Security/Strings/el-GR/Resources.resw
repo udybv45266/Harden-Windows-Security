@@ -5750,4 +5750,10 @@
   <data name="AcrylicThinTintColorSettingsCard.AutomationProperties.HelpText" xml:space="preserve">
     <value>Προσαρμόστε το Χρώμα Απόχρωσης του λεπτού ακρυλικού φόντου.</value>
   </data>
+  <data name="SidebarSplitViewDisplayModeChangerToggleButton.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Εναλλαγή μεταξύ των λειτουργιών επικάλυψης και ενσωμάτωσης του πλαισίου της πλαϊνής γραμμής.</value>
+  </data>
+  <data name="SidebarSplitViewDisplayModeChangerToggleButton.AutomationProperties.HelpText" xml:space="preserve">
+    <value>Εναλλαγή μεταξύ των λειτουργιών επικάλυψης και ενσωμάτωσης του πλαισίου της πλαϊνής γραμμής.</value>
+  </data>
 </root>

@@ -5750,4 +5750,10 @@ Empreinte : {3}</value>
   <data name="AcrylicThinTintColorSettingsCard.AutomationProperties.HelpText" xml:space="preserve">
     <value>Ajustez la couleur de la teinte de l'arrière-plan acrylique fin.</value>
   </data>
+  <data name="SidebarSplitViewDisplayModeChangerToggleButton.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Basculer entre les modes superposition et en ligne du volet de la barre latérale.</value>
+  </data>
+  <data name="SidebarSplitViewDisplayModeChangerToggleButton.AutomationProperties.HelpText" xml:space="preserve">
+    <value>Basculer entre les modes superposition et en ligne du volet de la barre latérale.</value>
+  </data>
 </root>

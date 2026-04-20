@@ -7208,7 +7208,7 @@ NOTE: यदि कोई भी App Control UMCI नीति इसे सक�
   <data name="NotificationSettingsSettingsExpander.AutomationProperties.HelpText" xml:space="preserve">
     <value>सूचनाओं और नोटिस से संबंधित सेटिंग्स प्रबंधित करें.</value>
   </data>
-   <data name="SidebarSplitViewDisplayModeChangerToggleButton.ToolTipService.ToolTip" xml:space="preserve">
+  <data name="SidebarSplitViewDisplayModeChangerToggleButton.ToolTipService.ToolTip" xml:space="preserve">
     <value>साइडबार पेन के ओवरले और इनलाइन मोड के बीच स्विच करें।</value>
   </data>
   <data name="SidebarSplitViewDisplayModeChangerToggleButton.AutomationProperties.HelpText" xml:space="preserve">

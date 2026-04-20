@@ -5750,4 +5750,10 @@
   <data name="AcrylicThinTintColorSettingsCard.AutomationProperties.HelpText" xml:space="preserve">
     <value>एक्रिलिक पतले बैकड्रॉप के टिंट कलर को एडजस्ट करें।</value>
   </data>
+  <data name="SidebarSplitViewDisplayModeChangerToggleButton.ToolTipService.ToolTip" xml:space="preserve">
+    <value>साइडबार पेन के ओवरले और इनलाइन मोड के बीच स्विच करें।</value>
+  </data>
+  <data name="SidebarSplitViewDisplayModeChangerToggleButton.AutomationProperties.HelpText" xml:space="preserve">
+    <value>साइडबार पेन के ओवरले और इनलाइन मोड के बीच स्विच करें।</value>
+  </data>
 </root>

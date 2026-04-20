@@ -7208,7 +7208,7 @@
   <data name="NotificationSettingsSettingsExpander.AutomationProperties.HelpText" xml:space="preserve">
     <value>Διαχειριστείτε τις ρυθμίσεις που σχετίζονται με τις ειδοποιήσεις και τις γνωστοποιήσεις.</value>
   </data>
-   <data name="SidebarSplitViewDisplayModeChangerToggleButton.ToolTipService.ToolTip" xml:space="preserve">
+  <data name="SidebarSplitViewDisplayModeChangerToggleButton.ToolTipService.ToolTip" xml:space="preserve">
     <value>Εναλλαγή μεταξύ των λειτουργιών επικάλυψης και ενσωμάτωσης του πλαισίου της πλαϊνής γραμμής.</value>
   </data>
   <data name="SidebarSplitViewDisplayModeChangerToggleButton.AutomationProperties.HelpText" xml:space="preserve">

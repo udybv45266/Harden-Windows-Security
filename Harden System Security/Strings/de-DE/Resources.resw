@@ -5750,4 +5750,10 @@ Fingerabdruck: {3}</value>
   <data name="AcrylicThinTintColorSettingsCard.AutomationProperties.HelpText" xml:space="preserve">
     <value>Passen Sie die Farbtonfarbe des dünnen Acryl-Hintergrunds an.</value>
   </data>
+  <data name="SidebarSplitViewDisplayModeChangerToggleButton.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Wechseln Sie zwischen dem Überlagerungs- und dem Inline-Modus des Seitenbereichs.</value>
+  </data>
+  <data name="SidebarSplitViewDisplayModeChangerToggleButton.AutomationProperties.HelpText" xml:space="preserve">
+    <value>Wechseln Sie zwischen dem Überlagerungs- und dem Inline-Modus des Seitenbereichs.</value>
+  </data>
 </root>
