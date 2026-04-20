@@ -613,12 +613,12 @@ internal sealed partial class DeploymentVM : ViewModelBase, IGraphAuthHost, IDis
 	/// <summary>
 	/// Event handler for the Select Groups button.
 	/// </summary>
-	internal void SelectGroups_Click()
+	internal async void SelectGroups_Click()
 	{
 		// Assign the current signed in account to the ViewModel to make it available for usage.
 		IntuneDeploymentDetailsVM.TargetAccount = AuthCompanionCLS.CurrentActiveAccount;
 
-		ViewModelProvider.NavigationService.Navigate(typeof(IntuneDeploymentDetails), null);
+		await ViewModelProvider.NavigationService.Navigate(typeof(IntuneDeploymentDetails), null);
 	}
 
 	/// <summary>

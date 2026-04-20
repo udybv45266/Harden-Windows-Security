@@ -731,7 +731,7 @@
                                                                                 </Grid.ColumnDefinitions>
                                                                                 <FontIcon Glyph="&#xEB51;" FontSize="14" VerticalAlignment="Center" />
                                                                                 <TextBlock Grid.Column="1"
-                                                                                           Text="{x:Bind PolicyIdentifier}"
+                                                                                           Text="{x:Bind PolicyIdentifier, Mode=OneWay}"
                                                                                            TextTrimming="CharacterEllipsis"
                                                                                            TextWrapping="NoWrap"
                                                                                            VerticalAlignment="Center"
@@ -752,7 +752,7 @@
                                                                                 </Grid.ColumnDefinitions>
                                                                                 <FontIcon Glyph="&#xE97C;" FontSize="12" VerticalAlignment="Center" />
                                                                                 <TextBlock Grid.Column="1"
-                                                                                           Text="{x:Bind PolicyObj.PolicyType}"
+                                                                                           Text="{x:Bind PolicyObj.PolicyType, Mode=OneWay}"
                                                                                            TextTrimming="CharacterEllipsis"
                                                                                            TextWrapping="NoWrap"
                                                                                            VerticalAlignment="Center"
@@ -766,26 +766,44 @@
                                                                                 </Grid.ColumnDefinitions>
                                                                                 <FontIcon Glyph="&#xEF3F;" FontSize="12" VerticalAlignment="Center" />
                                                                                 <TextBlock Grid.Column="1"
-                                                                                           Text="{x:Bind SigningStatus}"
+                                                                                           Text="{x:Bind SigningStatus, Mode=OneWay}"
                                                                                            TextTrimming="CharacterEllipsis"
                                                                                            TextWrapping="NoWrap"
                                                                                            VerticalAlignment="Center"
                                                                                            Style="{ThemeResource CaptionTextBlockStyle}"/>
                                                                             </Grid>
 
-                                                                            <Grid ColumnSpacing="5" HorizontalAlignment="Center">
-                                                                                <Grid.ColumnDefinitions>
-                                                                                    <ColumnDefinition Width="Auto"/>
-                                                                                    <ColumnDefinition Width="*"/>
-                                                                                </Grid.ColumnDefinitions>
-                                                                                <FontIcon Glyph="&#xE765;" FontSize="12" VerticalAlignment="Center" />
-                                                                                <TextBlock Grid.Column="1"
-                                                                                           Text="{x:Bind PolicyObj.VersionEx}"
+                                                                            <StackPanel Orientation="Horizontal" Spacing="6" HorizontalAlignment="Center">
+
+                                                                                <Grid ColumnSpacing="5" HorizontalAlignment="Center">
+                                                                                    <Grid.ColumnDefinitions>
+                                                                                        <ColumnDefinition Width="Auto"/>
+                                                                                        <ColumnDefinition Width="*"/>
+                                                                                    </Grid.ColumnDefinitions>
+                                                                                    <FontIcon Glyph="&#xE765;" FontSize="12" VerticalAlignment="Center" />
+                                                                                    <TextBlock Grid.Column="1"
+                                                                                           Text="{x:Bind PolicyObj.VersionEx, Mode=OneWay}"
                                                                                            TextTrimming="CharacterEllipsis"
                                                                                            TextWrapping="NoWrap"
                                                                                            VerticalAlignment="Center"
                                                                                            Style="{ThemeResource CaptionTextBlockStyle}"/>
-                                                                            </Grid>
+                                                                                </Grid>
+
+                                                                                <Grid ColumnSpacing="5" HorizontalAlignment="Center">
+                                                                                    <Grid.ColumnDefinitions>
+                                                                                        <ColumnDefinition Width="Auto"/>
+                                                                                        <ColumnDefinition Width="*"/>
+                                                                                    </Grid.ColumnDefinitions>
+                                                                                    <FontIcon Glyph="&#xF596;" FontSize="12" VerticalAlignment="Center" />
+                                                                                    <TextBlock Grid.Column="1"
+                                                                                               Text="{x:Bind FileSize, Mode=OneWay}"
+                                                                                               TextTrimming="CharacterEllipsis"
+                                                                                               TextWrapping="NoWrap"
+                                                                                               VerticalAlignment="Center"
+                                                                                               Style="{ThemeResource CaptionTextBlockStyle}"/>
+                                                                                </Grid>
+
+                                                                            </StackPanel>
 
                                                                             <Grid ColumnSpacing="5" HorizontalAlignment="Center">
                                                                                 <Grid.ColumnDefinitions>
@@ -794,7 +812,7 @@
                                                                                 </Grid.ColumnDefinitions>
                                                                                 <FontIcon Glyph="&#xE932;" FontSize="12" VerticalAlignment="Center" />
                                                                                 <TextBlock Grid.Column="1"
-                                                                                           Text="{x:Bind PolicyID}"
+                                                                                           Text="{x:Bind PolicyID, Mode=OneWay}"
                                                                                            TextTrimming="CharacterEllipsis"
                                                                                            TextWrapping="NoWrap"
                                                                                            VerticalAlignment="Center"

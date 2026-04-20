@@ -681,7 +681,8 @@ internal sealed partial class MainWindowVM : ViewModelBase, IDisposable
 
 							PolicyFileRepresent policyToAdd = new(Management.Initialize(null, xmlDocument))
 							{
-								UniqueObjID = Guid.Parse(uniqueID)
+								UniqueObjID = Guid.Parse(uniqueID),
+								FileSize = ViewModels.HomeVM.FormatDataSize(fileBytes.Length)
 							};
 
 							await Atlas.AppDispatcher.EnqueueAsync(() =>
@@ -1051,6 +1052,8 @@ internal sealed partial class MainWindowVM : ViewModelBase, IDisposable
 							if (File.Exists(filePath))
 								File.Delete(filePath);
 							File.WriteAllBytes(filePath, enc);
+
+							policy.FileSize = ViewModels.HomeVM.FormatDataSize(enc.Length);
 						}
 						catch (Exception ex)
 						{
@@ -1059,9 +1062,13 @@ internal sealed partial class MainWindowVM : ViewModelBase, IDisposable
 					}
 					else
 					{
+						byte[] bites = memoryStream.ToArray();
+
 						if (File.Exists(filePath))
 							File.Delete(filePath);
-						File.WriteAllBytes(filePath, memoryStream.ToArray());
+						File.WriteAllBytes(filePath, bites);
+
+						policy.FileSize = ViewModels.HomeVM.FormatDataSize(bites.Length);
 					}
 				});
 			}

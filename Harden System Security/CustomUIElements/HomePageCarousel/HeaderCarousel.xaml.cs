@@ -116,7 +116,7 @@ internal sealed partial class HeaderCarousel : UserControl
 		}
 	}
 
-	private void Tile_Click(object sender, RoutedEventArgs e)
+	private async void Tile_Click(object sender, RoutedEventArgs e)
 	{
 		if (sender is HeaderTile tile)
 		{
@@ -133,7 +133,7 @@ internal sealed partial class HeaderCarousel : UserControl
 			};
 
 			if (targetPage is not null)
-				ViewModelProvider.NavigationService.Navigate(targetPage);
+				await ViewModelProvider.NavigationService.Navigate(targetPage);
 		}
 	}
 

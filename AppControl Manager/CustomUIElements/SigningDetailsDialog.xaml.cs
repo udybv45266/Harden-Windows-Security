@@ -178,12 +178,12 @@ internal sealed partial class SigningDetailsDialog : ContentDialogV2
 	/// </summary>
 	/// <param name="sender"></param>
 	/// <param name="e"></param>
-	private void OpenAppSettingsButton_Click(object sender, RoutedEventArgs e)
+	private async void OpenAppSettingsButton_Click(object sender, RoutedEventArgs e)
 	{
 		// Hide the dialog box
 		Hide();
 
-		ViewModelProvider.NavigationService.Navigate(typeof(Pages.Settings), null);
+		await ViewModelProvider.NavigationService.Navigate(typeof(Pages.Settings), null);
 	}
 
 	/// <summary>

@@ -314,8 +314,8 @@ internal sealed partial class CreateSupplementalPolicyVM : ViewModelBase, IDispo
 	/// <summary>
 	/// Link to the page that shows scanned file details
 	/// </summary>
-	internal void FilesAndFoldersViewFileDetailsSettingsCard_Click() =>
-		ViewModelProvider.NavigationService.Navigate(typeof(CreateSupplementalPolicyFilesAndFoldersScanResults), null);
+	internal async void FilesAndFoldersViewFileDetailsSettingsCard_Click() =>
+		await ViewModelProvider.NavigationService.Navigate(typeof(CreateSupplementalPolicyFilesAndFoldersScanResults), null);
 
 	/// <summary>
 	/// Event handler for the clear button for the text box of selected Base policy path
@@ -1284,8 +1284,8 @@ internal sealed partial class CreateSupplementalPolicyVM : ViewModelBase, IDispo
 
 	internal void StrictKernelModeScanButton_Click() => StrictKernelModePerformScans(false);
 
-	internal void DetectedKernelModeFilesDetailsSettingsCard_Click() =>
-		ViewModelProvider.NavigationService.Navigate(typeof(StrictKernelPolicyScanResults), null);
+	internal async void DetectedKernelModeFilesDetailsSettingsCard_Click() =>
+		await ViewModelProvider.NavigationService.Navigate(typeof(StrictKernelPolicyScanResults), null);
 
 	/// <summary>
 	/// Browse for Base Policy - Button Click

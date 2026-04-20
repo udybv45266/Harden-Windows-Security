@@ -800,7 +800,7 @@ internal sealed partial class ViewFileCertificatesVM : ViewModelBase
 		try
 		{
 			// Navigate to the View File Certificates page
-			ViewModelProvider.NavigationService.Navigate(typeof(Pages.ViewFileCertificates), null);
+			await ViewModelProvider.NavigationService.Navigate(typeof(Pages.ViewFileCertificates), null);
 
 			selectedFile = filePath;
 

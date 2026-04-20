@@ -19,6 +19,7 @@ using System.Collections.Frozen;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices;
+using System.Threading.Tasks;
 using AppControlManager.ViewModels;
 using Microsoft.UI.Windowing;
 using Microsoft.UI.Xaml;
@@ -141,7 +142,7 @@ internal sealed class NavigationService
 	/// <param name="navPageType"></param>
 	/// <param name="navItemTag"></param>
 	/// <param name="targetId">Optional ID of an item to scroll to on the target page.</param>
-	internal async void Navigate(Type? navPageType, string? navItemTag = null, Guid? targetId = null)
+	internal async Task Navigate(Type? navPageType, string? navItemTag = null, Guid? targetId = null)
 	{
 		if (_frame is null || MainNavigation is null)
 			throw new InvalidOperationException("NavigationService has not been initialized.");
@@ -339,7 +340,7 @@ internal sealed class NavigationService
 	/// </summary>
 	/// <param name="sender"></param>
 	/// <param name="args"></param>
-	internal void MainNavigation_ItemInvoked(NavigationView sender, NavigationViewItemInvokedEventArgs? args)
+	internal async void MainNavigation_ItemInvoked(NavigationView sender, NavigationViewItemInvokedEventArgs? args)
 	{
 		// If any other page was invoked
 		if (args?.InvokedItemContainer is not null)
@@ -350,11 +351,11 @@ internal sealed class NavigationService
 			// https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.navigationviewiteminvokedeventargs.issettingsinvoked
 			if (args.IsSettingsInvoked)
 			{
-				Navigate(typeof(Pages.Settings), null);
+				await Navigate(typeof(Pages.Settings), null);
 			}
 			else
 			{
-				Navigate(null, args?.InvokedItemContainer.Tag.ToString());
+				await Navigate(null, args?.InvokedItemContainer.Tag.ToString());
 			}
 		}
 	}
@@ -398,10 +399,10 @@ internal sealed class NavigationService
 	/// </summary>
 	/// <param name="sender"></param>
 	/// <param name="args"></param>
-	internal void SearchBox_SuggestionChosen(AutoSuggestBox sender, AutoSuggestBoxSuggestionChosenEventArgs args)
+	internal async void SearchBox_SuggestionChosen(AutoSuggestBox sender, AutoSuggestBoxSuggestionChosenEventArgs args)
 	{
 		UnifiedSearchBarResult result = (UnifiedSearchBarResult)args.SelectedItem;
-		Navigate(result.PageType, null, result.MUnitId);
+		await Navigate(result.PageType, null, result.MUnitId);
 	}
 
 	/// <summary>
@@ -510,10 +511,10 @@ internal sealed class NavigationService
 	/// </summary>
 	/// <param name="sender"></param>
 	/// <param name="args"></param>
-	internal void BreadcrumbBar_ItemClicked(BreadcrumbBar sender, BreadcrumbBarItemClickedEventArgs args)
+	internal async void BreadcrumbBar_ItemClicked(BreadcrumbBar sender, BreadcrumbBarItemClickedEventArgs args)
 	{
 		Crumb crumb = (Crumb)args.Item;
-		Navigate(crumb.Page, null);
+		await Navigate(crumb.Page, null);
 	}
 
 	/// <summary>

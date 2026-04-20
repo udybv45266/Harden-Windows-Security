@@ -1325,7 +1325,7 @@ internal sealed partial class GroupPolicyEditorVM : ViewModelBase
 		{
 			SelectedFile = filePath;
 
-			ViewModelProvider.NavigationService.Navigate(typeof(Pages.GroupPolicyEditor));
+			await ViewModelProvider.NavigationService.Navigate(typeof(Pages.GroupPolicyEditor));
 
 			await ProcessSelectedFilePrivate();
 		}

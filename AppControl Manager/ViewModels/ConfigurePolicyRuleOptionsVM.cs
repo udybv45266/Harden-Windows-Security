@@ -276,7 +276,7 @@ internal sealed partial class ConfigurePolicyRuleOptionsVM : ViewModelBase
 	}
 
 	/// <summary>
-	/// Event handlers to retrieve latest policy rule option details from the XML file and check/uncheck UI boxes
+	/// Event handler to retrieve latest policy rule option details from the XML file and check/uncheck UI boxes.
 	/// </summary>
 	internal async void RefreshRuleOptionsState_Click()
 	{
@@ -437,7 +437,7 @@ internal sealed partial class ConfigurePolicyRuleOptionsVM : ViewModelBase
 			ElementsAreEnabled = false;
 
 			// Navigate to the Configure Policy Rule Options page
-			ViewModelProvider.NavigationService.Navigate(typeof(Pages.ConfigurePolicyRuleOptions), null);
+			await ViewModelProvider.NavigationService.Navigate(typeof(Pages.ConfigurePolicyRuleOptions), null);
 
 			// Assign the policy file path to the local variable
 			SelectedPolicy = policy;

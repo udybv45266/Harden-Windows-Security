@@ -181,12 +181,12 @@ internal sealed partial class SigningDetailsDialogForRemoval : ContentDialogV2
 	/// <summary>
 	/// Event handler for the button that navigates to the Settings page
 	/// </summary>
-	private void OpenAppSettingsButton_Click()
+	private async void OpenAppSettingsButton_Click()
 	{
 		// Hide the dialog box
 		Hide();
 
-		ViewModelProvider.NavigationService.Navigate(typeof(Pages.Settings), null);
+		await ViewModelProvider.NavigationService.Navigate(typeof(Pages.Settings), null);
 	}
 
 	/// <summary>

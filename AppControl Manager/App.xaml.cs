@@ -155,7 +155,7 @@ public sealed partial class App : Application
 	/// <summary>
 	/// Perform initial navigation.
 	/// </summary>
-	private static void InitialNav() => ViewModelProvider.NavigationService.Navigate(typeof(AppControlManager.Pages.Home));
+	private static async Task InitialNav() => await ViewModelProvider.NavigationService.Navigate(typeof(AppControlManager.Pages.Home));
 
 	/// <summary>
 	/// Exposes the main application window as a static property. It retrieves the window from the current application

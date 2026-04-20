@@ -1385,7 +1385,9 @@ internal sealed partial class MUnitListViewControl : UserControl, IDisposable
 
 	#region Animating the individual Apply/Verify/Remove buttons
 
+#pragma warning disable IDE0370
 	private readonly SpringVector3NaturalMotionAnimation SpringAnimationForIndividualButtons = App.MainWindow!.Compositor.CreateSpringVector3Animation();
+#pragma warning restore IDE370
 	private static readonly Vector3 OnePoint1Vector = new(1.1f);
 	private static readonly Vector3 OneVector = new(1.0f);
 

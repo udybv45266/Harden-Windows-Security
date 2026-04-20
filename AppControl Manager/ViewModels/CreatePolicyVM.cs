@@ -688,7 +688,7 @@ internal sealed partial class CreatePolicyVM : ViewModelBase
 	{
 		try
 		{
-			ViewModelProvider.NavigationService.Navigate(typeof(CreatePolicy), null);
+			await ViewModelProvider.NavigationService.Navigate(typeof(CreatePolicy), null);
 
 			switch (type)
 			{

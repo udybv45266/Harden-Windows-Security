@@ -1597,7 +1597,7 @@ internal sealed partial class PolicyEditorVM : ViewModelBase
 		try
 		{
 			// Navigate to the policy editor page
-			ViewModelProvider.NavigationService.Navigate(typeof(Pages.PolicyEditor), null);
+			await ViewModelProvider.NavigationService.Navigate(typeof(Pages.PolicyEditor), null);
 
 			// Assign the policy file path to the local variable
 			SelectedPolicy = policy;

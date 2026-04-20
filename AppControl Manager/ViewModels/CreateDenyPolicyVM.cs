@@ -485,8 +485,8 @@ internal sealed partial class CreateDenyPolicyVM : ViewModelBase, IDisposable
 		}
 	}
 
-	internal void FilesAndFoldersViewFileDetailsSettingsCard_Click() =>
-		ViewModelProvider.NavigationService.Navigate(typeof(CreateDenyPolicyFilesAndFoldersScanResults), null);
+	internal async void FilesAndFoldersViewFileDetailsSettingsCard_Click() =>
+		await ViewModelProvider.NavigationService.Navigate(typeof(CreateDenyPolicyFilesAndFoldersScanResults), null);
 
 	/// <summary>
 	/// Button to clear the list of selected folder paths

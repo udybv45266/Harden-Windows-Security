@@ -100,6 +100,11 @@ internal sealed partial class PolicyFileRepresent(SiPolicy policyObj, PolicyFile
 	internal string SigningStatus => PolicyObj.Rules.Any(x => x.Item == OptionType.EnabledUnsignedSystemIntegrityPolicy) ? Atlas.GetStr("Unsigned") : Atlas.GetStr("Signed");
 
 	/// <summary>
+	/// Displays the size of the policy in the cache if Persistent Library is enabled in the app settings.
+	/// </summary>
+	internal string? FileSize { get; set => SP(ref field, value); }
+
+	/// <summary>
 	/// This is required so ListBox can show the string representation directly for displaying purposes.
 	/// </summary>
 	/// <returns></returns>

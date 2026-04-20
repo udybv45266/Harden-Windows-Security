@@ -219,7 +219,7 @@ public sealed partial class App : Application
 				Logger.Write(string.Format(Atlas.GetStr("PolicyEditorLaunchErrorMessage"), ex.Message));
 
 				// Continue doing the normal navigation if there was a problem
-				InitialNav();
+				await InitialNav();
 			}
 			finally
 			{
@@ -267,14 +267,14 @@ public sealed partial class App : Application
 							}
 						default:
 							{
-								InitialNav();
+								await InitialNav();
 								break;
 							}
 					}
 				}
 				else
 				{
-					InitialNav();
+					await InitialNav();
 				}
 			}
 			catch (Exception ex)
@@ -282,7 +282,7 @@ public sealed partial class App : Application
 				Logger.Write(ex);
 
 				// Continue doing the normal navigation if there was a problem
-				InitialNav();
+				await InitialNav();
 			}
 			finally
 			{
@@ -296,7 +296,7 @@ public sealed partial class App : Application
 		{
 			try
 			{
-				ViewModelProvider.NavigationService.Navigate(PageTypeToNavTo, null);
+				await ViewModelProvider.NavigationService.Navigate(PageTypeToNavTo, null);
 			}
 			finally
 			{
@@ -305,7 +305,7 @@ public sealed partial class App : Application
 		}
 		else
 		{
-			InitialNav();
+			await InitialNav();
 		}
 
 		#endregion

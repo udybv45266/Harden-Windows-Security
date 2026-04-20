@@ -9,3 +9,5 @@
 * Various small UI and UX improvements.
 
 * Improves policy creation and fixes the following issue: https://github.com/HotCakeX/Harden-Windows-Security/issues/1093
+
+* You can now view the size of each policy in the Policies Library on the Sidebar.

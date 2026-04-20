@@ -358,8 +358,8 @@ internal sealed partial class UpdateVM : ViewModelBase
 	/// <summary>
 	/// Navigate to the Package Installer sub-page.
 	/// </summary>
-	internal void NavigateToAppPackageInstallerPage_Click() =>
-		ViewModelProvider.NavigationService.Navigate(typeof(Pages.UpdatePageCustomMSIXPath), null);
+	internal async void NavigateToAppPackageInstallerPage_Click() =>
+		await ViewModelProvider.NavigationService.Navigate(typeof(Pages.UpdatePageCustomMSIXPath), null);
 
 	/// <summary>
 	/// Whether the installation process must use hardened procedures.
