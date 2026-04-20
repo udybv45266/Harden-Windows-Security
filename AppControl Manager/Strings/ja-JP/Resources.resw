@@ -7208,4 +7208,37 @@
   <data name="NotificationSettingsSettingsExpander.AutomationProperties.HelpText" xml:space="preserve">
     <value>通知とお知らせに関連する設定を管理します。</value>
   </data>
+   <data name="SidebarSplitViewDisplayModeChangerToggleButton.ToolTipService.ToolTip" xml:space="preserve">
+    <value>サイドバー ペインのオーバーレイ モードとインライン モードを切り替えます。</value>
+  </data>
+  <data name="SidebarSplitViewDisplayModeChangerToggleButton.AutomationProperties.HelpText" xml:space="preserve">
+    <value>サイドバー ペインのオーバーレイ モードとインライン モードを切り替えます。</value>
+  </data>
+  <data name="ShowBasePoliciesInLibraryToggleButton.ToolTipService.ToolTip" xml:space="preserve">
+    <value>ライブラリにベース ポリシーを表示します。</value>
+  </data>
+  <data name="ShowBasePoliciesInLibraryToggleButton.AutomationProperties.HelpText" xml:space="preserve">
+    <value>ライブラリにベース ポリシーを表示します。</value>
+  </data>
+  <data name="ShowSupplementalPoliciesInLibraryToggleButton.ToolTipService.ToolTip" xml:space="preserve">
+    <value>ライブラリに補足ポリシーを表示します。</value>
+  </data>
+  <data name="ShowSupplementalPoliciesInLibraryToggleButton.AutomationProperties.HelpText" xml:space="preserve">
+    <value>ライブラリに補足ポリシーを表示します。</value>
+  </data>
+  <data name="ShowAppIDTaggingPoliciesInLibraryToggleButton.ToolTipService.ToolTip" xml:space="preserve">
+    <value>ライブラリにアプリ ID タグ付けポリシーを表示します。</value>
+  </data>
+  <data name="ShowAppIDTaggingPoliciesInLibraryToggleButton.AutomationProperties.HelpText" xml:space="preserve">
+    <value>ライブラリにアプリ ID タグ付けポリシーを表示します。</value>
+  </data>
+  <data name="PoliciesLibraryContextualSearchToggleMenuFlyoutItem.Text" xml:space="preserve">
+    <value>コンテキスト検索</value>
+  </data>
+  <data name="PoliciesLibraryContextualSearchToggleMenuFlyoutItem.ToolTipService.ToolTip" xml:space="preserve">
+    <value>すべてのポリシーのコンテンツを検索します。</value>
+  </data>
+  <data name="PoliciesLibraryContextualSearchToggleMenuFlyoutItem.AutomationProperties.HelpText" xml:space="preserve">
+    <value>すべてのポリシーのコンテンツを検索します。</value>
+  </data>
 </root>

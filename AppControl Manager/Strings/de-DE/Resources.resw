@@ -7208,4 +7208,37 @@ HINWEIS: Diese Option wird immer erzwungen, wenn eine beliebige App Control-UMCI
   <data name="NotificationSettingsSettingsExpander.AutomationProperties.HelpText" xml:space="preserve">
     <value>Verwalten Sie Einstellungen im Zusammenhang mit Benachrichtigungen und Mitteilungen.</value>
   </data>
+   <data name="SidebarSplitViewDisplayModeChangerToggleButton.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Wechseln Sie zwischen dem Überlagerungs- und dem Inline-Modus des Seitenbereichs.</value>
+  </data>
+  <data name="SidebarSplitViewDisplayModeChangerToggleButton.AutomationProperties.HelpText" xml:space="preserve">
+    <value>Wechseln Sie zwischen dem Überlagerungs- und dem Inline-Modus des Seitenbereichs.</value>
+  </data>
+  <data name="ShowBasePoliciesInLibraryToggleButton.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Basisrichtlinien in der Bibliothek anzeigen.</value>
+  </data>
+  <data name="ShowBasePoliciesInLibraryToggleButton.AutomationProperties.HelpText" xml:space="preserve">
+    <value>Basisrichtlinien in der Bibliothek anzeigen.</value>
+  </data>
+  <data name="ShowSupplementalPoliciesInLibraryToggleButton.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Ergänzende Richtlinien in der Bibliothek anzeigen.</value>
+  </data>
+  <data name="ShowSupplementalPoliciesInLibraryToggleButton.AutomationProperties.HelpText" xml:space="preserve">
+    <value>Ergänzende Richtlinien in der Bibliothek anzeigen.</value>
+  </data>
+  <data name="ShowAppIDTaggingPoliciesInLibraryToggleButton.ToolTipService.ToolTip" xml:space="preserve">
+    <value>App-ID-Tagging-Richtlinien in der Bibliothek anzeigen.</value>
+  </data>
+  <data name="ShowAppIDTaggingPoliciesInLibraryToggleButton.AutomationProperties.HelpText" xml:space="preserve">
+    <value>App-ID-Tagging-Richtlinien in der Bibliothek anzeigen.</value>
+  </data>
+  <data name="PoliciesLibraryContextualSearchToggleMenuFlyoutItem.Text" xml:space="preserve">
+    <value>Kontextbezogene Suche</value>
+  </data>
+  <data name="PoliciesLibraryContextualSearchToggleMenuFlyoutItem.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Durchsuchen Sie den Inhalt aller Richtlinien.</value>
+  </data>
+  <data name="PoliciesLibraryContextualSearchToggleMenuFlyoutItem.AutomationProperties.HelpText" xml:space="preserve">
+    <value>Durchsuchen Sie den Inhalt aller Richtlinien.</value>
+  </data>
 </root>

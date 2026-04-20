@@ -7208,4 +7208,37 @@
   <data name="NotificationSettingsSettingsExpander.AutomationProperties.HelpText" xml:space="preserve">
     <value>Gérez les paramètres liés aux notifications et aux avis.</value>
   </data>
+   <data name="SidebarSplitViewDisplayModeChangerToggleButton.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Basculer entre les modes superposition et en ligne du volet de la barre latérale.</value>
+  </data>
+  <data name="SidebarSplitViewDisplayModeChangerToggleButton.AutomationProperties.HelpText" xml:space="preserve">
+    <value>Basculer entre les modes superposition et en ligne du volet de la barre latérale.</value>
+  </data>
+  <data name="ShowBasePoliciesInLibraryToggleButton.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Afficher les stratégies de base dans la bibliothèque.</value>
+  </data>
+  <data name="ShowBasePoliciesInLibraryToggleButton.AutomationProperties.HelpText" xml:space="preserve">
+    <value>Afficher les stratégies de base dans la bibliothèque.</value>
+  </data>
+  <data name="ShowSupplementalPoliciesInLibraryToggleButton.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Afficher les stratégies supplémentaires dans la bibliothèque.</value>
+  </data>
+  <data name="ShowSupplementalPoliciesInLibraryToggleButton.AutomationProperties.HelpText" xml:space="preserve">
+    <value>Afficher les stratégies supplémentaires dans la bibliothèque.</value>
+  </data>
+  <data name="ShowAppIDTaggingPoliciesInLibraryToggleButton.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Afficher les stratégies d'étiquetage d'ID d'application dans la bibliothèque.</value>
+  </data>
+  <data name="ShowAppIDTaggingPoliciesInLibraryToggleButton.AutomationProperties.HelpText" xml:space="preserve">
+    <value>Afficher les stratégies d'étiquetage d'ID d'application dans la bibliothèque.</value>
+  </data>
+  <data name="PoliciesLibraryContextualSearchToggleMenuFlyoutItem.Text" xml:space="preserve">
+    <value>Recherche contextuelle</value>
+  </data>
+  <data name="PoliciesLibraryContextualSearchToggleMenuFlyoutItem.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Rechercher dans le contenu de toutes les stratégies.</value>
+  </data>
+  <data name="PoliciesLibraryContextualSearchToggleMenuFlyoutItem.AutomationProperties.HelpText" xml:space="preserve">
+    <value>Rechercher dans le contenu de toutes les stratégies.</value>
+  </data>
 </root>

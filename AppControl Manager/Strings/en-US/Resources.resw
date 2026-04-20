@@ -7208,7 +7208,6 @@ NOTE: This option is always enforced if any App Control UMCI policy enables it. 
   <data name="NotificationSettingsSettingsExpander.AutomationProperties.HelpText" xml:space="preserve">
     <value>Manage settings related to notifications and notices.</value>
   </data>
-  <!--NEW-->
   <data name="SidebarSplitViewDisplayModeChangerToggleButton.ToolTipService.ToolTip" xml:space="preserve">
     <value>Switch between the Overlay and Inline modes of the sidebar pane.</value>
   </data>

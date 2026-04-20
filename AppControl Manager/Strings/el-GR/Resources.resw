@@ -7208,4 +7208,37 @@
   <data name="NotificationSettingsSettingsExpander.AutomationProperties.HelpText" xml:space="preserve">
     <value>Διαχειριστείτε τις ρυθμίσεις που σχετίζονται με τις ειδοποιήσεις και τις γνωστοποιήσεις.</value>
   </data>
+   <data name="SidebarSplitViewDisplayModeChangerToggleButton.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Εναλλαγή μεταξύ των λειτουργιών επικάλυψης και ενσωμάτωσης του πλαισίου της πλαϊνής γραμμής.</value>
+  </data>
+  <data name="SidebarSplitViewDisplayModeChangerToggleButton.AutomationProperties.HelpText" xml:space="preserve">
+    <value>Εναλλαγή μεταξύ των λειτουργιών επικάλυψης και ενσωμάτωσης του πλαισίου της πλαϊνής γραμμής.</value>
+  </data>
+  <data name="ShowBasePoliciesInLibraryToggleButton.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Εμφάνιση βασικών πολιτικών στη βιβλιοθήκη.</value>
+  </data>
+  <data name="ShowBasePoliciesInLibraryToggleButton.AutomationProperties.HelpText" xml:space="preserve">
+    <value>Εμφάνιση βασικών πολιτικών στη βιβλιοθήκη.</value>
+  </data>
+  <data name="ShowSupplementalPoliciesInLibraryToggleButton.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Εμφάνιση συμπληρωματικών πολιτικών στη βιβλιοθήκη.</value>
+  </data>
+  <data name="ShowSupplementalPoliciesInLibraryToggleButton.AutomationProperties.HelpText" xml:space="preserve">
+    <value>Εμφάνιση συμπληρωματικών πολιτικών στη βιβλιοθήκη.</value>
+  </data>
+  <data name="ShowAppIDTaggingPoliciesInLibraryToggleButton.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Εμφάνιση πολιτικών προσθήκης ετικετών αναγνωριστικού εφαρμογής στη βιβλιοθήκη.</value>
+  </data>
+  <data name="ShowAppIDTaggingPoliciesInLibraryToggleButton.AutomationProperties.HelpText" xml:space="preserve">
+    <value>Εμφάνιση πολιτικών προσθήκης ετικετών αναγνωριστικού εφαρμογής στη βιβλιοθήκη.</value>
+  </data>
+  <data name="PoliciesLibraryContextualSearchToggleMenuFlyoutItem.Text" xml:space="preserve">
+    <value>Αναζήτηση με βάση τα συμφραζόμενα</value>
+  </data>
+  <data name="PoliciesLibraryContextualSearchToggleMenuFlyoutItem.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Αναζήτηση στα περιεχόμενα όλων των πολιτικών.</value>
+  </data>
+  <data name="PoliciesLibraryContextualSearchToggleMenuFlyoutItem.AutomationProperties.HelpText" xml:space="preserve">
+    <value>Αναζήτηση στα περιεχόμενα όλων των πολιτικών.</value>
+  </data>
 </root>

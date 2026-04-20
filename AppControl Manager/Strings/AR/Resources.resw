@@ -7127,6 +7127,42 @@
   <data name="SetColorMenuFlyoutSubItem.ToolTipService.ToolTip" xml:space="preserve">
     <value>عيّن لوناً للنهج في المكتبة كطريقة لتمييزه.</value>
   </data>
+    <data name="AcrylicThinLuminosityOpacitySettingsCard.Description" xml:space="preserve">
+    <value>ضبط عتامة اللمعان لخلفية Acrylic الرفيعة.</value>
+  </data>
+  <data name="AcrylicThinLuminosityOpacitySettingsCard.Header" xml:space="preserve">
+    <value>عتامة اللمعان</value>
+  </data>
+  <data name="AcrylicThinLuminosityOpacitySettingsCard.ToolTipService.ToolTip" xml:space="preserve">
+    <value>ضبط عتامة اللمعان لخلفية Acrylic الرفيعة.</value>
+  </data>
+  <data name="AcrylicThinLuminosityOpacitySettingsCard.AutomationProperties.HelpText" xml:space="preserve">
+    <value>ضبط عتامة اللمعان لخلفية Acrylic الرفيعة.</value>
+  </data>
+  <data name="AcrylicThinTintOpacitySettingsCard.Description" xml:space="preserve">
+    <value>ضبط عتامة الصبغة لخلفية Acrylic الرفيعة.</value>
+  </data>
+  <data name="AcrylicThinTintOpacitySettingsCard.Header" xml:space="preserve">
+    <value>عتامة الصبغة</value>
+  </data>
+  <data name="AcrylicThinTintOpacitySettingsCard.ToolTipService.ToolTip" xml:space="preserve">
+    <value>ضبط عتامة الصبغة لخلفية Acrylic الرفيعة.</value>
+  </data>
+  <data name="AcrylicThinTintOpacitySettingsCard.AutomationProperties.HelpText" xml:space="preserve">
+    <value>ضبط عتامة الصبغة لخلفية Acrylic الرفيعة.</value>
+  </data>
+  <data name="AcrylicThinTintColorSettingsCard.Description" xml:space="preserve">
+    <value>ضبط لون الصبغة لخلفية Acrylic الرفيعة.</value>
+  </data>
+  <data name="AcrylicThinTintColorSettingsCard.Header" xml:space="preserve">
+    <value>لون الصبغة</value>
+  </data>
+  <data name="AcrylicThinTintColorSettingsCard.ToolTipService.ToolTip" xml:space="preserve">
+    <value>ضبط لون الصبغة لخلفية Acrylic الرفيعة.</value>
+  </data>
+  <data name="AcrylicThinTintColorSettingsCard.AutomationProperties.HelpText" xml:space="preserve">
+    <value>ضبط لون الصبغة لخلفية Acrylic الرفيعة.</value>
+  </data>
   <data name="EnableToastNotificationsSettingsCard.Description" xml:space="preserve">
     <value>يسمح تمكين هذا للتطبيق بعرض إعلامات منبثقة في Windows.</value>
   </data>
@@ -7171,5 +7207,38 @@
   </data>
   <data name="NotificationSettingsSettingsExpander.AutomationProperties.HelpText" xml:space="preserve">
     <value>إدارة الإعدادات المتعلقة بالإعلامات والإشعارات.</value>
+  </data>
+   <data name="SidebarSplitViewDisplayModeChangerToggleButton.ToolTipService.ToolTip" xml:space="preserve">
+    <value>التبديل بين وضعي التراكب والمضمن لجزء الشريط الجانبي.</value>
+  </data>
+  <data name="SidebarSplitViewDisplayModeChangerToggleButton.AutomationProperties.HelpText" xml:space="preserve">
+    <value>التبديل بين وضعي التراكب والمضمن لجزء الشريط الجانبي.</value>
+  </data>
+  <data name="ShowBasePoliciesInLibraryToggleButton.ToolTipService.ToolTip" xml:space="preserve">
+    <value>إظهار السياسات الأساسية في المكتبة.</value>
+  </data>
+  <data name="ShowBasePoliciesInLibraryToggleButton.AutomationProperties.HelpText" xml:space="preserve">
+    <value>إظهار السياسات الأساسية في المكتبة.</value>
+  </data>
+  <data name="ShowSupplementalPoliciesInLibraryToggleButton.ToolTipService.ToolTip" xml:space="preserve">
+    <value>إظهار السياسات التكميلية في المكتبة.</value>
+  </data>
+  <data name="ShowSupplementalPoliciesInLibraryToggleButton.AutomationProperties.HelpText" xml:space="preserve">
+    <value>إظهار السياسات التكميلية في المكتبة.</value>
+  </data>
+  <data name="ShowAppIDTaggingPoliciesInLibraryToggleButton.ToolTipService.ToolTip" xml:space="preserve">
+    <value>إظهار سياسات وضع علامات معرف التطبيق في المكتبة.</value>
+  </data>
+  <data name="ShowAppIDTaggingPoliciesInLibraryToggleButton.AutomationProperties.HelpText" xml:space="preserve">
+    <value>إظهار سياسات وضع علامات معرف التطبيق في المكتبة.</value>
+  </data>
+  <data name="PoliciesLibraryContextualSearchToggleMenuFlyoutItem.Text" xml:space="preserve">
+    <value>بحث سياقي</value>
+  </data>
+  <data name="PoliciesLibraryContextualSearchToggleMenuFlyoutItem.ToolTipService.ToolTip" xml:space="preserve">
+    <value>البحث في محتوى جميع السياسات.</value>
+  </data>
+  <data name="PoliciesLibraryContextualSearchToggleMenuFlyoutItem.AutomationProperties.HelpText" xml:space="preserve">
+    <value>البحث في محتوى جميع السياسات.</value>
   </data>
 </root>

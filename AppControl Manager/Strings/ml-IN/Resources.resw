@@ -7208,4 +7208,37 @@
   <data name="NotificationSettingsSettingsExpander.AutomationProperties.HelpText" xml:space="preserve">
     <value>അറിയിപ്പുകളുമായും നോട്ടീസുകളുമായും ബന്ധപ്പെട്ട ക്രമീകരണങ്ങൾ മാനേജ് ചെയ്യുക.</value>
   </data>
+   <data name="SidebarSplitViewDisplayModeChangerToggleButton.ToolTipService.ToolTip" xml:space="preserve">
+    <value>സൈഡ്‌ബാർ പാളിയുടെ ഓവർലേ, ഇൻലൈൻ മോഡുകൾക്കിടയിൽ മാറുക.</value>
+  </data>
+  <data name="SidebarSplitViewDisplayModeChangerToggleButton.AutomationProperties.HelpText" xml:space="preserve">
+    <value>സൈഡ്‌ബാർ പാളിയുടെ ഓവർലേ, ഇൻലൈൻ മോഡുകൾക്കിടയിൽ മാറുക.</value>
+  </data>
+  <data name="ShowBasePoliciesInLibraryToggleButton.ToolTipService.ToolTip" xml:space="preserve">
+    <value>ലൈബ്രറിയിൽ അടിസ്ഥാന നയങ്ങൾ കാണിക്കുക.</value>
+  </data>
+  <data name="ShowBasePoliciesInLibraryToggleButton.AutomationProperties.HelpText" xml:space="preserve">
+    <value>ലൈബ്രറിയിൽ അടിസ്ഥാന നയങ്ങൾ കാണിക്കുക.</value>
+  </data>
+  <data name="ShowSupplementalPoliciesInLibraryToggleButton.ToolTipService.ToolTip" xml:space="preserve">
+    <value>ലൈബ്രറിയിൽ സപ്ലിമെന്റൽ നയങ്ങൾ കാണിക്കുക.</value>
+  </data>
+  <data name="ShowSupplementalPoliciesInLibraryToggleButton.AutomationProperties.HelpText" xml:space="preserve">
+    <value>ലൈബ്രറിയിൽ സപ്ലിമെന്റൽ നയങ്ങൾ കാണിക്കുക.</value>
+  </data>
+  <data name="ShowAppIDTaggingPoliciesInLibraryToggleButton.ToolTipService.ToolTip" xml:space="preserve">
+    <value>ലൈബ്രറിയിൽ ആപ്പ് ഐഡി ടാഗിംഗ് നയങ്ങൾ കാണിക്കുക.</value>
+  </data>
+  <data name="ShowAppIDTaggingPoliciesInLibraryToggleButton.AutomationProperties.HelpText" xml:space="preserve">
+    <value>ലൈബ്രറിയിൽ ആപ്പ് ഐഡി ടാഗിംഗ് നയങ്ങൾ കാണിക്കുക.</value>
+  </data>
+  <data name="PoliciesLibraryContextualSearchToggleMenuFlyoutItem.Text" xml:space="preserve">
+    <value>സന്ദർഭോചിതമായ തിരയൽ</value>
+  </data>
+  <data name="PoliciesLibraryContextualSearchToggleMenuFlyoutItem.ToolTipService.ToolTip" xml:space="preserve">
+    <value>എല്ലാ നയങ്ങളുടെയും ഉള്ളടക്കങ്ങളിലൂടെ തിരയുക.</value>
+  </data>
+  <data name="PoliciesLibraryContextualSearchToggleMenuFlyoutItem.AutomationProperties.HelpText" xml:space="preserve">
+    <value>എല്ലാ നയങ്ങളുടെയും ഉള്ളടക്കങ്ങളിലൂടെ തിരയുക.</value>
+  </data>
 </root>
