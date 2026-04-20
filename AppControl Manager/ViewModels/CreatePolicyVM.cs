@@ -111,7 +111,7 @@ internal sealed partial class CreatePolicyVM : ViewModelBase
 			});
 
 			// Assign the created policy to the Sidebar
-			ViewModelProvider.MainWindowVM.AssignToSidebar(_policyPathAllowMicrosoft);
+			await ViewModelProvider.MainWindowVM.AssignToSidebar(_policyPathAllowMicrosoft);
 
 			AppControlManager.MainWindow.TriggerTransferIconAnimationStatic((UIElement)sender);
 
@@ -223,7 +223,7 @@ internal sealed partial class CreatePolicyVM : ViewModelBase
 			});
 
 			// Assign the created policy to the Sidebar
-			ViewModelProvider.MainWindowVM.AssignToSidebar(_policyPathDefaultWindows);
+			await ViewModelProvider.MainWindowVM.AssignToSidebar(_policyPathDefaultWindows);
 
 			AppControlManager.MainWindow.TriggerTransferIconAnimationStatic((UIElement)sender);
 
@@ -332,7 +332,7 @@ internal sealed partial class CreatePolicyVM : ViewModelBase
 			});
 
 			// Assign the created policy to the Sidebar
-			ViewModelProvider.MainWindowVM.AssignToSidebar(_policyPathSignedAndReputable);
+			await ViewModelProvider.MainWindowVM.AssignToSidebar(_policyPathSignedAndReputable);
 
 			AppControlManager.MainWindow.TriggerTransferIconAnimationStatic((UIElement)sender);
 
@@ -404,7 +404,7 @@ internal sealed partial class CreatePolicyVM : ViewModelBase
 			});
 
 			// Assign the created policy to the Sidebar
-			ViewModelProvider.MainWindowVM.AssignToSidebar(_policyPathMSFTRecommendedDriverBlockRules);
+			await ViewModelProvider.MainWindowVM.AssignToSidebar(_policyPathMSFTRecommendedDriverBlockRules);
 
 			AppControlManager.MainWindow.TriggerTransferIconAnimationStatic((UIElement)sender);
 
@@ -509,7 +509,7 @@ internal sealed partial class CreatePolicyVM : ViewModelBase
 			});
 
 			// Assign the created policy to the Sidebar
-			ViewModelProvider.MainWindowVM.AssignToSidebar(_policyPathRecommendedUserModeBlockRules);
+			await ViewModelProvider.MainWindowVM.AssignToSidebar(_policyPathRecommendedUserModeBlockRules);
 
 			AppControlManager.MainWindow.TriggerTransferIconAnimationStatic((UIElement)sender);
 
@@ -579,7 +579,7 @@ internal sealed partial class CreatePolicyVM : ViewModelBase
 			});
 
 			// Assign the created policy to the Sidebar
-			ViewModelProvider.MainWindowVM.AssignToSidebar(_policyPathStrictKernelMode);
+			await ViewModelProvider.MainWindowVM.AssignToSidebar(_policyPathStrictKernelMode);
 
 			AppControlManager.MainWindow.TriggerTransferIconAnimationStatic((UIElement)sender);
 
@@ -650,7 +650,7 @@ internal sealed partial class CreatePolicyVM : ViewModelBase
 			});
 
 			// Assign the created policy to the Sidebar
-			ViewModelProvider.MainWindowVM.AssignToSidebar(_policyPathRMMBlocking);
+			await ViewModelProvider.MainWindowVM.AssignToSidebar(_policyPathRMMBlocking);
 
 			if (sender is not null)
 				AppControlManager.MainWindow.TriggerTransferIconAnimationStatic((UIElement)sender);
@@ -762,7 +762,7 @@ internal sealed partial class CreatePolicyVM : ViewModelBase
 			});
 
 			// Assign the created policy to the Sidebar
-			ViewModelProvider.MainWindowVM.AssignToSidebar(_policyPathDownloadsDefenseMeasure);
+			await ViewModelProvider.MainWindowVM.AssignToSidebar(_policyPathDownloadsDefenseMeasure);
 
 			if (sender is not null)
 				AppControlManager.MainWindow.TriggerTransferIconAnimationStatic((UIElement)sender);
@@ -834,7 +834,7 @@ internal sealed partial class CreatePolicyVM : ViewModelBase
 			});
 
 			// Assign the created policy to the Sidebar
-			ViewModelProvider.MainWindowVM.AssignToSidebar(_policyPathDangerousScriptHostsBlocking);
+			await ViewModelProvider.MainWindowVM.AssignToSidebar(_policyPathDangerousScriptHostsBlocking);
 
 			if (sender is not null)
 				AppControlManager.MainWindow.TriggerTransferIconAnimationStatic((UIElement)sender);

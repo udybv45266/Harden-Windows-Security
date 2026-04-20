@@ -157,7 +157,7 @@ internal sealed partial class MainWindowVM : ViewModelBase, IDisposable
 				{
 					if (policy.PolicyIdentifier.Contains(SidebarSearchText, StringComparison.OrdinalIgnoreCase) ||
 						(policy.FileName is not null && policy.FileName.Contains(SidebarSearchText, StringComparison.OrdinalIgnoreCase)) ||
-						(policy.PolicyObj.VersionEx.Contains(SidebarSearchText, StringComparison.OrdinalIgnoreCase)) ||
+						policy.PolicyObj.VersionEx.Contains(SidebarSearchText, StringComparison.OrdinalIgnoreCase) ||
 						policy.SigningStatus.Contains(SidebarSearchText, StringComparison.OrdinalIgnoreCase)
 						)
 					{
@@ -1011,12 +1011,12 @@ internal sealed partial class MainWindowVM : ViewModelBase, IDisposable
 	/// The only method used to add new policies to the Sidebar's Policies Library.
 	/// </summary>
 	/// <param name="policy"></param>
-	internal async void AssignToSidebar(SiPolicy.PolicyFileRepresent policy)
+	internal async Task AssignToSidebar(SiPolicy.PolicyFileRepresent policy)
 	{
 		await PoliciesLibraryCacheLock.WaitAsync();
 		try
 		{
-			_ = Atlas.AppDispatcher.TryEnqueue(() =>
+			await Atlas.AppDispatcher.EnqueueAsync(() =>
 			{
 				SidebarPoliciesLibrary.Add(policy);
 			});

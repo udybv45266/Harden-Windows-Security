@@ -526,7 +526,7 @@ internal sealed partial class EventLogsPolicyCreationVM : ViewModelBase
 				SelectedLogs = AllFileIdentities;
 			}
 
-			await Task.Run(() =>
+			await Task.Run(async () =>
 			{
 				// Separate the signed and unsigned data
 				FileBasedInfoPackage DataPackage = SignerAndHashBuilder.BuildSignerAndHashObjects(data: SelectedLogs, level: ScanLevelComboBoxSelectedItem.Level);
@@ -561,7 +561,7 @@ internal sealed partial class EventLogsPolicyCreationVM : ViewModelBase
 								FinalSupplementalPolicy = PolicyToAddLogsTo;
 
 								// Assign the created policy to the Sidebar
-								ViewModelProvider.MainWindowVM.AssignToSidebar(FinalSupplementalPolicy);
+								await ViewModelProvider.MainWindowVM.AssignToSidebar(FinalSupplementalPolicy);
 
 								MainWindow.TriggerTransferIconAnimationStatic(sender);
 
@@ -613,7 +613,7 @@ internal sealed partial class EventLogsPolicyCreationVM : ViewModelBase
 								FinalSupplementalPolicy = new(policyObj);
 
 								// Assign the created policy to the Sidebar
-								ViewModelProvider.MainWindowVM.AssignToSidebar(FinalSupplementalPolicy);
+								await ViewModelProvider.MainWindowVM.AssignToSidebar(FinalSupplementalPolicy);
 
 								MainWindow.TriggerTransferIconAnimationStatic(sender);
 
@@ -668,7 +668,7 @@ internal sealed partial class EventLogsPolicyCreationVM : ViewModelBase
 								FinalSupplementalPolicy = new(policyObj);
 
 								// Assign the created policy to the Sidebar
-								ViewModelProvider.MainWindowVM.AssignToSidebar(FinalSupplementalPolicy);
+								await ViewModelProvider.MainWindowVM.AssignToSidebar(FinalSupplementalPolicy);
 
 								MainWindow.TriggerTransferIconAnimationStatic(sender);
 

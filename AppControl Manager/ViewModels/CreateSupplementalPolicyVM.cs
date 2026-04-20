@@ -525,7 +525,7 @@ internal sealed partial class CreateSupplementalPolicyVM : ViewModelBase, IDispo
 				}
 
 				// Assign the created policy to the Sidebar
-				ViewModelProvider.MainWindowVM.AssignToSidebar(_FinalFilesAndFoldersSupplementalPolicy);
+				await ViewModelProvider.MainWindowVM.AssignToSidebar(_FinalFilesAndFoldersSupplementalPolicy);
 
 				if (sender is not null)
 					MainWindow.TriggerTransferIconAnimationStatic((UIElement)sender);
@@ -871,7 +871,7 @@ internal sealed partial class CreateSupplementalPolicyVM : ViewModelBase, IDispo
 				CertificatesBasedCertFilePaths.Count
 			));
 
-			await Task.Run(() =>
+			await Task.Run(async () =>
 			{
 				List<CertificateSignerCreator> certificateResults = [];
 
@@ -933,7 +933,7 @@ internal sealed partial class CreateSupplementalPolicyVM : ViewModelBase, IDispo
 				}
 
 				// Assign the created policy to the Sidebar
-				ViewModelProvider.MainWindowVM.AssignToSidebar(_FinalCertificatesSupplementalPolicy);
+				await ViewModelProvider.MainWindowVM.AssignToSidebar(_FinalCertificatesSupplementalPolicy);
 
 				MainWindow.TriggerTransferIconAnimationStatic((UIElement)sender);
 
@@ -1121,7 +1121,7 @@ internal sealed partial class CreateSupplementalPolicyVM : ViewModelBase, IDispo
 				}
 
 				// Assign the created policy to the Sidebar
-				ViewModelProvider.MainWindowVM.AssignToSidebar(_FinalISGSupplementalPolicy);
+				await ViewModelProvider.MainWindowVM.AssignToSidebar(_FinalISGSupplementalPolicy);
 
 				MainWindow.TriggerTransferIconAnimationStatic((UIElement)sender);
 
@@ -1462,7 +1462,7 @@ internal sealed partial class CreateSupplementalPolicyVM : ViewModelBase, IDispo
 
 			string policyNameChosenByUser = StrictKernelModePolicyName ?? string.Empty;
 
-			await Task.Run(() =>
+			await Task.Run(async () =>
 			{
 				// Separate the signed and unsigned data
 				FileBasedInfoPackage DataPackage = SignerAndHashBuilder.BuildSignerAndHashObjects(data: [.. StrictKernelModeScanResults], level: ScanLevels.WHQLFilePublisher);
@@ -1507,7 +1507,7 @@ internal sealed partial class CreateSupplementalPolicyVM : ViewModelBase, IDispo
 				}
 
 				// Assign the created policy to the Sidebar
-				ViewModelProvider.MainWindowVM.AssignToSidebar(_FinalStrictKernelModeSupplementalPolicy);
+				await ViewModelProvider.MainWindowVM.AssignToSidebar(_FinalStrictKernelModeSupplementalPolicy);
 
 				MainWindow.TriggerTransferIconAnimationStatic((UIElement)sender);
 
@@ -2060,7 +2060,7 @@ internal sealed partial class CreateSupplementalPolicyVM : ViewModelBase, IDispo
 
 			PFNBasedCancellableButton.Cts?.Token.ThrowIfCancellationRequested();
 
-			await Task.Run(() =>
+			await Task.Run(async () =>
 			{
 				PFNBasedCancellableButton.Cts?.Token.ThrowIfCancellationRequested();
 
@@ -2108,7 +2108,7 @@ internal sealed partial class CreateSupplementalPolicyVM : ViewModelBase, IDispo
 				}
 
 				// Assign the created policy to the Sidebar
-				ViewModelProvider.MainWindowVM.AssignToSidebar(_FinalPFNSupplementalPolicy);
+				await ViewModelProvider.MainWindowVM.AssignToSidebar(_FinalPFNSupplementalPolicy);
 
 				MainWindow.TriggerTransferIconAnimationStatic((UIElement)sender);
 
@@ -2440,7 +2440,7 @@ internal sealed partial class CreateSupplementalPolicyVM : ViewModelBase, IDispo
 
 			PatternBasedFileRuleCancellableButton.Cts?.Token.ThrowIfCancellationRequested();
 
-			await Task.Run(() =>
+			await Task.Run(async () =>
 			{
 				PatternBasedFileRuleCancellableButton.Cts?.Token.ThrowIfCancellationRequested();
 
@@ -2488,7 +2488,7 @@ internal sealed partial class CreateSupplementalPolicyVM : ViewModelBase, IDispo
 				}
 
 				// Assign the created policy to the Sidebar
-				ViewModelProvider.MainWindowVM.AssignToSidebar(_FinalCustomPatternBasedFileRuleSupplementalPolicy);
+				await ViewModelProvider.MainWindowVM.AssignToSidebar(_FinalCustomPatternBasedFileRuleSupplementalPolicy);
 
 				MainWindow.TriggerTransferIconAnimationStatic((UIElement)sender);
 

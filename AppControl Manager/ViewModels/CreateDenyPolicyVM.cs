@@ -387,7 +387,7 @@ internal sealed partial class CreateDenyPolicyVM : ViewModelBase, IDisposable
 				}
 
 				// Assign the created policy to the Sidebar
-				ViewModelProvider.MainWindowVM.AssignToSidebar(_FilesAndFoldersDenyPolicyPath);
+				await ViewModelProvider.MainWindowVM.AssignToSidebar(_FilesAndFoldersDenyPolicyPath);
 
 				MainWindow.TriggerTransferIconAnimationStatic((UIElement)sender);
 
@@ -757,7 +757,7 @@ internal sealed partial class CreateDenyPolicyVM : ViewModelBase, IDisposable
 				}
 			}
 
-			await Task.Run(() =>
+			await Task.Run(async () =>
 			{
 				PFNBasedCancellableButton.Cts?.Token.ThrowIfCancellationRequested();
 
@@ -801,7 +801,7 @@ internal sealed partial class CreateDenyPolicyVM : ViewModelBase, IDisposable
 				}
 
 				// Assign the created policy to the Sidebar
-				ViewModelProvider.MainWindowVM.AssignToSidebar(_PFNDenyPolicyPath);
+				await ViewModelProvider.MainWindowVM.AssignToSidebar(_PFNDenyPolicyPath);
 
 				MainWindow.TriggerTransferIconAnimationStatic((UIElement)sender);
 
@@ -1083,7 +1083,7 @@ internal sealed partial class CreateDenyPolicyVM : ViewModelBase, IDisposable
 
 			PatternBasedFileRuleCancellableButton.Cts?.Token.ThrowIfCancellationRequested();
 
-			await Task.Run(() =>
+			await Task.Run(async () =>
 			{
 				// Separate the signed and unsigned data
 				FileBasedInfoPackage DataPackage = SignerAndHashBuilder.BuildSignerAndHashObjects(data: null, level: ScanLevels.CustomFileRulePattern, folderPaths: null, customFileRulePatterns: [DenyPolicyCustomPatternBasedCustomPatternTextBox]);
@@ -1127,7 +1127,7 @@ internal sealed partial class CreateDenyPolicyVM : ViewModelBase, IDisposable
 				}
 
 				// Assign the created policy to the Sidebar
-				ViewModelProvider.MainWindowVM.AssignToSidebar(_CustomPatternBasedFileRuleDenyPolicyPath);
+				await ViewModelProvider.MainWindowVM.AssignToSidebar(_CustomPatternBasedFileRuleDenyPolicyPath);
 
 				MainWindow.TriggerTransferIconAnimationStatic((UIElement)sender);
 

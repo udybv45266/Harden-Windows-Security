@@ -619,7 +619,7 @@ DeviceEvents
 				));
 			}
 
-			await Task.Run(() =>
+			await Task.Run(async () =>
 			{
 				// Separate the signed and unsigned data
 				FileBasedInfoPackage DataPackage = SignerAndHashBuilder.BuildSignerAndHashObjects(data: SelectedLogs, level: ScanLevelComboBoxSelectedItem.Level);
@@ -655,7 +655,7 @@ DeviceEvents
 								FinalSupplementalPolicy = PolicyToAddLogsTo;
 
 								// Assign the created policy to the Sidebar
-								ViewModelProvider.MainWindowVM.AssignToSidebar(FinalSupplementalPolicy);
+								await ViewModelProvider.MainWindowVM.AssignToSidebar(FinalSupplementalPolicy);
 
 								MainWindow.TriggerTransferIconAnimationStatic(sender);
 
@@ -710,7 +710,7 @@ DeviceEvents
 								FinalSupplementalPolicy = new(policyObj);
 
 								// Assign the created policy to the Sidebar
-								ViewModelProvider.MainWindowVM.AssignToSidebar(FinalSupplementalPolicy);
+								await ViewModelProvider.MainWindowVM.AssignToSidebar(FinalSupplementalPolicy);
 
 								MainWindow.TriggerTransferIconAnimationStatic(sender);
 
@@ -768,7 +768,7 @@ DeviceEvents
 								FinalSupplementalPolicy = new(policyObj);
 
 								// Assign the created policy to the Sidebar
-								ViewModelProvider.MainWindowVM.AssignToSidebar(FinalSupplementalPolicy);
+								await ViewModelProvider.MainWindowVM.AssignToSidebar(FinalSupplementalPolicy);
 
 								MainWindow.TriggerTransferIconAnimationStatic(sender);
 

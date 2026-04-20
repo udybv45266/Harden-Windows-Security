@@ -523,7 +523,7 @@ internal sealed partial class SimulationVM : ViewModelBase
 				}
 			}
 
-			await Task.Run(() =>
+			await Task.Run(async () =>
 			{
 				// Scan all of the files among the selected simulation output results
 				IEnumerable<FileIdentity> LocalFilesResults = LocalFilesScan.Scan(
@@ -548,7 +548,7 @@ internal sealed partial class SimulationVM : ViewModelBase
 				}
 
 				// Assign the created policy to the Sidebar
-				ViewModelProvider.MainWindowVM.AssignToSidebar(SelectedPolicy);
+				await ViewModelProvider.MainWindowVM.AssignToSidebar(SelectedPolicy);
 
 				MainWindow.TriggerTransferIconAnimationStatic((UIElement)sender);
 			});

@@ -482,7 +482,7 @@ internal sealed partial class DeploymentVM : ViewModelBase, IGraphAuthHost, IDis
 					}
 
 					// Assign the signed policy (back) to the Sidebar
-					ViewModelProvider.MainWindowVM.AssignToSidebar(file);
+					await ViewModelProvider.MainWindowVM.AssignToSidebar(file);
 
 					MainWindow.TriggerTransferIconAnimationStatic((UIElement)sender);
 

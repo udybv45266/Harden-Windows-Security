@@ -1851,13 +1851,13 @@ internal sealed partial class MainWindow : Window, INPCImplant
 
 			if (filePaths.Count > 0)
 			{
-				await Task.Run(() =>
+				foreach (string selectedFile in filePaths)
 				{
-					foreach (string selectedFile in filePaths)
-					{
-						ViewModel.AssignToSidebar(ViewModels.PolicyEditorVM.ParseFilePathAsPolicyRepresent(selectedFile));
-					}
-				});
+					PolicyFileRepresent pol = await Task.Run(() => ViewModels.PolicyEditorVM.ParseFilePathAsPolicyRepresent(selectedFile));
+
+					await ViewModel.AssignToSidebar(pol);
+				}
+
 				// Show the animated icons on the currently visible page
 				Nav.AffectPagesAnimatedIconsVisibilitiesEx(true);
 			}

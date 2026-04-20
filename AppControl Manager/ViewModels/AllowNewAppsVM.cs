@@ -507,7 +507,7 @@ internal sealed partial class AllowNewAppsVM : ViewModelBase
 				return;
 			}
 
-			await Task.Run(() =>
+			await Task.Run(async () =>
 			{
 				// Separate the signed and unsigned data
 				FileBasedInfoPackage DataPackage = SignerAndHashBuilder.BuildSignerAndHashObjects(data: [.. fileIdentities.FileIdentitiesInternal], level: ScanLevelComboBoxSelectedItem.Level, folderPaths: selectedDirectoriesToScan);
@@ -541,7 +541,7 @@ internal sealed partial class AllowNewAppsVM : ViewModelBase
 				FinalSupplementalPolicy = new(policyObj);
 
 				// Assign the created policy to the Sidebar
-				ViewModelProvider.MainWindowVM.AssignToSidebar(FinalSupplementalPolicy);
+				await ViewModelProvider.MainWindowVM.AssignToSidebar(FinalSupplementalPolicy);
 
 				MainWindow.TriggerTransferIconAnimationStatic((UIElement)sender);
 

@@ -1376,7 +1376,7 @@ internal sealed partial class PolicyEditorVM : ViewModelBase
 				}
 
 				// Assign the modified policy to the Sidebar
-				ViewModelProvider.MainWindowVM.AssignToSidebar(SelectedPolicy);
+				await ViewModelProvider.MainWindowVM.AssignToSidebar(SelectedPolicy);
 
 				MainWindow.TriggerTransferIconAnimationStatic((UIElement)sender);
 

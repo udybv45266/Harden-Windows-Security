@@ -183,7 +183,7 @@ internal sealed partial class ConfigurePolicyRuleOptionsVM : ViewModelBase
 				}
 
 				// Assign the modified policy to the Sidebar
-				ViewModelProvider.MainWindowVM.AssignToSidebar(SelectedPolicy);
+				await ViewModelProvider.MainWindowVM.AssignToSidebar(SelectedPolicy);
 
 				MainWindow.TriggerTransferIconAnimationStatic((UIElement)sender);
 			});
@@ -248,7 +248,7 @@ internal sealed partial class ConfigurePolicyRuleOptionsVM : ViewModelBase
 				}
 
 				// Assign the modified policy to the Sidebar
-				ViewModelProvider.MainWindowVM.AssignToSidebar(SelectedPolicy);
+				await ViewModelProvider.MainWindowVM.AssignToSidebar(SelectedPolicy);
 
 				MainWindow.TriggerTransferIconAnimationStatic((UIElement)sender);
 			});

@@ -715,7 +715,7 @@ internal sealed partial class FirewallSentinelVM : ViewModelBase, IDisposable
 				CiToolHelper.UpdatePolicy(Management.ConvertXMLToBinary(policy.PolicyObj));
 
 				// Assign the created policy to the Sidebar
-				ViewModelProvider.MainWindowVM.AssignToSidebar(policy);
+				await ViewModelProvider.MainWindowVM.AssignToSidebar(policy);
 
 				MainWindow.TriggerTransferIconAnimationStatic((UIElement)sender);
 
@@ -1094,7 +1094,7 @@ internal sealed partial class FirewallSentinelVM : ViewModelBase, IDisposable
 				PinnedPolicy.PolicyObj = Merger.Merge(PinnedPolicy.PolicyObj, [policyObj]);
 
 				// Assign the created policy to the Sidebar
-				ViewModelProvider.MainWindowVM.AssignToSidebar(PinnedPolicy);
+				await ViewModelProvider.MainWindowVM.AssignToSidebar(PinnedPolicy);
 
 				MainWindow.TriggerTransferIconAnimationStatic((UIElement)sender);
 
@@ -1214,7 +1214,7 @@ internal sealed partial class FirewallSentinelVM : ViewModelBase, IDisposable
 				CertificatesBasedCertFilePaths.Count
 			));
 
-			await Task.Run(() =>
+			await Task.Run(async () =>
 			{
 				List<CertificateSignerCreator> certificateResults = [];
 
@@ -1246,7 +1246,7 @@ internal sealed partial class FirewallSentinelVM : ViewModelBase, IDisposable
 				PinnedPolicy.PolicyObj = Merger.Merge(PinnedPolicy.PolicyObj, [policyObj]);
 
 				// Assign the created policy to the Sidebar
-				ViewModelProvider.MainWindowVM.AssignToSidebar(PinnedPolicy);
+				await ViewModelProvider.MainWindowVM.AssignToSidebar(PinnedPolicy);
 
 				MainWindow.TriggerTransferIconAnimationStatic((UIElement)sender);
 
@@ -1360,7 +1360,7 @@ internal sealed partial class FirewallSentinelVM : ViewModelBase, IDisposable
 
 			PatternBasedFileRuleCancellableButton.Cts?.Token.ThrowIfCancellationRequested();
 
-			await Task.Run(() =>
+			await Task.Run(async () =>
 			{
 				PatternBasedFileRuleCancellableButton.Cts?.Token.ThrowIfCancellationRequested();
 
@@ -1376,7 +1376,7 @@ internal sealed partial class FirewallSentinelVM : ViewModelBase, IDisposable
 				PinnedPolicy.PolicyObj = Merger.Merge(PinnedPolicy.PolicyObj, [policyObj]);
 
 				// Assign the created policy to the Sidebar
-				ViewModelProvider.MainWindowVM.AssignToSidebar(PinnedPolicy);
+				await ViewModelProvider.MainWindowVM.AssignToSidebar(PinnedPolicy);
 
 				MainWindow.TriggerTransferIconAnimationStatic((UIElement)sender);
 

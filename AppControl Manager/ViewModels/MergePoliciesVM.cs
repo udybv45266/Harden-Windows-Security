@@ -73,7 +73,7 @@ internal sealed partial class MergePoliciesVM : ViewModelBase
 
 			MainInfoBar.WriteInfo(Atlas.GetStr("MergePolicies_MergingMessage"));
 
-			await Task.Run(() =>
+			await Task.Run(async () =>
 			{
 				List<SiPolicy.SiPolicy> otherPolicyObjs = [];
 
@@ -86,7 +86,7 @@ internal sealed partial class MergePoliciesVM : ViewModelBase
 				MainPolicy.PolicyObj = Merger.Merge(MainPolicy.PolicyObj, otherPolicyObjs);
 
 				// Assign the created policy to the Sidebar
-				ViewModelProvider.MainWindowVM.AssignToSidebar(MainPolicy);
+				await ViewModelProvider.MainWindowVM.AssignToSidebar(MainPolicy);
 
 				MainWindow.TriggerTransferIconAnimationStatic((UIElement)sender);
 
@@ -253,7 +253,7 @@ internal sealed partial class MergePoliciesVM : ViewModelBase
 			ConvertToAppIDTaggingElementsAreEnabled = false;
 			AdvancedFeaturesInfoBar.IsClosable = false;
 
-			await Task.Run(() =>
+			await Task.Run(async () =>
 			{
 				foreach (PolicyFileRepresent policy in PoliciesToConvertToAppIDTagging)
 				{
@@ -267,7 +267,7 @@ internal sealed partial class MergePoliciesVM : ViewModelBase
 					policy.PolicyObj = Merger.Merge(policy.PolicyObj, null);
 
 					// Assign the created policy to the Sidebar
-					ViewModelProvider.MainWindowVM.AssignToSidebar(policy);
+					await ViewModelProvider.MainWindowVM.AssignToSidebar(policy);
 
 					MainWindow.TriggerTransferIconAnimationStatic((UIElement)sender);
 
@@ -351,7 +351,7 @@ internal sealed partial class MergePoliciesVM : ViewModelBase
 			SigningScenarioRemovalElementsAreEnabled = false;
 			AdvancedFeaturesInfoBar.IsClosable = false;
 
-			await Task.Run(() =>
+			await Task.Run(async () =>
 			{
 				if (UserModeSigningScenarioSelected)
 				{
@@ -360,7 +360,7 @@ internal sealed partial class MergePoliciesVM : ViewModelBase
 						policy.PolicyObj = RemoveSigningScenarios.RemoveUserMode(policy.PolicyObj);
 
 						// Assign the created policy to the Sidebar
-						ViewModelProvider.MainWindowVM.AssignToSidebar(policy);
+						await ViewModelProvider.MainWindowVM.AssignToSidebar(policy);
 
 						MainWindow.TriggerTransferIconAnimationStatic((UIElement)sender);
 
@@ -377,7 +377,7 @@ internal sealed partial class MergePoliciesVM : ViewModelBase
 						policy.PolicyObj = RemoveSigningScenarios.RemoveKernelMode(policy.PolicyObj);
 
 						// Assign the created policy to the Sidebar
-						ViewModelProvider.MainWindowVM.AssignToSidebar(policy);
+						await ViewModelProvider.MainWindowVM.AssignToSidebar(policy);
 
 						MainWindow.TriggerTransferIconAnimationStatic((UIElement)sender);
 
