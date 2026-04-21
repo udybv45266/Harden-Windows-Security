@@ -4,8 +4,6 @@
 
 * Added toggle buttons to the Policies Library on the Sidebar so you can choose to show/hide policies based on their types.
 
-* Added a new option in the Policies Library: Contextual Search. You can now click/tap on the magnifier icon in the Policies Library on the Sidebar to enable contextual search which allows you to not only search among the policies based on their names, types or IDs but also search through every detail that exists in them. This is quite useful when, for instance, you want to find out which policy in the Sidebar contains the hash of a particular file or which policy allows or blocks a particular app and other such scenarios.
-
 * Improves policy creation and fixes the following issue: https://github.com/HotCakeX/Harden-Windows-Security/issues/1093
 
 * You can now view the size of each policy in the Policies Library on the Sidebar.
@@ -15,3 +13,5 @@
 * You can now cancel the simulation process that you start in the Simulation page. The button has been changed to a cancellable version.
 
 * You can now cancel the event log scan that you start in the event logs page. The button has been changed to a cancellable version.
+
+* You can now duplicate a policy in the library by right-clicking on it and selecting "Duplicate Policy".

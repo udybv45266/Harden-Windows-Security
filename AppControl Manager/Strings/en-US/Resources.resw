@@ -7241,4 +7241,14 @@ NOTE: This option is always enforced if any App Control UMCI policy enables it. 
   <data name="PoliciesLibraryContextualSearchToggleMenuFlyoutItem.AutomationProperties.HelpText" xml:space="preserve">
     <value>Search through the contents of all policies.</value>
   </data>
+  <!--NEW-->
+  <data name="DuplicatePolicyMenuFlyoutItem.Text" xml:space="preserve">
+    <value>Duplicate Policy</value>
+  </data>
+  <data name="DuplicatePolicyMenuFlyoutItem.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Duplicate the policy by creating a copy of it in the library.</value>
+  </data>
+  <data name="DuplicatePolicyMenuFlyoutItem.AutomationProperties.HelpText" xml:space="preserve">
+    <value>Duplicate the policy by creating a copy of it in the library.</value>
+  </data>
 </root>

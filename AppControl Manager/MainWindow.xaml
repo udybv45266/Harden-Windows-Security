@@ -607,6 +607,12 @@
                                                                                 </MenuFlyoutItem.Icon>
                                                                             </MenuFlyoutItem>
 
+                                                                            <MenuFlyoutItem x:Uid="DuplicatePolicyMenuFlyoutItem" Click="OnDuplicatePolicy" DataContext="{x:Bind}">
+                                                                                <MenuFlyoutItem.Icon>
+                                                                                    <FontIcon Glyph="&#xF584;" />
+                                                                                </MenuFlyoutItem.Icon>
+                                                                            </MenuFlyoutItem>
+
                                                                             <MenuFlyoutSubItem x:Uid="SetColorMenuFlyoutSubItem">
                                                                                 <MenuFlyoutSubItem.Icon>
                                                                                     <FontIcon Glyph="&#xE8EC;" />

@@ -21,9 +21,11 @@ using System.Linq;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using AppControlManager.XMLOps;
+using Microsoft.UI;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Media;
 using Windows.System;
+using Windows.UI;
 
 namespace AppControlManager.SiPolicy;
 
@@ -68,12 +70,28 @@ internal sealed partial class PolicyFileRepresent(SiPolicy policyObj, PolicyFile
 	/// <summary>
 	/// The brush used to display the policy color tag indicator.
 	/// </summary>
-	internal SolidColorBrush? TagColorBrush { get; set => SP(ref field, value); }
+	internal SolidColorBrush? TagColorBrush
+	{
+		get; set
+		{
+			if (SP(ref field, value))
+			{
+				if (field is null)
+				{
+					IsTagVisible = Visibility.Collapsed;
+				}
+				else
+				{
+					IsTagVisible = field.Color == Colors.Transparent ? Visibility.Collapsed : Visibility.Visible;
+				}
+			}
+		}
+	}
 
 	/// <summary>
 	/// The visibility of the policy color tag indicator.
 	/// </summary>
-	internal Visibility IsTagVisible { get; set => SP(ref field, value); } = Visibility.Collapsed;
+	internal Visibility IsTagVisible { get; private set => SP(ref field, value); } = Visibility.Collapsed;
 
 	/// <summary>
 	/// Helper method to generate the identifier string.
@@ -109,6 +127,16 @@ internal sealed partial class PolicyFileRepresent(SiPolicy policyObj, PolicyFile
 	/// </summary>
 	/// <returns></returns>
 	public override string ToString() => PolicyIdentifier;
+
+	/// <summary>
+	/// Creates a Deep/Full copy of the current policy.
+	/// </summary>
+	internal PolicyFileRepresent CreateCopy() => new(policyObj: PolicyObj, kind: kind)
+	{
+		FilePath = FilePath,
+		FileName = FileName,
+		FileSize = FileSize
+	};
 
 	/// <summary>
 	/// Accepts a policy file representation, offers a save dialog so user can save it somewhere,

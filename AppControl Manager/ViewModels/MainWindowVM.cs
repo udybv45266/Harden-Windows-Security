@@ -695,7 +695,6 @@ internal sealed partial class MainWindowVM : ViewModelBase, IDisposable
 									if (parsedColor != Colors.Transparent)
 									{
 										policyToAdd.TagColorBrush = new SolidColorBrush(parsedColor);
-										policyToAdd.IsTagVisible = Visibility.Visible;
 									}
 								}
 

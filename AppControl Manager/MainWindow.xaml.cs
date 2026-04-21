@@ -1676,7 +1676,6 @@ internal sealed partial class MainWindow : Window, INPCImplant
 			if (string.Equals(colorTag, "Transparent", StringComparison.OrdinalIgnoreCase))
 			{
 				policyContext.TagColorBrush = new SolidColorBrush(Colors.Transparent);
-				policyContext.IsTagVisible = Visibility.Collapsed;
 				await ViewModel.UpdatePolicyColorAsync(policyContext.UniqueObjID, "Transparent");
 			}
 			// For Custom colors from the picker
@@ -1717,7 +1716,6 @@ internal sealed partial class MainWindow : Window, INPCImplant
 				{
 					Windows.UI.Color selectedColor = picker.Color;
 					policyContext.TagColorBrush = new SolidColorBrush(selectedColor);
-					policyContext.IsTagVisible = Visibility.Visible;
 
 					string hexColor = $"#{selectedColor.A:X2}{selectedColor.R:X2}{selectedColor.G:X2}{selectedColor.B:X2}";
 					await ViewModel.UpdatePolicyColorAsync(policyContext.UniqueObjID, hexColor);
@@ -1728,7 +1726,6 @@ internal sealed partial class MainWindow : Window, INPCImplant
 			{
 				Windows.UI.Color parsedColor = MainWindowVM.ParseColor(colorTag);
 				policyContext.TagColorBrush = new SolidColorBrush(parsedColor);
-				policyContext.IsTagVisible = Visibility.Visible;
 				await ViewModel.UpdatePolicyColorAsync(policyContext.UniqueObjID, colorTag);
 			}
 		}
@@ -1873,6 +1870,17 @@ internal sealed partial class MainWindow : Window, INPCImplant
 	{
 		using CustomPoliciesLibraryCacheLocationManagerDialog customDialog = new();
 		_ = await customDialog.ShowAsync();
+	}
+
+	/// <summary>
+	/// Event handler for right-click context menu option for each policy in the library to duplicate it.
+	/// </summary>
+	private async void OnDuplicatePolicy(object sender, RoutedEventArgs e)
+	{
+		if (sender is FrameworkElement { DataContext: PolicyFileRepresent policyContext })
+		{
+			await ViewModel.AssignToSidebar(policyContext.CreateCopy());
+		}
 	}
 
 	#endregion
