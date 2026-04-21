@@ -199,6 +199,19 @@ internal sealed partial class AnimatedCancellableButton : Button, IDisposable, I
 		set => SetValue(ExternalButtonContentProperty, value);
 	}
 
+	private static readonly DependencyProperty ExternalButtonIconProperty =
+	DependencyProperty.Register(
+		nameof(ExternalButtonIcon),
+		typeof(string),
+		typeof(AnimatedCancellableButton),
+		new PropertyMetadata(string.Empty));
+
+	public string ExternalButtonIcon
+	{
+		get => (string)GetValue(ExternalButtonIconProperty);
+		set => SetValue(ExternalButtonIconProperty, value);
+	}
+
 	private static void OnExternalButtonContentChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
 	{
 		if (d is AnimatedCancellableButton button && !button._isDisposed && !button._isDisposing)
@@ -207,7 +220,14 @@ internal sealed partial class AnimatedCancellableButton : Button, IDisposable, I
 
 			if (!string.IsNullOrEmpty(newContent))
 			{
-				button.Content = newContent;
+				if (!string.IsNullOrEmpty(button.ExternalButtonIcon))
+				{
+					button.Content = CreateButtonContent(newContent, button.ExternalButtonIcon);
+				}
+				else
+				{
+					button.Content = newContent;
+				}
 			}
 		}
 	}
@@ -718,19 +738,30 @@ internal sealed partial class AnimatedCancellableButton : Button, IDisposable, I
 		{
 			if (ExternalInternalIsCancellingState)
 			{
-				Content = Atlas.GetStr("Cancelling");
+				Content = CreateButtonContent(Atlas.GetStr("Cancelling"), "\uF16A");
 				UpdateButtonStyle(true);
 			}
 			else if (ExternalInternalIsCancelState)
 			{
-				Content = Atlas.GetStr("Cancel");
+				Content = CreateButtonContent(Atlas.GetStr("Cancel"), "\uE711");
 				UpdateButtonStyle(true);
 			}
 			else
 			{
-				Content = !string.IsNullOrEmpty(ExternalButtonContent)
-					? ExternalButtonContent
-					: !string.IsNullOrEmpty(ExternalOriginalText) ? ExternalOriginalText : ButtonDefaultText;
+				if (!string.IsNullOrEmpty(ExternalButtonIcon))
+				{
+					Content = CreateButtonContent(!string.IsNullOrEmpty(ExternalButtonContent)
+									   ? ExternalButtonContent
+									   : !string.IsNullOrEmpty(ExternalOriginalText) ? ExternalOriginalText : ButtonDefaultText
+									   , ExternalButtonIcon); ;
+				}
+				else
+				{
+					Content = !string.IsNullOrEmpty(ExternalButtonContent)
+									   ? ExternalButtonContent
+									   : !string.IsNullOrEmpty(ExternalOriginalText) ? ExternalOriginalText : ButtonDefaultText;
+				}
+
 				UpdateButtonStyle(false);
 			}
 		}
@@ -1063,19 +1094,30 @@ internal sealed partial class AnimatedCancellableButton : Button, IDisposable, I
 		{
 			if (_targetCancellingStateAfterFadeOut)
 			{
-				Content = Atlas.GetStr("Cancelling");
+				Content = CreateButtonContent(Atlas.GetStr("Cancelling"), "\uF16A");
 				UpdateButtonStyle(true);
 			}
 			else if (_targetStateAfterFadeOut)
 			{
-				Content = Atlas.GetStr("Cancel");
+				Content = CreateButtonContent(Atlas.GetStr("Cancel"), "\uE711");
 				UpdateButtonStyle(true);
 			}
 			else
 			{
-				Content = !string.IsNullOrEmpty(ExternalButtonContent)
-					? ExternalButtonContent
-					: !string.IsNullOrEmpty(ExternalOriginalText) ? ExternalOriginalText : ButtonDefaultText;
+				if (!string.IsNullOrEmpty(ExternalButtonIcon))
+				{
+					Content = CreateButtonContent(!string.IsNullOrEmpty(ExternalButtonContent)
+									   ? ExternalButtonContent
+									   : !string.IsNullOrEmpty(ExternalOriginalText) ? ExternalOriginalText : ButtonDefaultText,
+									   ExternalButtonIcon); ;
+				}
+				else
+				{
+					Content = !string.IsNullOrEmpty(ExternalButtonContent)
+								? ExternalButtonContent
+								: !string.IsNullOrEmpty(ExternalOriginalText) ? ExternalOriginalText : ButtonDefaultText;
+				}
+
 				UpdateButtonStyle(false);
 			}
 
@@ -1111,6 +1153,23 @@ internal sealed partial class AnimatedCancellableButton : Button, IDisposable, I
 
 		SynchronizeWithExternalState();
 	}
+
+	private static StackPanel CreateButtonContent(string contentText, string contentIcon) => new()
+	{
+		Spacing = 8,
+		Orientation = Orientation.Horizontal,
+		Children =
+		{
+			new FontIcon
+			{
+				Glyph = contentIcon,
+				FontSize = 16
+			},
+			new TextBlock {
+				Text = contentText
+			}
+		}
+	};
 
 	private void AnimatedCancellableButton_Unloaded(object? sender, RoutedEventArgs e)
 	{

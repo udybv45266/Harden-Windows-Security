@@ -69,9 +69,16 @@ internal sealed partial class EventLogsPolicyCreationVM : ViewModelBase
 		// To adjust the initial width of the columns, giving them nice paddings.
 		// Passing the current list (even if empty) initializes defaults.
 		ColumnManager.CalculateColumnWidths(FileIdentities);
+
+		ScanLogsCancellableButton = new(Atlas.GetStr("ScanEventLogsButton/Content"));
 	}
 
 	internal readonly InfoBarSettings MainInfoBar = new();
+
+	/// <summary>
+	/// Initialization details for the main button for the Scan Logs.
+	/// </summary>
+	internal readonly AnimatedCancellableButtonInitializer ScanLogsCancellableButton;
 
 	// To store the FileIdentities displayed on the ListView
 	// Binding happens on the XAML but methods related to search update the ItemSource of the ListView from code behind otherwise there will not be an expected result
@@ -392,11 +399,17 @@ internal sealed partial class EventLogsPolicyCreationVM : ViewModelBase
 		if (Interlocked.Exchange(ref flag, 1) == 1)
 			return;
 
+		bool error = false;
+
+		ScanLogsCancellableButton.Begin();
+
 		try
 		{
 			AreElementsEnabled = false;
 
 			MainInfoBar.IsClosable = false;
+
+			ScanLogsCancellableButton.Cts?.Token.ThrowIfCancellationRequested();
 
 			ClearDataButton_Click();
 
@@ -409,8 +422,11 @@ internal sealed partial class EventLogsPolicyCreationVM : ViewModelBase
 			// Grab the App Control Logs
 			HashSet<FileIdentity> Output = await GetEventLogsData.GetAppControlEvents(
 				CodeIntegrityEvtxFilePath: CodeIntegrityEVTX,
-				AppLockerEvtxFilePath: AppLockerEVTX
+				AppLockerEvtxFilePath: AppLockerEVTX,
+				cToken: ScanLogsCancellableButton.Cts?.Token
 			);
+
+			ScanLogsCancellableButton.Cts?.Token.ThrowIfCancellationRequested();
 
 			// Store all of the data in the List
 			AllFileIdentities.AddRange(Output);
@@ -418,8 +434,12 @@ internal sealed partial class EventLogsPolicyCreationVM : ViewModelBase
 			// Sort to display newest event first at top by default
 			AllFileIdentities.Sort((x, y) => Nullable.Compare(y.TimeCreated, x.TimeCreated));
 
+			ScanLogsCancellableButton.Cts?.Token.ThrowIfCancellationRequested();
+
 			// Populates the Observable Collection and applies filters to ensure the UI reflects any currently selected Date or Search Text filters.
 			ApplyFilters();
+
+			ScanLogsCancellableButton.Cts?.Token.ThrowIfCancellationRequested();
 
 			await Task.Run(CalculateColumnWidths);
 
@@ -446,10 +466,17 @@ internal sealed partial class EventLogsPolicyCreationVM : ViewModelBase
 		}
 		catch (Exception ex)
 		{
-			MainInfoBar.WriteError(ex, Atlas.GetStr("ErrorDuringLogsScanMessage"));
+			HandleExceptions(ex, ref error, ref ScanLogsCancellableButton.wasCancelled, MainInfoBar, Atlas.GetStr("ErrorDuringLogsScanMessage"));
 		}
 		finally
 		{
+			if (ScanLogsCancellableButton.wasCancelled)
+			{
+				MainInfoBar.WriteWarning(Atlas.GetStr("OperationCancelledByUser"));
+			}
+
+			ScanLogsCancellableButton.End();
+
 			AreElementsEnabled = true;
 
 			// Stop displaying the Progress Ring

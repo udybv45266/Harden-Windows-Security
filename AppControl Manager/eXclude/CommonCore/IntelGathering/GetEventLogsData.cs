@@ -23,6 +23,7 @@ using System.Linq;
 using System.Net;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace CommonCore.IntelGathering;
@@ -45,7 +46,7 @@ internal static class GetEventLogsData
 	/// Retrieves the Code Integrity events from the local and EVTX files
 	/// </summary>
 	/// <returns></returns>
-	private static HashSet<FileIdentity> CodeIntegrityEventsRetriever(string? EvtxFilePath = null)
+	private static HashSet<FileIdentity> CodeIntegrityEventsRetriever(string? EvtxFilePath = null, CancellationToken? cToken = null)
 	{
 
 		// HashSet to store the output, ensures the data are unique and are time-prioritized
@@ -96,12 +97,16 @@ internal static class GetEventLogsData
 				return fileIdentities.FileIdentitiesInternal;
 			}
 
+			cToken?.ThrowIfCancellationRequested();
+
 			// Group all events based on their ActivityId property
 			IEnumerable<IGrouping<Guid?, EventRecord>> groupedEvents = rawEvents.GroupBy(e => e.ActivityId);
 
 			// Iterate over each group of events
 			foreach (IGrouping<Guid?, EventRecord> group in groupedEvents)
 			{
+				cToken?.ThrowIfCancellationRequested();
+
 				// There are either blocked or audit events in each group
 				// If there are more than 1 of either block or audit events, selecting the first one because that means the same event was triggered by multiple deployed policies
 
@@ -503,7 +508,7 @@ internal static class GetEventLogsData
 	/// Retrieves the AppLocker events from the local and EVTX files
 	/// </summary>
 	/// <returns></returns>
-	private static HashSet<FileIdentity> AppLockerEventsRetriever(string? EvtxFilePath = null)
+	private static HashSet<FileIdentity> AppLockerEventsRetriever(string? EvtxFilePath = null, CancellationToken? cToken = null)
 	{
 
 		// HashSet to store the output, ensures the data are unique
@@ -553,12 +558,16 @@ internal static class GetEventLogsData
 				return fileIdentities.FileIdentitiesInternal;
 			}
 
+			cToken?.ThrowIfCancellationRequested();
+
 			// Group all events based on their ActivityId property
 			IEnumerable<IGrouping<Guid?, EventRecord>> groupedEvents = rawEvents.GroupBy(e => e.ActivityId);
 
 			// Iterate over each group of events
 			foreach (IGrouping<Guid?, EventRecord> group in groupedEvents)
 			{
+				cToken?.ThrowIfCancellationRequested();
+
 				// There are either blocked or audit events in each group
 				// If there are more than 1 of either block or audit events, selecting the first one because that means the same event was triggered by multiple deployed policies
 
@@ -971,7 +980,7 @@ internal static class GetEventLogsData
 	/// Gets Code Integrity and AppLocker event logs Asynchronously
 	/// </summary>
 	/// <returns></returns>
-	internal static async Task<HashSet<FileIdentity>> GetAppControlEvents(string? CodeIntegrityEvtxFilePath = null, string? AppLockerEvtxFilePath = null, int EventsToCapture = 0)
+	internal static async Task<HashSet<FileIdentity>> GetAppControlEvents(string? CodeIntegrityEvtxFilePath = null, string? AppLockerEvtxFilePath = null, int EventsToCapture = 0, CancellationToken? cToken = null)
 	{
 		using IDisposable taskTracker = TaskTracking.RegisterOperation();
 
@@ -981,11 +990,13 @@ internal static class GetEventLogsData
 		if (EventsToCapture == 0)
 		{
 			// Start both tasks in parallel
-			Task<HashSet<FileIdentity>> codeIntegrityTask = Task.Run(() => CodeIntegrityEventsRetriever(CodeIntegrityEvtxFilePath));
-			Task<HashSet<FileIdentity>> appLockerTask = Task.Run(() => AppLockerEventsRetriever(AppLockerEvtxFilePath));
+			Task<HashSet<FileIdentity>> codeIntegrityTask = Task.Run(() => CodeIntegrityEventsRetriever(CodeIntegrityEvtxFilePath, cToken: cToken));
+			Task<HashSet<FileIdentity>> appLockerTask = Task.Run(() => AppLockerEventsRetriever(AppLockerEvtxFilePath, cToken: cToken));
 
 			// Await both tasks to complete
 			HashSet<FileIdentity>[] results = await Task.WhenAll(codeIntegrityTask, appLockerTask);
+
+			cToken?.ThrowIfCancellationRequested();
 
 			// Assign the Code Integrity task's HashSet output since it's the main category and will have the majority of the events
 			combinedResult = results[0];
@@ -1004,13 +1015,13 @@ internal static class GetEventLogsData
 		else if (EventsToCapture == 1)
 		{
 			// Only starts the Code integrity events capture task
-			combinedResult = await Task.Run(() => CodeIntegrityEventsRetriever(CodeIntegrityEvtxFilePath));
+			combinedResult = await Task.Run(() => CodeIntegrityEventsRetriever(CodeIntegrityEvtxFilePath, cToken: cToken));
 		}
 
 		else if (EventsToCapture == 2)
 		{
 			// Only starts the AppLocker events capture task
-			combinedResult = await Task.Run(() => AppLockerEventsRetriever(AppLockerEvtxFilePath));
+			combinedResult = await Task.Run(() => AppLockerEventsRetriever(AppLockerEvtxFilePath, cToken: cToken));
 		}
 
 		Logger.Write(string.Format(

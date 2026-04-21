@@ -76,20 +76,26 @@
                               IsActive="{x:Bind ViewModel.ScanLogsProgressRingIsActive, Mode=OneWay}" />
 
                     <!-- Scan button -->
-                    <Button x:Uid="ScanEventLogsButton"
+                    <customUI:AnimatedCancellableButton x:Uid="ScanEventLogsButton"
+                            AccessKey="S"
                             Style="{StaticResource AccentButtonStyle}"
-                            IsEnabled="{x:Bind ViewModel.AreElementsEnabled, Mode=OneWay}"
+                            Margin="2,0,4,0"
                             Click="{x:Bind ViewModel.ScanLogs_Click}"
-                            AccessKey="S">
-                        <Button.ContentTemplate>
-                            <DataTemplate x:DataType="x:String">
-                                <StackPanel Orientation="Horizontal" Spacing="8">
-                                    <FontIcon Glyph="&#xEE6F;" />
-                                    <TextBlock Text="{x:Bind}"/>
-                                </StackPanel>
-                            </DataTemplate>
-                        </Button.ContentTemplate>
-                    </Button>
+                            CancelMethod="{x:Bind ViewModel.ScanLogsCancellableButton.Cancel}"
+                            ExternalButtonIcon="&#xEE6F;"
+                            ExternalOperationInProgress="{x:Bind ViewModel.ScanLogsCancellableButton.IsOperationInProgress, Mode=OneWay}"
+                            ExternalIsCancelState="{x:Bind ViewModel.ScanLogsCancellableButton.IsCancelState, Mode=OneWay}"
+                            ExternalIsCancellingState="{x:Bind ViewModel.ScanLogsCancellableButton.IsCancellingState, Mode=OneWay}"
+                            ExternalIsAnimating="{x:Bind ViewModel.ScanLogsCancellableButton.IsAnimating, Mode=OneWay}"
+                            ExternalButtonContent="{x:Bind ViewModel.ScanLogsCancellableButton.ButtonContent, Mode=OneWay}"
+                            ExternalOriginalText="{x:Bind ViewModel.ScanLogsCancellableButton.OriginalText, Mode=OneWay}"
+                            ExternalInternalIsCancelState="{x:Bind ViewModel.ScanLogsCancellableButton.InternalIsCancelState, Mode=OneWay}"
+                            ExternalInternalIsCancellingState="{x:Bind ViewModel.ScanLogsCancellableButton.InternalIsCancellingState, Mode=OneWay}"
+                            ExternalInternalIsAnimating="{x:Bind ViewModel.ScanLogsCancellableButton.InternalIsAnimating, Mode=OneWay}"
+                            ExternalInternalIsOperationInProgress="{x:Bind ViewModel.ScanLogsCancellableButton.InternalIsOperationInProgress, Mode=OneWay}"
+                            ExternalInternalSuppressExternalClick="{x:Bind ViewModel.ScanLogsCancellableButton.InternalSuppressExternalClick, Mode=OneWay}"
+                            ExternalShadowAnimationRunning="{x:Bind ViewModel.ScanLogsCancellableButton.ShadowAnimationRunning, Mode=OneWay}"
+                            ExternalOperationStarted="{x:Bind ViewModel.ScanLogsCancellableButton.OperationStarted, Mode=OneWay}" />
 
                     <SplitButton ToolTipService.ToolTip="Create the supplemental policy"
                                  x:Name="MainSplitButton"

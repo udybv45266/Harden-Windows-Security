@@ -36,6 +36,7 @@
                             Margin="0,0,4,0"
                             Click="{x:Bind ViewModel.BeginSimulationButton_Click}"
                             CancelMethod="{x:Bind ViewModel.BeginSimulationCancellableButton.Cancel}"
+                            ExternalButtonIcon="&#xE768;"
                             ExternalOperationInProgress="{x:Bind ViewModel.BeginSimulationCancellableButton.IsOperationInProgress, Mode=OneWay}"
                             ExternalIsCancelState="{x:Bind ViewModel.BeginSimulationCancellableButton.IsCancelState, Mode=OneWay}"
                             ExternalIsCancellingState="{x:Bind ViewModel.BeginSimulationCancellableButton.IsCancellingState, Mode=OneWay}"

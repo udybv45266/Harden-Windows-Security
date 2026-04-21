@@ -149,7 +149,7 @@
                 <Setter Property="ChildrenTransitions">
                     <Setter.Value>
                         <TransitionCollection>
-                            <RepositionThemeTransition />
+                            <RepositionThemeTransition IsStaggeringEnabled="False" />
                         </TransitionCollection>
                     </Setter.Value>
                 </Setter>
