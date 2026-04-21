@@ -4924,13 +4924,13 @@
   <data name="PolicyEditorSaveTheChanges.AutomationProperties.HelpText" xml:space="preserve">
     <value>שמור את השינויים שנעשו בנתונים חזרה לקובץ XML של המדיניות.</value>
   </data>
-  <data name="BeginSimulationTextBlock.Text" xml:space="preserve">
+  <data name="BeginSimulationButton.Content" xml:space="preserve">
     <value>התחל סימולציה</value>
   </data>
-  <data name="BeginSimulation.ToolTipService.ToolTip" xml:space="preserve">
+  <data name="BeginSimulationButton.ToolTipService.ToolTip" xml:space="preserve">
     <value>התחל את הסימולציה באמצעות התצורות הנבחרות.</value>
   </data>
-  <data name="BeginSimulation.AutomationProperties.HelpText" xml:space="preserve">
+  <data name="BeginSimulationButton.AutomationProperties.HelpText" xml:space="preserve">
     <value>התחל את הסימולציה באמצעות התצורות הנבחרות.</value>
   </data>
   <data name="RetrieveOnlinePoliciesTextBlock.Text" xml:space="preserve">

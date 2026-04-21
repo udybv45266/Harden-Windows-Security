@@ -50,7 +50,9 @@ internal static class Arbitrator
 			// If the signer has any EKUs, try to match it with the file's EKU OIDs
 			if (signer.HasEKU)
 			{
+#if DEBUG
 				Logger.Write(string.Format(Atlas.GetStr("CurrentFileHasNEKUs"), simulationInput.FilePath.FullName, simulationInput.EKUOIDs?.Count));
+#endif
 
 				// Check if any of the Signer's OIDs match any of the file's certificates' OIDs (which are basically Leaf certificates' EKU OIDs)
 				// This is used for all levels, not just WHQL levels

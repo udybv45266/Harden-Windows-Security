@@ -81,7 +81,8 @@ internal static class AppControlSimulation
 		bool scanSecurityCatalogs,
 		List<string>? catRootPath,
 		ushort threadsCount = 2,
-		IProgress<double>? progressReporter = null)
+		IProgress<double>? progressReporter = null,
+		CancellationToken? cToken = null)
 	{
 
 		// Ensure threadsCount is at least 1
@@ -101,6 +102,8 @@ internal static class AppControlSimulation
 		HashSet<string> FilePathRules = XmlFilePathExtractor.GetFilePaths(policyObj);
 
 		bool HasFilePathRules = FilePathRules.Count > 0;
+
+		cToken?.ThrowIfCancellationRequested();
 
 		#endregion
 
@@ -148,6 +151,7 @@ internal static class AppControlSimulation
 		// Keys of it are the file paths which aren't important, values are the important items needed at the end of the simulation
 		ConcurrentDictionary<string, SimulationOutput> FinalSimulationResults = new(threadsCount, CollectedFiles.Item2);
 
+		cToken?.ThrowIfCancellationRequested();
 
 		#region Region Making Sure No AllowAll Rule Exists
 
@@ -217,6 +221,8 @@ internal static class AppControlSimulation
 					// Loop over the current chunk of data
 					foreach (string CurrentFilePath in chunk)
 					{
+						cToken?.ThrowIfCancellationRequested();
+
 						// Increment the processed file count safely
 						_ = Interlocked.Increment(ref processedFilesCount);
 

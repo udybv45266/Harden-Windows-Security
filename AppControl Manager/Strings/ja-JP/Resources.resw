@@ -4924,13 +4924,13 @@
   <data name="PolicyEditorSaveTheChanges.AutomationProperties.HelpText" xml:space="preserve">
     <value>データに加えられた変更をポリシーXMLファイルに保存します。</value>
   </data>
-  <data name="BeginSimulationTextBlock.Text" xml:space="preserve">
+  <data name="BeginSimulationButton.Content" xml:space="preserve">
     <value>シミュレーション開始</value>
   </data>
-  <data name="BeginSimulation.ToolTipService.ToolTip" xml:space="preserve">
+  <data name="BeginSimulationButton.ToolTipService.ToolTip" xml:space="preserve">
     <value>選択した構成を使用してシミュレーションを開始します。</value>
   </data>
-  <data name="BeginSimulation.AutomationProperties.HelpText" xml:space="preserve">
+  <data name="BeginSimulationButton.AutomationProperties.HelpText" xml:space="preserve">
     <value>選択した構成を使用してシミュレーションを開始します。</value>
   </data>
   <data name="RetrieveOnlinePoliciesTextBlock.Text" xml:space="preserve">

@@ -4924,13 +4924,13 @@ NOTE: यदि कोई भी App Control UMCI नीति इसे सक�
   <data name="PolicyEditorSaveTheChanges.AutomationProperties.HelpText" xml:space="preserve">
     <value>डेटा में किए गए परिवर्तनों को नीति XML फ़ाइल में वापस सेव करें।</value>
   </data>
-  <data name="BeginSimulationTextBlock.Text" xml:space="preserve">
+  <data name="BeginSimulationButton.Content" xml:space="preserve">
     <value>सिमुलेशन शुरू करें</value>
   </data>
-  <data name="BeginSimulation.ToolTipService.ToolTip" xml:space="preserve">
+  <data name="BeginSimulationButton.ToolTipService.ToolTip" xml:space="preserve">
     <value>चयनित कॉन्फ़िगरेशन का उपयोग करके सिमुलेशन शुरू करें।</value>
   </data>
-  <data name="BeginSimulation.AutomationProperties.HelpText" xml:space="preserve">
+  <data name="BeginSimulationButton.AutomationProperties.HelpText" xml:space="preserve">
     <value>चयनित कॉन्फ़िगरेशन का उपयोग करके सिमुलेशन शुरू करें।</value>
   </data>
   <data name="RetrieveOnlinePoliciesTextBlock.Text" xml:space="preserve">

@@ -63,11 +63,18 @@ internal sealed partial class SimulationVM : ViewModelBase
 
 		// To adjust the initial width of the columns, giving them nice paddings.
 		ColumnManager.CalculateColumnWidths(SimulationOutputs);
+
+		BeginSimulationCancellableButton = new(Atlas.GetStr("BeginSimulationButton/Content"));
 	}
 
 	internal readonly InfoBarSettings MainInfoBar = new();
 
 	internal Visibility SelectedPolicyLightAnimatedIconVisibility { get; set => SP(ref field, value); } = Visibility.Collapsed;
+
+	/// <summary>
+	/// Initialization details for the main button for the begin Simulation.
+	/// </summary>
+	internal readonly AnimatedCancellableButtonInitializer BeginSimulationCancellableButton;
 
 	internal readonly CommonCore.IncrementalCollection.RangedObservableCollection<SimulationOutput> SimulationOutputs = [];
 
@@ -293,6 +300,8 @@ internal sealed partial class SimulationVM : ViewModelBase
 
 		bool error = false;
 
+		BeginSimulationCancellableButton.Begin();
+
 		try
 		{
 			AreElementsEnabled = false;
@@ -300,6 +309,8 @@ internal sealed partial class SimulationVM : ViewModelBase
 			MainInfoBar.IsClosable = false;
 
 			MainInfoBar.WriteInfo(Atlas.GetStr("PerformingSimulationMessage"));
+
+			BeginSimulationCancellableButton.Cts?.Token.ThrowIfCancellationRequested();
 
 			// Run the simulation
 			ConcurrentDictionary<string, SimulationOutput> result = await Task.Run(() =>
@@ -311,9 +322,12 @@ internal sealed partial class SimulationVM : ViewModelBase
 					ScanSecurityCatalogs,
 					CatRootPaths,
 					(ushort)ScalabilityRadialGaugeValue,
-					ProgressRingValueProgress
+					ProgressRingValueProgress,
+					BeginSimulationCancellableButton.Cts?.Token
 				);
 			});
+
+			BeginSimulationCancellableButton.Cts?.Token.ThrowIfCancellationRequested();
 
 			// Clear the current ObservableCollection and backup the full data set
 			SimulationOutputs.Clear();
@@ -338,15 +352,20 @@ internal sealed partial class SimulationVM : ViewModelBase
 		}
 		catch (Exception ex)
 		{
-			error = true;
-			MainInfoBar.WriteError(ex, Atlas.GetStr("ErrorDuringSimulationMessage"));
+			HandleExceptions(ex, ref error, ref BeginSimulationCancellableButton.wasCancelled, MainInfoBar, Atlas.GetStr("ErrorDuringSimulationMessage"));
 		}
 		finally
 		{
-			if (!error)
+			if (BeginSimulationCancellableButton.wasCancelled)
+			{
+				MainInfoBar.WriteWarning(Atlas.GetStr("OperationCancelledByUser"));
+			}
+			else if (!error)
 			{
 				MainInfoBar.WriteSuccess(Atlas.GetStr("SimulationCompletedSuccessfullyMessage"));
 			}
+
+			BeginSimulationCancellableButton.End();
 
 			AreElementsEnabled = true;
 			MainInfoBar.IsClosable = true;

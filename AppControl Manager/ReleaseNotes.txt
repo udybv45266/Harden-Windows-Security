@@ -13,3 +13,5 @@
 * You can now view the size of each policy in the Policies Library on the Sidebar.
 
 * You can now use CTRL + S keyboard shortcuts to open and close the Sidebar's pane.
+
+* You can now cancel the simulation process that you start in the Simulation page. The button has been changed to a cancellable version.

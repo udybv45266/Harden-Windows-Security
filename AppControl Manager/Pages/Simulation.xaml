@@ -25,21 +25,30 @@
 
         <Expander HorizontalAlignment="Stretch"
                   Grid.Row="1"
-                  Margin="0,5,0,10">
+                  Margin="0,5,0,5">
             <Expander.Header>
 
                 <CCToolKit:WrapPanel Style="{StaticResource UnifiedToolbarStyle}">
 
                     <!-- Begin Simulation Button -->
-                    <Button x:Uid="BeginSimulation"
-                        Style="{StaticResource AccentButtonStyle}"
-                        IsEnabled="{x:Bind ViewModel.AreElementsEnabled, Mode=OneWay}"
-                        Click="{x:Bind ViewModel.BeginSimulationButton_Click}">
-                        <StackPanel Orientation="Horizontal">
-                            <SymbolIcon Symbol="Play" />
-                            <TextBlock x:Uid="BeginSimulationTextBlock" Margin="5,0,0,0"/>
-                        </StackPanel>
-                    </Button>
+                    <customUI:AnimatedCancellableButton x:Uid="BeginSimulationButton"
+                            Style="{StaticResource AccentButtonStyle}"
+                            Margin="0,0,4,0"
+                            Click="{x:Bind ViewModel.BeginSimulationButton_Click}"
+                            CancelMethod="{x:Bind ViewModel.BeginSimulationCancellableButton.Cancel}"
+                            ExternalOperationInProgress="{x:Bind ViewModel.BeginSimulationCancellableButton.IsOperationInProgress, Mode=OneWay}"
+                            ExternalIsCancelState="{x:Bind ViewModel.BeginSimulationCancellableButton.IsCancelState, Mode=OneWay}"
+                            ExternalIsCancellingState="{x:Bind ViewModel.BeginSimulationCancellableButton.IsCancellingState, Mode=OneWay}"
+                            ExternalIsAnimating="{x:Bind ViewModel.BeginSimulationCancellableButton.IsAnimating, Mode=OneWay}"
+                            ExternalButtonContent="{x:Bind ViewModel.BeginSimulationCancellableButton.ButtonContent, Mode=OneWay}"
+                            ExternalOriginalText="{x:Bind ViewModel.BeginSimulationCancellableButton.OriginalText, Mode=OneWay}"
+                            ExternalInternalIsCancelState="{x:Bind ViewModel.BeginSimulationCancellableButton.InternalIsCancelState, Mode=OneWay}"
+                            ExternalInternalIsCancellingState="{x:Bind ViewModel.BeginSimulationCancellableButton.InternalIsCancellingState, Mode=OneWay}"
+                            ExternalInternalIsAnimating="{x:Bind ViewModel.BeginSimulationCancellableButton.InternalIsAnimating, Mode=OneWay}"
+                            ExternalInternalIsOperationInProgress="{x:Bind ViewModel.BeginSimulationCancellableButton.InternalIsOperationInProgress, Mode=OneWay}"
+                            ExternalInternalSuppressExternalClick="{x:Bind ViewModel.BeginSimulationCancellableButton.InternalSuppressExternalClick, Mode=OneWay}"
+                            ExternalShadowAnimationRunning="{x:Bind ViewModel.BeginSimulationCancellableButton.ShadowAnimationRunning, Mode=OneWay}"
+                            ExternalOperationStarted="{x:Bind ViewModel.BeginSimulationCancellableButton.OperationStarted, Mode=OneWay}" />
 
                     <!-- Select policy Button -->
                     <customUI:ButtonV2 Click="{x:Bind ViewModel.SelectXmlFileButton_Click}"
