@@ -7251,4 +7251,16 @@ NOTE: This option is always enforced if any App Control UMCI policy enables it. 
   <data name="DuplicatePolicyMenuFlyoutItem.AutomationProperties.HelpText" xml:space="preserve">
     <value>Duplicate the policy by creating a copy of it in the library.</value>
   </data>
+  <data name="RemovePolicyFilePathMenuFlyoutItem.Text" xml:space="preserve">
+    <value>Remove File Path</value>
+  </data>
+  <data name="RemovePolicyFilePathMenuFlyoutItem.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Remove the file path associated with the policy. It is assigned to the policies that you manually add to the library by drag and dropping them here or browsing for them.</value>
+  </data>
+  <data name="RemovePolicyFilePathMenuFlyoutItem.AutomationProperties.HelpText" xml:space="preserve">
+    <value>Remove the file path associated with the policy. It is assigned to the policies that you manually add to the library by drag and dropping them here or browsing for them.</value>
+  </data>
+  <data name="PolicyEditorSuccessfulSaveToPoliciesLibraryMessage" xml:space="preserve">
+    <value>Successfully saved the changes to the policies library.</value>
+  </data>
 </root>

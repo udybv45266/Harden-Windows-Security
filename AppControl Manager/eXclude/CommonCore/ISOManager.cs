@@ -1823,8 +1823,11 @@ internal static partial class ISOManager
 		return uint.MaxValue;
 	}
 
-	internal static bool IsDriveWritable(string drivePath)
+	internal static bool IsDriveWritable(string? drivePath)
 	{
+		if (drivePath is null)
+			return false;
+
 		string testFilePath = Path.Combine(drivePath, $"write_test_{Guid.CreateVersion7():N}.tmp");
 
 		try

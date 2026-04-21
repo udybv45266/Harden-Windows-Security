@@ -776,7 +776,7 @@ internal sealed partial class PolicyEditorVM : ViewModelBase
 				policyObj: BinaryOpsReverse.ConvertBinaryToXmlFile(filePath),
 				kind: PolicyFileRepresentKind.CIP)
 			{
-				FileName = Path.GetFileNameWithoutExtension(filePath)
+				FilePath = filePath
 			};
 		}
 		else if (string.Equals(fileExt, ".xml", StringComparison.OrdinalIgnoreCase))
@@ -785,8 +785,7 @@ internal sealed partial class PolicyEditorVM : ViewModelBase
 				policyObj: Management.Initialize(filePath, null),
 				kind: PolicyFileRepresentKind.XML)
 			{
-				FilePath = filePath, // Only assign the file path if it's XML since we use it to save the policy back to the file in other places in the app.
-				FileName = Path.GetFileNameWithoutExtension(filePath)
+				FilePath = filePath // Only assign the file path if it's XML since we use it to save the policy back to the file in other places in the app.
 			};
 		}
 		else if (string.Equals(fileExt, ".p7b", StringComparison.OrdinalIgnoreCase))
@@ -795,7 +794,7 @@ internal sealed partial class PolicyEditorVM : ViewModelBase
 				policyObj: BinaryOpsReverse.ConvertBinaryToXmlFile(filePath),
 				kind: PolicyFileRepresentKind.P7B)
 			{
-				FileName = Path.GetFileNameWithoutExtension(filePath)
+				FilePath = filePath
 			};
 		}
 		else if (string.Equals(fileExt, ".bin", StringComparison.OrdinalIgnoreCase))
@@ -804,7 +803,7 @@ internal sealed partial class PolicyEditorVM : ViewModelBase
 				policyObj: BinaryOpsReverse.ConvertBinaryToXmlFile(filePath),
 				kind: PolicyFileRepresentKind.BIN)
 			{
-				FileName = Path.GetFileNameWithoutExtension(filePath)
+				FilePath = filePath
 			};
 		}
 		else
@@ -1246,20 +1245,16 @@ internal sealed partial class PolicyEditorVM : ViewModelBase
 
 				#endregion
 
-				string? fileToSaveTheChangesTo = null;
+				string? XMLFilePathToSaveTheChangesTo = null;
 
-				// Save the non-XML file in a XML file
-				if (SelectedPolicy.Kind is not PolicyFileRepresentKind.XML)
+				// We should be able to read/write in the same directory as the selected file (XML, CIP, Bin..anything) if we want to save the XML version of the modified policy in the same directory.
+				if (SelectedPolicy.FilePath is not null)
 				{
-					// Save it to User Config dir when elevated
-					fileToSaveTheChangesTo = Atlas.IsElevated
-						? Path.Combine(Atlas.UserConfigDir, $"{SelectedPolicy.FileName}.xml")
-						// Save it to the same location file is being read from if non-elevated since we already check if we have write permission in that location
-						: Path.Combine(Path.GetDirectoryName(SelectedPolicy.FilePath)!, $"{SelectedPolicy.FileName}.xml");
-				}
-				else
-				{
-					fileToSaveTheChangesTo = SelectedPolicy.FilePath;
+					if (ISOManager.IsDriveWritable(Path.GetDirectoryName(SelectedPolicy.FilePath)))
+					{
+						// Make sure the extension is XML.
+						XMLFilePathToSaveTheChangesTo = Path.ChangeExtension(SelectedPolicy.FilePath, ".xml");
+					}
 				}
 
 				// Anything that has to do with Settings must be applied by this method because it always overwrites any other changes as it writes the final settings block to the policy.
@@ -1369,10 +1364,12 @@ internal sealed partial class PolicyEditorVM : ViewModelBase
 				   kernelModeAppIDTags
 				   );
 
-				// Save the policy to the the user selected XML file path
-				if (fileToSaveTheChangesTo is not null)
+				// Save the policy to the XML file path
+				// If it remains null here, it means we either don't have permission to write to that directory or file path didn't exist.
+				// Either way it is fine because the policy will be saved to the Policies Library.
+				if (XMLFilePathToSaveTheChangesTo is not null)
 				{
-					Management.SavePolicyToFile(SelectedPolicy.PolicyObj, fileToSaveTheChangesTo);
+					Management.SavePolicyToFile(SelectedPolicy.PolicyObj, XMLFilePathToSaveTheChangesTo);
 				}
 
 				// Assign the modified policy to the Sidebar
@@ -1390,9 +1387,16 @@ internal sealed partial class PolicyEditorVM : ViewModelBase
 						PolicySettingsCollection.Add(item);
 					}
 
-					MainInfoBar.WriteSuccess(Atlas.GetStr("PolicyEditorSuccessfulSaveMessage"));
+					if (XMLFilePathToSaveTheChangesTo is not null)
+					{
+						MainInfoBar.WriteSuccess(Atlas.GetStr("PolicyEditorSuccessfulSaveMessage"));
+					}
+					else
+					{
+						MainInfoBar.WriteSuccess(Atlas.GetStr("PolicyEditorSuccessfulSaveToPoliciesLibraryMessage"));
+					}
 
-					if (SelectedPolicy.Kind is not PolicyFileRepresentKind.XML)
+					if (SelectedPolicy.Kind is not PolicyFileRepresentKind.XML && XMLFilePathToSaveTheChangesTo is not null)
 					{
 						using ContentDialogV2 dialog = new()
 						{
@@ -1414,7 +1418,7 @@ internal sealed partial class PolicyEditorVM : ViewModelBase
 									new TextBox
 									{
 										TextWrapping = TextWrapping.Wrap,
-										Text = fileToSaveTheChangesTo,
+										Text = XMLFilePathToSaveTheChangesTo,
 										IsReadOnly = true,
 										HorizontalAlignment = HorizontalAlignment.Center
 									}

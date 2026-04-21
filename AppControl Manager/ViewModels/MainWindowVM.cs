@@ -156,7 +156,7 @@ internal sealed partial class MainWindowVM : ViewModelBase, IDisposable
 				if (!PoliciesLibraryContextualSearch)
 				{
 					if (policy.PolicyIdentifier.Contains(SidebarSearchText, StringComparison.OrdinalIgnoreCase) ||
-						(policy.FileName is not null && policy.FileName.Contains(SidebarSearchText, StringComparison.OrdinalIgnoreCase)) ||
+						(policy.FilePath is not null && policy.FilePath.Contains(SidebarSearchText, StringComparison.OrdinalIgnoreCase)) ||
 						policy.PolicyObj.VersionEx.Contains(SidebarSearchText, StringComparison.OrdinalIgnoreCase) ||
 						policy.SigningStatus.Contains(SidebarSearchText, StringComparison.OrdinalIgnoreCase)
 						)

@@ -613,6 +613,12 @@
                                                                                 </MenuFlyoutItem.Icon>
                                                                             </MenuFlyoutItem>
 
+                                                                            <MenuFlyoutItem x:Uid="RemovePolicyFilePathMenuFlyoutItem" Click="OnRemovePolicyFilePath" IsEnabled="{x:Bind FilePathExists, Mode=OneWay}" DataContext="{x:Bind}">
+                                                                                <MenuFlyoutItem.Icon>
+                                                                                    <FontIcon Glyph="&#xED61;" />
+                                                                                </MenuFlyoutItem.Icon>
+                                                                            </MenuFlyoutItem>
+
                                                                             <MenuFlyoutSubItem x:Uid="SetColorMenuFlyoutSubItem">
                                                                                 <MenuFlyoutSubItem.Icon>
                                                                                     <FontIcon Glyph="&#xE8EC;" />

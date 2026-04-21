@@ -59,13 +59,17 @@ internal sealed partial class PolicyFileRepresent(SiPolicy policyObj, PolicyFile
 	/// The path of the file from which the policy was loaded, if applicable.
 	/// Not always present and only used for certain areas.
 	/// </summary>
-	internal string? FilePath { get; set; }
+	internal string? FilePath
+	{
+		get; set
+		{
+			field = value;
 
-	/// <summary>
-	/// The name of the file from which the policy was loaded, if applicable.
-	/// Not always present and only used for certain areas.
-	/// </summary>
-	internal string? FileName { get; set; }
+			OnPropertyChanged(nameof(FilePathExists));
+		}
+	}
+
+	internal bool FilePathExists => FilePath != null;
 
 	/// <summary>
 	/// The brush used to display the policy color tag indicator.
@@ -134,7 +138,6 @@ internal sealed partial class PolicyFileRepresent(SiPolicy policyObj, PolicyFile
 	internal PolicyFileRepresent CreateCopy() => new(policyObj: PolicyObj, kind: kind)
 	{
 		FilePath = FilePath,
-		FileName = FileName,
 		FileSize = FileSize
 	};
 

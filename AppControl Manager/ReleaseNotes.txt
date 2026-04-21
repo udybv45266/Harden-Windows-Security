@@ -1,11 +1,3 @@
-* You can now change the display mode of the Sidebar pane and switch between Overlay or Inline modes.
-
-* The AppControl Manager app now responds to the Windows theme/color changes if the app's theme in the settings page is set to "Use System Setting".
-
-* Added toggle buttons to the Policies Library on the Sidebar so you can choose to show/hide policies based on their types.
-
-* Improves policy creation and fixes the following issue: https://github.com/HotCakeX/Harden-Windows-Security/issues/1093
-
 * You can now view the size of each policy in the Policies Library on the Sidebar.
 
 * You can now use CTRL + S keyboard shortcuts to open and close the Sidebar's pane.
@@ -15,3 +7,5 @@
 * You can now cancel the event log scan that you start in the event logs page. The button has been changed to a cancellable version.
 
 * You can now duplicate a policy in the library by right-clicking on it and selecting "Duplicate Policy".
+
+* You can now detach policies you manually add to the sidebar policies library from their file paths so the changes made to them won't be written back to the original files.

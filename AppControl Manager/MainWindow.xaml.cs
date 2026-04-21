@@ -1883,6 +1883,17 @@ internal sealed partial class MainWindow : Window, INPCImplant
 		}
 	}
 
+	/// <summary>
+	/// Event handler for right-click context menu option for each policy in the library to clear/remove its file path association.
+	/// </summary>
+	private async void OnRemovePolicyFilePath(object sender, RoutedEventArgs e)
+	{
+		if (sender is FrameworkElement { DataContext: PolicyFileRepresent policyContext })
+		{
+			policyContext.FilePath = null;
+		}
+	}
+
 	#endregion
 
 #endif

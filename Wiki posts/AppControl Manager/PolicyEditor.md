@@ -27,7 +27,7 @@ This feature also deduplicates any redundant rules or signers within the policy 
 
 * **Load Policy**: Use this button to import the details of the chosen App Control policy into the user interface.
 
-* **Save the Changes**: Click this button to commit any modifications back to the selected App Control policy. If the file you are working with is a `CIP` binary, BIN or P7B policy, then using this button will save it as XML file with the same name in the `AppControl Manager` directory in Program Files (if the app is running elevated), or it will save the XML in the same location as the CIP, BIN or P7B file (if the app is running with standard privilege).
+* **Save the Changes**: Click this button to commit any modifications back to the selected App Control policy. If the file you are working with is a `CIP` binary, `BIN` or `P7B` policy, then using this button will attempt to save it as XML file with the same name in the same directory. If the file you are working with is XML then using this button will overwrite it with the new changes. If the app has the necessary write permissions to write to the selected file's directory, it will do so, otherwise the policy will be just available in the Policies Library on the Sidebar.
 
 * **Clear the Data**: Use this button to reset all data loaded in the interface as a consequence of loading the policy.
 
