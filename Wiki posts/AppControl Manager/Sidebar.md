@@ -34,6 +34,14 @@ Any new policy that you create in the app will be automatically added to the lib
     * **Copy BasePolicyID** (Copies the BasePolicyID to the clipboard)
     * **Copy policyID** (Copies the PolicyID to the clipboard)
     * **Set Color** (You can tag policies in the library with colors to help with easy recognition or categorization of them. You can choose from a pre-defined set of colors or use the color picker to select any color you like. The colors you select are remembered by the app and in the Policies Library local cache location, a new JSON file will be created that will be used to remember the colors. If you do not use any colors, that JSON file will never be created.)
+    * **Duplicate Policy** Duplicate the policy by creating a copy of it in the library.
+    * **Remove File Path** When you add a policy to the library such as via Drag & Drop or browsing for files, the file path will be saved with the policy in the library. Use this button to remove the file path so the changes made to the policy won't be written back to the original file. The file path association only remains until the app is restarted because it is not remembered when the app is closed.
+
+#### Search
+
+You can search through the policies in the library by typing in the search box.
+
+* **Contextual Search**: Click/tap on the magnifier icon in the Policies Library on the Sidebar to enable contextual search which allows you to not only search among the policies based on their names, types or IDs but also search through every detail that exists in them. This is quite useful when, for instance, you want to find out which policy in the Sidebar contains the hash of a particular file or which policy allows or blocks a particular app and other such advanced scenarios.
 
 ### Persistence Feature
 
@@ -86,6 +94,11 @@ Pages within the AppControl Manager that require a policy automatically recogniz
 <img src="https://raw.githubusercontent.com/HotCakeX/.github/refs/heads/main/Pictures/Gifs/AppControlManagerSidebarUsageGuide.gif" alt="AppControl Manager Application's Sidebar">
 
 </div>
+
+<br>
+
+> [!TIP]\
+> You can open the Sidebar via `CTRL` + `S` keyboard shortcut too.
 
 <br>
 
