@@ -5,3 +5,5 @@
 * The Harden System Security app now responds to the Windows theme/color changes if the app's theme in the settings page is set to "Use System Setting".
 
 * Various small UI and UX improvements.
+
+* You can now use CTRL + S keyboard shortcuts to open and close the Sidebar's pane.

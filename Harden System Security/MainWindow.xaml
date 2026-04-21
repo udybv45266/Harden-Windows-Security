@@ -264,6 +264,10 @@
                     Background="Transparent"
                     BorderThickness="0">
 
+                <Button.KeyboardAccelerators>
+                    <KeyboardAccelerator Key="S" Modifiers="Control" Invoked="{x:Bind ViewModel.SidebarButtonKeyboardAccelerator_Invoked}"/>
+                </Button.KeyboardAccelerators>
+
                 <Button.Content>
                     <CCToolKit:WrapPanel Orientation="Horizontal">
 

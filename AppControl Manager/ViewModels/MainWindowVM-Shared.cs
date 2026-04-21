@@ -28,6 +28,7 @@ using Microsoft.UI.Composition.SystemBackdrops;
 using Microsoft.UI.Windowing;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
+using Microsoft.UI.Xaml.Input;
 using Microsoft.UI.Xaml.Media;
 using Windows.Foundation;
 using Windows.Graphics;
@@ -142,6 +143,15 @@ internal sealed partial class MainWindowVM : ViewModelBase
 	/// Event handler for the main Sidebar button click
 	/// </summary>
 	internal void SidebarButton_Click() => SidebarPaneIsOpen = !SidebarPaneIsOpen;
+
+	/// <summary>
+	/// To open the Sidebar via keyboard shortcuts.
+	/// </summary>
+	internal void SidebarButtonKeyboardAccelerator_Invoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventArgs args)
+	{
+		SidebarButton_Click();
+		args.Handled = true;
+	}
 
 	/// <summary>
 	/// Event handler triggered when the UpdateAvailable event is raised, indicating an update is available.
