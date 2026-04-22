@@ -80,14 +80,7 @@ internal sealed partial class PolicyFileRepresent(SiPolicy policyObj, PolicyFile
 		{
 			if (SP(ref field, value))
 			{
-				if (field is null)
-				{
-					IsTagVisible = Visibility.Collapsed;
-				}
-				else
-				{
-					IsTagVisible = field.Color == Colors.Transparent ? Visibility.Collapsed : Visibility.Visible;
-				}
+				IsTagVisible = field is null ? Visibility.Collapsed : field.Color == Colors.Transparent ? Visibility.Collapsed : Visibility.Visible;
 			}
 		}
 	}
