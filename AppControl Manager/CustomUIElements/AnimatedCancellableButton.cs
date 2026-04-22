@@ -220,14 +220,7 @@ internal sealed partial class AnimatedCancellableButton : Button, IDisposable, I
 
 			if (!string.IsNullOrEmpty(newContent))
 			{
-				if (!string.IsNullOrEmpty(button.ExternalButtonIcon))
-				{
-					button.Content = CreateButtonContent(newContent, button.ExternalButtonIcon);
-				}
-				else
-				{
-					button.Content = newContent;
-				}
+				button.Content = !string.IsNullOrEmpty(button.ExternalButtonIcon) ? CreateButtonContent(newContent, button.ExternalButtonIcon) : newContent;
 			}
 		}
 	}
