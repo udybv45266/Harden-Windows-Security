@@ -2,8 +2,6 @@ name: Build Harden System Security App for Store
 
 on:
   workflow_dispatch: # Only the repository's owner can initiate this workflow
-  push:
-    branches: [ "main" ] # Testing deployment
 
 # Prevent the workflow from running more than once per change
 concurrency:
