@@ -9,3 +9,5 @@
 * You can now duplicate a policy in the library by right-clicking on it and selecting "Duplicate Policy".
 
 * You can now detach policies you manually add to the sidebar policies library from their file paths so the changes made to them won't be written back to the original files.
+
+* Updated dependencies to the latest versions.

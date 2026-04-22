@@ -7,3 +7,5 @@
 * Various small UI and UX improvements.
 
 * You can now use CTRL + S keyboard shortcuts to open and close the Sidebar's pane.
+
+* Updated dependencies to the latest versions.
